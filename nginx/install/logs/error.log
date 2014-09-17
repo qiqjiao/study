@@ -1,0 +1,343 @@
+2014/09/17 11:13:59 [notice] 10152#0: using the "epoll" event method
+2014/09/17 11:13:59 [notice] 10152#0: using the "epoll" event method
+2014/09/17 11:13:59 [notice] 10152#0: nginx/1.6.2
+2014/09/17 11:13:59 [notice] 10152#0: nginx/1.6.2
+2014/09/17 11:13:59 [notice] 10152#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/09/17 11:13:59 [notice] 10152#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/09/17 11:13:59 [notice] 10152#0: OS: Linux 3.13.0-30-generic
+2014/09/17 11:13:59 [notice] 10152#0: OS: Linux 3.13.0-30-generic
+2014/09/17 11:13:59 [notice] 10152#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/09/17 11:13:59 [notice] 10152#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/09/17 11:13:59 [notice] 10153#0: start worker processes
+2014/09/17 11:13:59 [notice] 10153#0: start worker processes
+2014/09/17 11:13:59 [notice] 10153#0: start worker process 10154
+2014/09/17 11:13:59 [notice] 10153#0: start worker process 10154
+2014/09/17 11:14:22 [notice] 10158#0: signal process started
+2014/09/17 11:14:22 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:14:22 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:14:22 [notice] 10153#0: reconfiguring
+2014/09/17 11:14:22 [notice] 10153#0: reconfiguring
+2014/09/17 11:14:22 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:14:22 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:14:22 [notice] 10153#0: start worker processes
+2014/09/17 11:14:22 [notice] 10153#0: start worker processes
+2014/09/17 11:14:22 [notice] 10153#0: start worker process 10159
+2014/09/17 11:14:22 [notice] 10153#0: start worker process 10159
+2014/09/17 11:14:23 [notice] 10154#0: gracefully shutting down
+2014/09/17 11:14:23 [notice] 10154#0: gracefully shutting down
+2014/09/17 11:14:23 [notice] 10154#0: exiting
+2014/09/17 11:14:23 [notice] 10154#0: exiting
+2014/09/17 11:14:23 [notice] 10154#0: exit
+2014/09/17 11:14:23 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:14:23 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:14:23 [notice] 10153#0: worker process 10154 exited with code 0
+2014/09/17 11:14:23 [notice] 10153#0: worker process 10154 exited with code 0
+2014/09/17 11:14:23 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:14:23 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:14:30 [info] 10159#0: *1 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:35 [info] 10159#0: *2 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:36 [error] 10159#0: *3 open() "/home/jqq/study/nginx/install/html/search" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /search HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:36 [error] 10159#0: *3 open() "/home/jqq/study/nginx/install/html/search" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /search HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:36 [error] 10159#0: *3 open() "/home/jqq/study/nginx/install/html/search" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /search HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:36 [info] 10159#0: *3 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:40 [info] 10159#0: *4 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:41 [info] 10159#0: *5 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:42 [warn] 10159#0: *6 delaying request, excess: 0.522, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:42 [warn] 10159#0: *6 delaying request, excess: 0.522, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:42 [info] 10159#0: *6 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:14:42 [warn] 10159#0: *7 delaying request, excess: 0.982, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:42 [warn] 10159#0: *7 delaying request, excess: 0.982, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:14:43 [info] 10159#0: *7 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:06 [info] 10159#0: *8 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:06 [warn] 10159#0: *9 delaying request, excess: 0.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:06 [warn] 10159#0: *9 delaying request, excess: 0.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:07 [info] 10159#0: *9 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:07 [warn] 10159#0: *10 delaying request, excess: 0.966, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:07 [warn] 10159#0: *10 delaying request, excess: 0.966, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:08 [info] 10159#0: *10 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:08 [warn] 10159#0: *11 delaying request, excess: 0.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:08 [warn] 10159#0: *11 delaying request, excess: 0.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:09 [info] 10159#0: *11 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:09 [warn] 10159#0: *12 delaying request, excess: 0.987, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:09 [warn] 10159#0: *12 delaying request, excess: 0.987, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:10 [info] 10159#0: *12 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:10 [warn] 10159#0: *13 delaying request, excess: 0.971, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:10 [warn] 10159#0: *13 delaying request, excess: 0.971, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:11 [info] 10159#0: *13 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:11 [warn] 10159#0: *14 delaying request, excess: 0.959, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:11 [warn] 10159#0: *14 delaying request, excess: 0.959, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:12 [info] 10159#0: *14 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:12 [warn] 10159#0: *15 delaying request, excess: 0.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:12 [warn] 10159#0: *15 delaying request, excess: 0.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:13 [info] 10159#0: *15 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:13 [warn] 10159#0: *16 delaying request, excess: 0.965, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:13 [warn] 10159#0: *16 delaying request, excess: 0.965, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:14 [info] 10159#0: *16 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:14 [warn] 10159#0: *17 delaying request, excess: 0.985, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:14 [warn] 10159#0: *17 delaying request, excess: 0.985, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:15 [info] 10159#0: *17 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:15 [warn] 10159#0: *18 delaying request, excess: 0.964, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:15 [warn] 10159#0: *18 delaying request, excess: 0.964, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:16 [info] 10159#0: *18 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:16 [warn] 10159#0: *19 delaying request, excess: 0.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:16 [warn] 10159#0: *19 delaying request, excess: 0.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:17 [info] 10159#0: *19 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:17 [warn] 10159#0: *20 delaying request, excess: 0.987, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:17 [warn] 10159#0: *20 delaying request, excess: 0.987, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:18 [info] 10159#0: *20 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:15:18 [warn] 10159#0: *21 delaying request, excess: 0.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:18 [warn] 10159#0: *21 delaying request, excess: 0.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:15:19 [info] 10159#0: *21 client prematurely closed connection, client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [info] 10159#0: *22 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:13 [warn] 10159#0: *23 delaying request, excess: 0.998, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *23 delaying request, excess: 0.998, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *24 delaying request, excess: 1.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *24 delaying request, excess: 1.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *26 delaying request, excess: 2.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *26 delaying request, excess: 2.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *25 delaying request, excess: 3.976, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *25 delaying request, excess: 3.976, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *27 delaying request, excess: 4.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [warn] 10159#0: *27 delaying request, excess: 4.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [error] 10159#0: *28 limiting requests, excess: 5.973 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [error] 10159#0: *28 limiting requests, excess: 5.973 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [error] 10159#0: *28 limiting requests, excess: 5.973 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [info] 10159#0: *28 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:13 [error] 10159#0: *29 limiting requests, excess: 5.968 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [error] 10159#0: *29 limiting requests, excess: 5.968 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [error] 10159#0: *29 limiting requests, excess: 5.968 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:13 [info] 10159#0: *29 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:14 [info] 10159#0: *23 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:15 [info] 10159#0: *24 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:16 [info] 10159#0: *26 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:17 [info] 10159#0: *25 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:18 [info] 10159#0: *27 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:18 [warn] 10159#0: *30 delaying request, excess: 0.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:18 [warn] 10159#0: *30 delaying request, excess: 0.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:19 [info] 10159#0: *30 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:46 [warn] 10159#0: *32 delaying request, excess: 0.999, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *32 delaying request, excess: 0.999, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [info] 10159#0: *31 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:46 [warn] 10159#0: *33 delaying request, excess: 1.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *33 delaying request, excess: 1.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *34 delaying request, excess: 2.988, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *34 delaying request, excess: 2.988, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *36 delaying request, excess: 3.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *36 delaying request, excess: 3.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *35 delaying request, excess: 4.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [warn] 10159#0: *35 delaying request, excess: 4.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [error] 10159#0: *37 limiting requests, excess: 5.979 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [error] 10159#0: *37 limiting requests, excess: 5.979 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [error] 10159#0: *37 limiting requests, excess: 5.979 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [info] 10159#0: *37 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:46 [error] 10159#0: *38 limiting requests, excess: 5.975 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [error] 10159#0: *38 limiting requests, excess: 5.975 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [error] 10159#0: *38 limiting requests, excess: 5.975 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:46 [info] 10159#0: *38 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:47 [info] 10159#0: *32 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:48 [info] 10159#0: *33 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:48 [warn] 10159#0: *39 delaying request, excess: 3.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:48 [warn] 10159#0: *39 delaying request, excess: 3.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:16:49 [info] 10159#0: *34 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:50 [info] 10159#0: *36 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:51 [info] 10159#0: *35 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:16:52 [info] 10159#0: *39 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:11 [warn] 10159#0: *41 delaying request, excess: 1.000, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *41 delaying request, excess: 1.000, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [info] 10159#0: *40 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:11 [warn] 10159#0: *44 delaying request, excess: 1.995, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *44 delaying request, excess: 1.995, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *42 delaying request, excess: 2.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *42 delaying request, excess: 2.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *43 delaying request, excess: 3.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *43 delaying request, excess: 3.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *45 delaying request, excess: 4.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [warn] 10159#0: *45 delaying request, excess: 4.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *46 limiting requests, excess: 5.990 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *46 limiting requests, excess: 5.990 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *46 limiting requests, excess: 5.990 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *47 limiting requests, excess: 5.977 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *47 limiting requests, excess: 5.977 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *47 limiting requests, excess: 5.977 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [info] 10159#0: *47 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:11 [error] 10159#0: *48 limiting requests, excess: 5.969 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *48 limiting requests, excess: 5.969 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [error] 10159#0: *48 limiting requests, excess: 5.969 by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:11 [info] 10159#0: *46 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:11 [info] 10159#0: *48 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:12 [info] 10159#0: *41 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:13 [info] 10159#0: *44 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:14 [info] 10159#0: *42 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:15 [info] 10159#0: *43 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:16 [info] 10159#0: *45 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:30 [notice] 10236#0: signal process started
+2014/09/17 11:17:30 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:17:30 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:17:30 [notice] 10153#0: reconfiguring
+2014/09/17 11:17:30 [notice] 10153#0: reconfiguring
+2014/09/17 11:17:30 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:17:30 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:17:30 [notice] 10153#0: start worker processes
+2014/09/17 11:17:30 [notice] 10153#0: start worker processes
+2014/09/17 11:17:30 [notice] 10153#0: start worker process 10237
+2014/09/17 11:17:30 [notice] 10153#0: start worker process 10237
+2014/09/17 11:17:30 [notice] 10159#0: gracefully shutting down
+2014/09/17 11:17:30 [notice] 10159#0: gracefully shutting down
+2014/09/17 11:17:30 [notice] 10159#0: exiting
+2014/09/17 11:17:30 [notice] 10159#0: exiting
+2014/09/17 11:17:30 [notice] 10159#0: exit
+2014/09/17 11:17:30 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:17:30 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:17:30 [notice] 10153#0: worker process 10159 exited with code 0
+2014/09/17 11:17:30 [notice] 10153#0: worker process 10159 exited with code 0
+2014/09/17 11:17:30 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:17:30 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:17:33 [warn] 10237#0: *49 delaying request, excess: 0.999, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *49 delaying request, excess: 0.999, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *51 delaying request, excess: 1.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *51 delaying request, excess: 1.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *52 delaying request, excess: 2.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *52 delaying request, excess: 2.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *53 delaying request, excess: 3.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *53 delaying request, excess: 3.989, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [info] 10237#0: *50 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:33 [warn] 10237#0: *54 delaying request, excess: 4.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *54 delaying request, excess: 4.980, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *55 delaying request, excess: 5.979, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *55 delaying request, excess: 5.979, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *56 delaying request, excess: 6.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *56 delaying request, excess: 6.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *57 delaying request, excess: 7.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:33 [warn] 10237#0: *57 delaying request, excess: 7.975, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:17:34 [info] 10237#0: *49 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:35 [info] 10237#0: *51 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:36 [info] 10237#0: *52 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:37 [info] 10237#0: *53 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:38 [info] 10237#0: *54 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:39 [info] 10237#0: *55 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:40 [info] 10237#0: *56 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:17:41 [info] 10237#0: *57 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:52 [notice] 10285#0: signal process started
+2014/09/17 11:26:52 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:26:52 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:26:52 [notice] 10153#0: reconfiguring
+2014/09/17 11:26:52 [notice] 10153#0: reconfiguring
+2014/09/17 11:26:52 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:26:52 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:26:52 [notice] 10153#0: start worker processes
+2014/09/17 11:26:52 [notice] 10153#0: start worker processes
+2014/09/17 11:26:52 [notice] 10153#0: start worker process 10286
+2014/09/17 11:26:52 [notice] 10153#0: start worker process 10286
+2014/09/17 11:26:52 [notice] 10237#0: gracefully shutting down
+2014/09/17 11:26:52 [notice] 10237#0: gracefully shutting down
+2014/09/17 11:26:52 [notice] 10237#0: exiting
+2014/09/17 11:26:52 [notice] 10237#0: exiting
+2014/09/17 11:26:52 [notice] 10237#0: exit
+2014/09/17 11:26:52 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:26:52 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:26:52 [notice] 10153#0: worker process 10237 exited with code 0
+2014/09/17 11:26:52 [notice] 10153#0: worker process 10237 exited with code 0
+2014/09/17 11:26:52 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:26:52 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:26:54 [info] 10286#0: *58 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:54 [warn] 10286#0: *60 delaying request, excess: 0.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *60 delaying request, excess: 0.993, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *61 delaying request, excess: 1.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *61 delaying request, excess: 1.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *62 delaying request, excess: 2.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *62 delaying request, excess: 2.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *64 delaying request, excess: 3.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *64 delaying request, excess: 3.986, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *63 delaying request, excess: 4.985, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *63 delaying request, excess: 4.985, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *59 delaying request, excess: 5.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *59 delaying request, excess: 5.983, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *66 delaying request, excess: 6.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *66 delaying request, excess: 6.981, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *67 delaying request, excess: 7.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *67 delaying request, excess: 7.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *65 delaying request, excess: 8.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *65 delaying request, excess: 8.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *68 delaying request, excess: 9.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *68 delaying request, excess: 9.978, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *69 delaying request, excess: 10.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *69 delaying request, excess: 10.977, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *70 delaying request, excess: 11.974, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:54 [warn] 10286#0: *70 delaying request, excess: 11.974, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:26:55 [info] 10286#0: *60 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:56 [info] 10286#0: *61 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:57 [info] 10286#0: *62 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:58 [info] 10286#0: *64 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:26:59 [info] 10286#0: *63 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:00 [info] 10286#0: *59 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:01 [info] 10286#0: *66 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:02 [info] 10286#0: *67 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:03 [info] 10286#0: *65 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:04 [info] 10286#0: *68 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:05 [info] 10286#0: *69 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:06 [info] 10286#0: *70 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:06 [warn] 10286#0: *71 delaying request, excess: 0.973, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:06 [warn] 10286#0: *71 delaying request, excess: 0.973, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:07 [info] 10286#0: *71 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:19 [notice] 10305#0: signal process started
+2014/09/17 11:27:19 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:27:19 [notice] 10153#0: signal 1 (SIGHUP) received, reconfiguring
+2014/09/17 11:27:19 [notice] 10153#0: reconfiguring
+2014/09/17 11:27:19 [notice] 10153#0: reconfiguring
+2014/09/17 11:27:19 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:27:19 [notice] 10153#0: using the "epoll" event method
+2014/09/17 11:27:19 [notice] 10153#0: start worker processes
+2014/09/17 11:27:19 [notice] 10153#0: start worker processes
+2014/09/17 11:27:19 [notice] 10153#0: start worker process 10306
+2014/09/17 11:27:19 [notice] 10153#0: start worker process 10306
+2014/09/17 11:27:19 [notice] 10286#0: gracefully shutting down
+2014/09/17 11:27:19 [notice] 10286#0: gracefully shutting down
+2014/09/17 11:27:19 [notice] 10286#0: exiting
+2014/09/17 11:27:19 [notice] 10286#0: exiting
+2014/09/17 11:27:19 [notice] 10286#0: exit
+2014/09/17 11:27:19 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:27:19 [notice] 10153#0: signal 17 (SIGCHLD) received
+2014/09/17 11:27:19 [notice] 10153#0: worker process 10286 exited with code 0
+2014/09/17 11:27:19 [notice] 10153#0: worker process 10286 exited with code 0
+2014/09/17 11:27:19 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:27:19 [notice] 10153#0: signal 29 (SIGIO) received
+2014/09/17 11:27:21 [warn] 10306#0: *74 delaying request, excess: 0.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *74 delaying request, excess: 0.994, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *76 delaying request, excess: 1.976, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *76 delaying request, excess: 1.976, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *72 delaying request, excess: 2.974, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *72 delaying request, excess: 2.974, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *78 delaying request, excess: 3.970, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *78 delaying request, excess: 3.970, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *79 delaying request, excess: 4.964, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *79 delaying request, excess: 4.964, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [info] 10306#0: *73 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:21 [warn] 10306#0: *75 delaying request, excess: 5.954, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *75 delaying request, excess: 5.954, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *77 delaying request, excess: 6.952, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *77 delaying request, excess: 6.952, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *80 delaying request, excess: 7.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *80 delaying request, excess: 7.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *81 delaying request, excess: 8.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *81 delaying request, excess: 8.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *82 delaying request, excess: 9.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *82 delaying request, excess: 9.948, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *83 delaying request, excess: 10.946, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *83 delaying request, excess: 10.946, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *84 delaying request, excess: 11.940, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [warn] 10306#0: *84 delaying request, excess: 11.940, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:21 [info] 10306#0: *74 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:22 [info] 10306#0: *76 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:22 [info] 10306#0: *72 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:23 [info] 10306#0: *78 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:23 [info] 10306#0: *79 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:24 [info] 10306#0: *75 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:24 [info] 10306#0: *77 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:25 [info] 10306#0: *80 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:25 [info] 10306#0: *81 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:26 [info] 10306#0: *82 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:26 [info] 10306#0: *83 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:27 [info] 10306#0: *84 client 127.0.0.1 closed keepalive connection
+2014/09/17 11:27:27 [warn] 10306#0: *85 delaying request, excess: 0.940, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:27 [warn] 10306#0: *85 delaying request, excess: 0.940, by zone "one", client: 127.0.0.1, server: localhost, request: "GET /search2/ HTTP/1.1", host: "127.0.0.1:8080"
+2014/09/17 11:27:27 [info] 10306#0: *85 client 127.0.0.1 closed keepalive connection
