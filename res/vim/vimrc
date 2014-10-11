@@ -1,0 +1,37 @@
+set showcmd
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+set nu
+
+colo darkblue
+syntax on
+
+filetype on
+filetype plugin on
+filetype indent on
+
+autocmd VimResized * wincmd =
+
+set wildmenu
+set showmatch
+set ignorecase
+set hlsearch
+set incsearch
+set autoindent
+set smartindent
+set cindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set nowrap
+set laststatus=2
+set ruler
+set colorcolumn=80 
+set noswapfile
+
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$\|[^\t]\zs\t\+/
+
+runtime *.vim
