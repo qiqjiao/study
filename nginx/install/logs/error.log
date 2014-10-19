@@ -2941,3 +2941,94 @@
 2014/09/17 16:38:02 [info] 4222#0: *171 client 127.0.0.1 closed keepalive connection
 2014/09/17 16:38:02 [info] 4222#0: *172 client 127.0.0.1 closed keepalive connection
 2014/09/18 21:26:56 [emerg] 8007#0: unknown limit_req_zone "one" in /home/jqq/study/nginx/install/conf/nginx.conf:42
+2014/10/16 17:17:55 [notice] 29197#0: signal process started
+2014/10/16 17:17:55 [alert] 29197#0: kill(3948, 1) failed (3: No such process)
+2014/10/16 17:18:08 [notice] 29202#0: signal process started
+2014/10/16 17:18:08 [alert] 29202#0: kill(3948, 1) failed (3: No such process)
+2014/10/16 17:18:09 [notice] 29203#0: signal process started
+2014/10/16 17:18:09 [alert] 29203#0: kill(3948, 1) failed (3: No such process)
+2014/10/16 17:18:17 [notice] 29205#0: using the "epoll" event method
+2014/10/16 17:18:17 [notice] 29205#0: using the "epoll" event method
+2014/10/16 17:18:17 [notice] 29205#0: nginx/1.6.2
+2014/10/16 17:18:17 [notice] 29205#0: nginx/1.6.2
+2014/10/16 17:18:17 [notice] 29205#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/10/16 17:18:17 [notice] 29205#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/10/16 17:18:17 [notice] 29205#0: OS: Linux 3.13.0-30-generic
+2014/10/16 17:18:17 [notice] 29205#0: OS: Linux 3.13.0-30-generic
+2014/10/16 17:18:17 [notice] 29205#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/10/16 17:18:17 [notice] 29205#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/10/16 17:18:17 [notice] 29206#0: start worker processes
+2014/10/16 17:18:17 [notice] 29206#0: start worker processes
+2014/10/16 17:18:17 [notice] 29206#0: start worker process 29207
+2014/10/16 17:18:17 [notice] 29206#0: start worker process 29207
+2014/10/16 17:18:28 [info] 29207#0: *1 client 127.0.0.1 closed keepalive connection
+2014/10/16 17:18:31 [info] 29207#0: *2 client 127.0.0.1 closed keepalive connection
+2014/10/16 17:18:40 [notice] 29212#0: signal process started
+2014/10/16 17:18:40 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 17:18:40 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 17:18:40 [notice] 29206#0: reconfiguring
+2014/10/16 17:18:40 [notice] 29206#0: reconfiguring
+2014/10/16 17:18:40 [notice] 29206#0: using the "epoll" event method
+2014/10/16 17:18:40 [notice] 29206#0: using the "epoll" event method
+2014/10/16 17:18:40 [notice] 29206#0: start worker processes
+2014/10/16 17:18:40 [notice] 29206#0: start worker processes
+2014/10/16 17:18:40 [notice] 29206#0: start worker process 29213
+2014/10/16 17:18:40 [notice] 29206#0: start worker process 29213
+2014/10/16 17:18:40 [notice] 29207#0: gracefully shutting down
+2014/10/16 17:18:40 [notice] 29207#0: gracefully shutting down
+2014/10/16 17:18:40 [notice] 29207#0: exiting
+2014/10/16 17:18:40 [notice] 29207#0: exiting
+2014/10/16 17:18:40 [notice] 29207#0: exit
+2014/10/16 17:18:40 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 17:18:40 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 17:18:40 [notice] 29206#0: worker process 29207 exited with code 0
+2014/10/16 17:18:40 [notice] 29206#0: worker process 29207 exited with code 0
+2014/10/16 17:18:40 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 17:18:40 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 17:18:42 [info] 29213#0: *3 client 127.0.0.1 closed keepalive connection
+2014/10/16 18:01:22 [notice] 29425#0: signal process started
+2014/10/16 18:01:22 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 18:01:22 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 18:01:22 [notice] 29206#0: reconfiguring
+2014/10/16 18:01:22 [notice] 29206#0: reconfiguring
+2014/10/16 18:01:22 [notice] 29206#0: using the "epoll" event method
+2014/10/16 18:01:22 [notice] 29206#0: using the "epoll" event method
+2014/10/16 18:01:22 [notice] 29206#0: start worker processes
+2014/10/16 18:01:22 [notice] 29206#0: start worker processes
+2014/10/16 18:01:22 [notice] 29206#0: start worker process 29426
+2014/10/16 18:01:22 [notice] 29206#0: start worker process 29426
+2014/10/16 18:01:23 [notice] 29213#0: gracefully shutting down
+2014/10/16 18:01:23 [notice] 29213#0: gracefully shutting down
+2014/10/16 18:01:23 [notice] 29213#0: exiting
+2014/10/16 18:01:23 [notice] 29213#0: exiting
+2014/10/16 18:01:23 [notice] 29213#0: exit
+2014/10/16 18:01:23 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 18:01:23 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 18:01:23 [notice] 29206#0: worker process 29213 exited with code 0
+2014/10/16 18:01:23 [notice] 29206#0: worker process 29213 exited with code 0
+2014/10/16 18:01:23 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 18:01:23 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 18:01:27 [info] 29426#0: *4 client 127.0.0.1 closed keepalive connection
+2014/10/16 18:01:49 [notice] 29462#0: signal process started
+2014/10/16 18:01:49 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 18:01:49 [notice] 29206#0: signal 1 (SIGHUP) received, reconfiguring
+2014/10/16 18:01:49 [notice] 29206#0: reconfiguring
+2014/10/16 18:01:49 [notice] 29206#0: reconfiguring
+2014/10/16 18:01:49 [notice] 29206#0: using the "epoll" event method
+2014/10/16 18:01:49 [notice] 29206#0: using the "epoll" event method
+2014/10/16 18:01:49 [notice] 29206#0: start worker processes
+2014/10/16 18:01:49 [notice] 29206#0: start worker processes
+2014/10/16 18:01:49 [notice] 29206#0: start worker process 29463
+2014/10/16 18:01:49 [notice] 29206#0: start worker process 29463
+2014/10/16 18:01:49 [notice] 29426#0: gracefully shutting down
+2014/10/16 18:01:49 [notice] 29426#0: gracefully shutting down
+2014/10/16 18:01:49 [notice] 29426#0: exiting
+2014/10/16 18:01:49 [notice] 29426#0: exiting
+2014/10/16 18:01:49 [notice] 29426#0: exit
+2014/10/16 18:01:49 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 18:01:49 [notice] 29206#0: signal 17 (SIGCHLD) received
+2014/10/16 18:01:49 [notice] 29206#0: worker process 29426 exited with code 0
+2014/10/16 18:01:49 [notice] 29206#0: worker process 29426 exited with code 0
+2014/10/16 18:01:49 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 18:01:49 [notice] 29206#0: signal 29 (SIGIO) received
+2014/10/16 18:01:53 [info] 29463#0: *5 client 127.0.0.1 closed keepalive connection
