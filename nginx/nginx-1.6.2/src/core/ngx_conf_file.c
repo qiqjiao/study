@@ -1278,7 +1278,7 @@ ngx_conf_set_enum_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     }
 
     value = cf->args->elts;
-    e = cmd->post;
+    e = cmd->post; // list contains the string names of enum
 
     for (i = 0; e[i].name.len != 0; i++) {
         if (e[i].name.len != value[1].len
