@@ -470,6 +470,7 @@ ngx_vslprintf(u_char *buf, u_char *last, const char *fmt, va_list args)
 }
 
 
+// number -> string
 static u_char *
 ngx_sprintf_num(u_char *buf, u_char *last, uint64_t ui64, u_char zero,
     ngx_uint_t hexadecimal, ngx_uint_t width)

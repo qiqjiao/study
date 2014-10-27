@@ -183,17 +183,15 @@ ngx_module_t  ngx_core_module = {
     NGX_MODULE_V1_PADDING
 };
 
+ngx_uint_t          ngx_max_module; // module count
 
-ngx_uint_t          ngx_max_module;
-
-static ngx_uint_t   ngx_show_help;
-static ngx_uint_t   ngx_show_version;
-static ngx_uint_t   ngx_show_configure;
-static u_char      *ngx_prefix;
-static u_char      *ngx_conf_file;
-static u_char      *ngx_conf_params;
-static char        *ngx_signal;
-
+static ngx_uint_t   ngx_show_help; // -?,h
+static ngx_uint_t   ngx_show_version; // -v,V
+static ngx_uint_t   ngx_show_configure; // -V
+static u_char      *ngx_prefix; // -p
+static u_char      *ngx_conf_file; // -c
+static u_char      *ngx_conf_params; // -g
+static char        *ngx_signal; // -s
 
 static char **ngx_os_environ;
 
@@ -787,6 +785,8 @@ ngx_get_options(int argc, char *const *argv)
 }
 
 
+// main(argv)->ngx_os_argv, environ->ngx_os_environ
+// main(argc,argv)->ngx_argc/ngx_argv
 static ngx_int_t
 ngx_save_argv(ngx_cycle_t *cycle, int argc, char *const *argv)
 {
@@ -1109,6 +1109,7 @@ ngx_core_module_init_conf(ngx_cycle_t *cycle, void *conf)
 }
 
 
+// ccf->username(str)/user(uid)/group(gid)
 static char *
 ngx_set_user(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
@@ -1241,7 +1242,7 @@ ngx_set_priority(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     return NGX_CONF_OK;
 }
 
-
+// cpu_affinity_n/cpu_affinity
 static char *
 ngx_set_cpu_affinity(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
@@ -1334,6 +1335,7 @@ ngx_get_cpu_affinity(ngx_uint_t n)
 }
 
 
+// ccf->worker_processes = ngx_ncpu(auto)/N
 static char *
 ngx_set_worker_processes(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {

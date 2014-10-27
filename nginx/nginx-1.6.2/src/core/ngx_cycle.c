@@ -23,8 +23,8 @@ ngx_array_t            ngx_old_cycles;
 static ngx_pool_t     *ngx_temp_pool;
 static ngx_event_t     ngx_cleaner_event;
 
-ngx_uint_t             ngx_test_config;
-ngx_uint_t             ngx_quiet_mode;
+ngx_uint_t             ngx_test_config; // -t
+ngx_uint_t             ngx_quiet_mode; // -q
 
 #if (NGX_THREADS)
 ngx_tls_key_t          ngx_core_tls_key;
