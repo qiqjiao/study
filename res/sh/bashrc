@@ -126,5 +126,6 @@ function findcppsrc() {
 export PROMPT_COMMAND='history -a; history -r'
 function buildcscope() {
   find . -type f | grep -E -i 'CMakeLists.txt$|\.(h|c|cpp|cc|proto|py)$' > cscope.files
+  rm -f cscope.in.out cscope.out cscope.po.out
   cscope -bq
 }
