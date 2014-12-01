@@ -372,6 +372,7 @@ ngx_conf_handler(ngx_conf_t *cf, ngx_int_t last)
 
             /* set up the directive's configuration context */
 
+            // ???
             conf = NULL;
 
             if (cmd->type & NGX_DIRECT_CONF) {
@@ -457,8 +458,10 @@ ngx_conf_read_token(ngx_conf_t *cf)
 
     for ( ;; ) {
 
+        // meet empty buffer
         if (b->pos >= b->last) {
 
+            // meet file end
             if (cf->conf_file->file.offset >= file_size) {
 
                 if (cf->args->nelts > 0 || !last_space) {
@@ -507,6 +510,7 @@ ngx_conf_read_token(ngx_conf_t *cf)
                 ngx_memmove(b->start, start, len);
             }
 
+            // load buffer from file
             size = (ssize_t) (file_size - cf->conf_file->file.offset);
 
             if (size > b->end - (b->start + len)) {
