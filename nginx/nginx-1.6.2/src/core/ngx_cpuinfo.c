@@ -68,7 +68,7 @@ ngx_cpuid(uint32_t i, uint32_t *buf)
 
 
 /* auto detect the L2 cache line size of modern and widespread CPUs */
-
+// update ngx_cacheline_size
 void
 ngx_cpuinfo(void)
 {

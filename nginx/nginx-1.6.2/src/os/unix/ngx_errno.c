@@ -42,6 +42,7 @@ ngx_strerror(ngx_err_t err, u_char *errstr, size_t size)
 }
 
 
+// ngx_sys_errlist[NGX_SYS_NERR] = { strerror(0), strerror(1), ... }
 ngx_int_t
 ngx_strerror_init(void)
 {

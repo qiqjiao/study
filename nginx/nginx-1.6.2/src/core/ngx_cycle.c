@@ -897,7 +897,8 @@ ngx_init_zone_pool(ngx_cycle_t *cycle, ngx_shm_zone_t *zn)
     return NGX_OK;
 }
 
-
+// ngx_open_file(name)
+// output ngx_pid to file
 ngx_int_t
 ngx_create_pidfile(ngx_str_t *name, ngx_log_t *log)
 {

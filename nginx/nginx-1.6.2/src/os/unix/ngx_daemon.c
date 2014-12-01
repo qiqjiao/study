@@ -8,7 +8,10 @@
 #include <ngx_config.h>
 #include <ngx_core.h>
 
-
+// fork, parent exits and child continues
+// setsid()
+// umask(0)
+// redirect stdin/stdout to /dev/null
 ngx_int_t
 ngx_daemon(ngx_log_t *log)
 {

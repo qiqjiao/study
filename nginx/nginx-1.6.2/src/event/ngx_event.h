@@ -74,21 +74,21 @@ struct ngx_event_s {
     /* the pending eof reported by kqueue, epoll or in aio chain operation */
     unsigned         pending_eof:1;
 
-#if !(NGX_THREADS)
-    unsigned         posted_ready:1;
-#endif
-
-#if (NGX_WIN32)
-    /* setsockopt(SO_UPDATE_ACCEPT_CONTEXT) was successful */
-    unsigned         accept_context_updated:1;
-#endif
-
-#if (NGX_HAVE_KQUEUE)
-    unsigned         kq_vnode:1;
-
-    /* the pending errno reported by kqueue */
-    int              kq_errno;
-#endif
+//#if !(NGX_THREADS)
+//    unsigned         posted_ready:1;
+//#endif
+//
+//#if (NGX_WIN32)
+//    /* setsockopt(SO_UPDATE_ACCEPT_CONTEXT) was successful */
+//    unsigned         accept_context_updated:1;
+//#endif
+//
+//#if (NGX_HAVE_KQUEUE)
+//    unsigned         kq_vnode:1;
+//
+//    /* the pending errno reported by kqueue */
+//    int              kq_errno;
+//#endif
 
     /*
      * kqueue only:
@@ -135,29 +135,29 @@ struct ngx_event_s {
     unsigned         channel:1;
     unsigned         resolver:1;
 
-#if (NGX_THREADS)
-
-    unsigned         locked:1;
-
-    unsigned         posted_ready:1;
-    unsigned         posted_timedout:1;
-    unsigned         posted_eof:1;
-
-#if (NGX_HAVE_KQUEUE)
-    /* the pending errno reported by kqueue */
-    int              posted_errno;
-#endif
-
-#if (NGX_HAVE_KQUEUE) || (NGX_HAVE_IOCP)
-    int              posted_available;
-#else
-    unsigned         posted_available:1;
-#endif
-
-    ngx_atomic_t    *lock;
-    ngx_atomic_t    *own_lock;
-
-#endif
+//#if (NGX_THREADS)
+//
+//    unsigned         locked:1;
+//
+//    unsigned         posted_ready:1;
+//    unsigned         posted_timedout:1;
+//    unsigned         posted_eof:1;
+//
+//#if (NGX_HAVE_KQUEUE)
+//    /* the pending errno reported by kqueue */
+//    int              posted_errno;
+//#endif
+//
+//#if (NGX_HAVE_KQUEUE) || (NGX_HAVE_IOCP)
+//    int              posted_available;
+//#else
+//    unsigned         posted_available:1;
+//#endif
+//
+//    ngx_atomic_t    *lock;
+//    ngx_atomic_t    *own_lock;
+//
+//#endif
 
     /* the links of the posted queue */
     ngx_event_t     *next;

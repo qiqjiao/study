@@ -126,6 +126,7 @@ ngx_spawn_process(ngx_cycle_t *cycle, ngx_spawn_proc_pt proc, void *data,
                        ngx_processes[s].channel[0],
                        ngx_processes[s].channel[1]);
 
+        // http://www.beej.us/guide/bgnet/output/html/multipage/advanced.html#blocking
         if (ngx_nonblocking(ngx_processes[s].channel[0]) == -1) {
             ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno,
                           ngx_nonblocking_n " failed while spawning \"%s\"",
@@ -279,7 +280,7 @@ ngx_execute_proc(ngx_cycle_t *cycle, void *data)
     exit(1);
 }
 
-
+// Set signals defined in `signals`. handlers are all the same:ngx_signal_handler()
 ngx_int_t
 ngx_init_signals(ngx_log_t *log)
 {

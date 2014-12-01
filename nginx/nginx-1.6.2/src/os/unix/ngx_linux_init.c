@@ -29,7 +29,9 @@ static ngx_os_io_t ngx_linux_io = {
 #endif
 };
 
-
+// ngx_linux_kern_ostype = uname.sysname
+// ngx_linux_kern_osrelease = uname.release
+// ngx_os_io = ngx_linux_io;
 ngx_int_t
 ngx_os_specific_init(ngx_log_t *log)
 {

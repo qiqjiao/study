@@ -28,7 +28,12 @@ ngx_os_io_t ngx_os_io = {
     0
 };
 
-
+// ngx_os_specific_init()
+// ngx_pagesize = getpagesize();
+// ngx_cacheline_size = NGX_CPU_CACHE_LINE;
+// ngx_cpuinfo(); // update ngx_cacheline_size
+// ngx_max_sockets = (ngx_int_t) rlmt.rlim_cur;
+// ngx_inherited_nonblocking = 1;
 ngx_int_t
 ngx_os_init(ngx_log_t *log)
 {
@@ -78,7 +83,7 @@ ngx_os_init(ngx_log_t *log)
     return NGX_OK;
 }
 
-
+// Log some os related information
 void
 ngx_os_status(ngx_log_t *log)
 {
@@ -89,6 +94,7 @@ ngx_os_status(ngx_log_t *log)
 #endif
 
 #if (NGX_HAVE_OS_SPECIFIC_INIT)
+    // log ngx_linux_kern_ostype, ngx_linux_kern_osrelease
     ngx_os_specific_status(log);
 #endif
 

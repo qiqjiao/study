@@ -139,24 +139,6 @@ static ngx_command_t  ngx_core_commands[] = {
       0,
       NULL },
 
-#if (NGX_THREADS)
-
-    { ngx_string("worker_threads"),
-      NGX_MAIN_CONF|NGX_DIRECT_CONF|NGX_CONF_TAKE1,
-      ngx_conf_set_num_slot,
-      0,
-      offsetof(ngx_core_conf_t, worker_threads),
-      NULL },
-
-    { ngx_string("thread_stack_size"),
-      NGX_MAIN_CONF|NGX_DIRECT_CONF|NGX_CONF_TAKE1,
-      ngx_conf_set_size_slot,
-      0,
-      offsetof(ngx_core_conf_t, thread_stack_size),
-      NULL },
-
-#endif
-
       ngx_null_command
 };
 
@@ -203,8 +185,6 @@ main(int argc, char *const *argv)
     ngx_log_t        *log;
     ngx_cycle_t      *cycle, init_cycle;
     ngx_core_conf_t  *ccf;
-
-    ngx_debug_init();
 
     if (ngx_strerror_init() != NGX_OK) {
         return 1;
@@ -408,7 +388,11 @@ main(int argc, char *const *argv)
     return 0;
 }
 
-
+// http://blog.csdn.net/livelylittlefish/article/details/7277607
+// Parse getenv(NGINX_VAR) [like: "16000:16500:16600;"]
+// Set cycle->listening[i].fd = NGINX_VAR[i] (parsed fd from NGINX_VAR)
+// ngx_inherited = 1
+// ngx_set_inherited_sockets(cycle)
 static ngx_int_t
 ngx_add_inherited_sockets(ngx_cycle_t *cycle)
 {
@@ -785,18 +769,11 @@ ngx_get_options(int argc, char *const *argv)
 }
 
 
-// main(argv)->ngx_os_argv, environ->ngx_os_environ
-// main(argc,argv)->ngx_argc/ngx_argv
+// main(argv)->ngx_os_argv[], environ->ngx_os_environ
+// main(argc,argv)->ngx_argc/ngx_argv[](copied all args & last is NULL)
 static ngx_int_t
 ngx_save_argv(ngx_cycle_t *cycle, int argc, char *const *argv)
 {
-#if (NGX_FREEBSD)
-
-    ngx_os_argv = (char **) argv;
-    ngx_argc = argc;
-    ngx_argv = (char **) argv;
-
-#else
     size_t     len;
     ngx_int_t  i;
 
@@ -821,8 +798,6 @@ ngx_save_argv(ngx_cycle_t *cycle, int argc, char *const *argv)
 
     ngx_argv[i] = NULL;
 
-#endif
-
     ngx_os_environ = environ;
 
     return NGX_OK;
@@ -835,6 +810,9 @@ ngx_process_options(ngx_cycle_t *cycle)
     u_char  *p;
     size_t   len;
 
+    // prefix is ended with '/'
+    // cycle->conf_prefix = ngx_prefix (-p) / cwd / NGX_CONF_PREFIX / NGX_PREFIX
+    // cycle->prefix = ngx_prefix / cwd / NGX_PREFIX
     if (ngx_prefix) {
         len = ngx_strlen(ngx_prefix);
         p = ngx_prefix;
@@ -889,6 +867,7 @@ ngx_process_options(ngx_cycle_t *cycle)
 #endif
     }
 
+    // cycle->conf_file = ngx_conf_file (-c) / NGX_CONF_PATH
     if (ngx_conf_file) {
         cycle->conf_file.len = ngx_strlen(ngx_conf_file);
         cycle->conf_file.data = ngx_conf_file;
@@ -901,6 +880,7 @@ ngx_process_options(ngx_cycle_t *cycle)
         return NGX_ERROR;
     }
 
+    // cycle->conf_prefix = cycle->conf_file[0, last '/']
     for (p = cycle->conf_file.data + cycle->conf_file.len - 1;
          p > cycle->conf_file.data;
          p--)
@@ -912,6 +892,7 @@ ngx_process_options(ngx_cycle_t *cycle)
         }
     }
 
+    // cycle->conf_param = ngx_conf_params (-g)
     if (ngx_conf_params) {
         cycle->conf_param.len = ngx_strlen(ngx_conf_params);
         cycle->conf_param.data = ngx_conf_params;

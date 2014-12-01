@@ -276,7 +276,9 @@ ngx_log_errno(u_char *buf, u_char *last, ngx_err_t err)
     return buf;
 }
 
-
+// ngx_log.file = &ngx_log_file;
+// ngx_log.log_level = NGX_LOG_NOTICE;
+// ngx_log_file.fd = ngx_open_file(prefix|NGX_PREFIX / NGX_ERROR_LOG_PATH, ...)
 ngx_log_t *
 ngx_log_init(u_char *prefix)
 {
@@ -302,11 +304,7 @@ ngx_log_init(u_char *prefix)
 
     p = NULL;
 
-#if (NGX_WIN32)
-    if (name[1] != ':') {
-#else
     if (name[0] != '/') {
-#endif
 
         if (prefix) {
             plen = ngx_strlen(prefix);
@@ -346,12 +344,6 @@ ngx_log_init(u_char *prefix)
         ngx_log_stderr(ngx_errno,
                        "[alert] could not open error log file: "
                        ngx_open_file_n " \"%s\" failed", name);
-#if (NGX_WIN32)
-        ngx_event_log(ngx_errno,
-                       "could not open error log file: "
-                       ngx_open_file_n " \"%s\" failed", name);
-#endif
-
         ngx_log_file.fd = ngx_stderr;
     }
 
@@ -380,7 +372,8 @@ ngx_log_open_default(ngx_cycle_t *cycle)
     return NGX_OK;
 }
 
-
+// if cycle->log_use_stderr: return
+// dup2(cycle->log->file->fd, stderr)
 ngx_int_t
 ngx_log_redirect_stderr(ngx_cycle_t *cycle)
 {

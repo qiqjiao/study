@@ -70,6 +70,22 @@ ngx_time_init(void)
 }
 
 
+// lock
+// ngx_current_msec = (ngx_msec_t) sec * 1000 + msec;
+// if sec unchanged, update cached_time[slot].msec, else ++slot and update:
+//     { cached_time[slot], ngx_cached_http_time[slot],
+//       ngx_cached_http_log_time[slot], ngx_cached_http_log_iso8601[slot] }
+//     cached_time[slot].(sec, msec) = (sec, msec)
+//
+//    ngx_memory_barrier();
+//    # update pointers #
+//    ngx_cached_time = tp;
+//    ngx_cached_http_time.data = p0;
+//    ngx_cached_err_log_time.data = p1;
+//    ngx_cached_http_log_time.data = p2;
+//    ngx_cached_http_log_iso8601.data = p3;
+//
+// unlock
 void
 ngx_time_update(void)
 {
@@ -167,6 +183,7 @@ ngx_time_update(void)
                        ngx_abs(tp->gmtoff / 60), ngx_abs(tp->gmtoff % 60));
 
 
+    // enforce the above changes are flushed before following pointers are used
     ngx_memory_barrier();
 
     ngx_cached_time = tp;
