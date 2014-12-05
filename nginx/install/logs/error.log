@@ -3032,3 +3032,72 @@
 2014/10/16 18:01:49 [notice] 29206#0: signal 29 (SIGIO) received
 2014/10/16 18:01:49 [notice] 29206#0: signal 29 (SIGIO) received
 2014/10/16 18:01:53 [info] 29463#0: *5 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:35:28 [notice] 8506#0: using the "epoll" event method
+2014/12/04 10:35:28 [notice] 8506#0: using the "epoll" event method
+2014/12/04 10:35:28 [notice] 8506#0: nginx/1.6.2
+2014/12/04 10:35:28 [notice] 8506#0: nginx/1.6.2
+2014/12/04 10:35:28 [notice] 8506#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/04 10:35:28 [notice] 8506#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/04 10:35:28 [notice] 8506#0: OS: Linux 3.13.0-32-generic
+2014/12/04 10:35:28 [notice] 8506#0: OS: Linux 3.13.0-32-generic
+2014/12/04 10:35:28 [notice] 8506#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/04 10:35:28 [notice] 8506#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/04 10:35:28 [notice] 8507#0: start worker processes
+2014/12/04 10:35:28 [notice] 8507#0: start worker processes
+2014/12/04 10:35:28 [notice] 8507#0: start worker process 8508
+2014/12/04 10:35:28 [notice] 8507#0: start worker process 8508
+2014/12/04 10:36:05 [info] 8508#0: *1 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:36:08 [info] 8508#0: *2 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:36:22 [info] 8508#0: *3 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:36:28 [info] 8508#0: *4 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:36:56 [notice] 8507#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/04 10:36:56 [notice] 8507#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/04 10:36:56 [notice] 8507#0: reconfiguring
+2014/12/04 10:36:56 [notice] 8507#0: reconfiguring
+2014/12/04 10:36:56 [notice] 8507#0: using the "epoll" event method
+2014/12/04 10:36:56 [notice] 8507#0: using the "epoll" event method
+2014/12/04 10:36:56 [notice] 8507#0: start worker processes
+2014/12/04 10:36:56 [notice] 8507#0: start worker processes
+2014/12/04 10:36:56 [notice] 8507#0: start worker process 8515
+2014/12/04 10:36:56 [notice] 8507#0: start worker process 8515
+2014/12/04 10:36:56 [notice] 8508#0: gracefully shutting down
+2014/12/04 10:36:56 [notice] 8508#0: gracefully shutting down
+2014/12/04 10:36:56 [notice] 8508#0: exiting
+2014/12/04 10:36:56 [notice] 8508#0: exiting
+2014/12/04 10:36:56 [notice] 8508#0: exit
+2014/12/04 10:36:56 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/04 10:36:56 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/04 10:36:56 [notice] 8507#0: worker process 8508 exited with code 0
+2014/12/04 10:36:56 [notice] 8507#0: worker process 8508 exited with code 0
+2014/12/04 10:36:56 [notice] 8507#0: signal 29 (SIGIO) received
+2014/12/04 10:36:56 [notice] 8507#0: signal 29 (SIGIO) received
+2014/12/04 10:36:59 [info] 8515#0: *5 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:37:07 [info] 8515#0: *6 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:37:10 [info] 8515#0: *7 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:37:14 [info] 8515#0: *8 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:37:58 [info] 8515#0: *9 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:38:10 [info] 8515#0: *10 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:38:16 [info] 8515#0: *11 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:45:02 [notice] 8507#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/04 10:45:02 [notice] 8507#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/04 10:45:02 [notice] 8507#0: reconfiguring
+2014/12/04 10:45:02 [notice] 8507#0: reconfiguring
+2014/12/04 10:45:02 [notice] 8507#0: using the "epoll" event method
+2014/12/04 10:45:02 [notice] 8507#0: using the "epoll" event method
+2014/12/04 10:45:02 [notice] 8507#0: start worker processes
+2014/12/04 10:45:02 [notice] 8507#0: start worker processes
+2014/12/04 10:45:02 [notice] 8507#0: start worker process 8599
+2014/12/04 10:45:02 [notice] 8507#0: start worker process 8599
+2014/12/04 10:45:02 [notice] 8515#0: gracefully shutting down
+2014/12/04 10:45:02 [notice] 8515#0: gracefully shutting down
+2014/12/04 10:45:02 [notice] 8515#0: exiting
+2014/12/04 10:45:02 [notice] 8515#0: exiting
+2014/12/04 10:45:02 [notice] 8515#0: exit
+2014/12/04 10:45:02 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/04 10:45:02 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/04 10:45:02 [notice] 8507#0: worker process 8515 exited with code 0
+2014/12/04 10:45:02 [notice] 8507#0: worker process 8515 exited with code 0
+2014/12/04 10:45:02 [notice] 8507#0: signal 29 (SIGIO) received
+2014/12/04 10:45:02 [notice] 8507#0: signal 29 (SIGIO) received
+2014/12/04 10:48:27 [info] 8599#0: *12 client 127.0.0.1 closed keepalive connection
+2014/12/04 10:48:35 [info] 8599#0: *15 client 127.0.0.1 closed keepalive connection
