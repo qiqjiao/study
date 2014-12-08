@@ -354,7 +354,7 @@ ngx_log_init(u_char *prefix)
     return &ngx_log;
 }
 
-
+// ngx_conf_open_file(cycle, NGX_ERROR_LOG_PATH)
 ngx_int_t
 ngx_log_open_default(ngx_cycle_t *cycle)
 {

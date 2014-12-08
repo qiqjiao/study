@@ -96,7 +96,7 @@ ngx_conf_param(ngx_conf_t *cf)
     return rv;
 }
 
-
+// parse the tokens in file `filename`, for each token invoke command_conf_t.set
 char *
 ngx_conf_parse(ngx_conf_t *cf, ngx_str_t *filename)
 {
@@ -372,7 +372,39 @@ ngx_conf_handler(ngx_conf_t *cf, ngx_int_t last)
 
             /* set up the directive's configuration context */
 
-            // ???
+            // NGX_DIRECT_CONF:
+            // pass pointer to struct created by ctx->create_conf, e.g.
+            // { ngx_string("daemon"),
+            //   NGX_MAIN_CONF|NGX_DIRECT_CONF|NGX_CONF_FLAG,
+            //   ngx_conf_set_flag_slot,
+            //   0,
+            //   offsetof(ngx_core_conf_t, daemon),
+            //   NULL },
+            //   char * ngx_conf_set_flag_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf) {
+            //       char  *p = conf;
+            //       ngx_flag_t *fp = (ngx_flag_t *) (p + cmd->offset);
+            // NGX_MAIN_CONF
+            // pass pointer to cf->ctx[ngx_modules[i]->index] which is a pointer
+            // to actual config struct, e.g.
+            // static ngx_command_t  ngx_http_commands[] = {
+            // { ngx_string("http"),
+            //   NGX_MAIN_CONF|NGX_CONF_BLOCK|NGX_CONF_NOARGS,
+            //   ngx_http_block,
+            //   0,
+            //   0,
+            //   NULL },
+            // };
+            // static ngx_core_module_t  ngx_http_module_ctx = {
+            //     ngx_string("http"),
+            //     NULL,
+            //     NULL
+            // };
+            // There is no create_conf() for  http config struct, and it's created
+            // in ngx_http_block():
+            // static char * ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+            //     ngx_http_conf_ctx_t         *ctx;
+            //     ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t));
+            //     *(ngx_http_conf_ctx_t **) conf = ctx;
             conf = NULL;
 
             if (cmd->type & NGX_DIRECT_CONF) {
@@ -811,7 +843,12 @@ ngx_conf_full_name(ngx_cycle_t *cycle, ngx_str_t *name, ngx_uint_t conf_prefix)
     return ngx_get_full_name(cycle->pool, prefix, name);
 }
 
-
+// if f in cycle->open_files:
+//   return f
+// else
+//   f = ngx_list_push(&cycle->open_files);
+//   file->fd = name->len ? NGX_INVALID_FILE : ngx_stderr
+//   file->name = name->len ? ngx_conf_full_name(cycle, &name, 0) : name
 ngx_open_file_t *
 ngx_conf_open_file(ngx_cycle_t *cycle, ngx_str_t *name)
 {
@@ -819,10 +856,6 @@ ngx_conf_open_file(ngx_cycle_t *cycle, ngx_str_t *name)
     ngx_uint_t        i;
     ngx_list_part_t  *part;
     ngx_open_file_t  *file;
-
-#if (NGX_SUPPRESS_WARN)
-    ngx_str_null(&full);
-#endif
 
     if (name->len) {
         full = *name;

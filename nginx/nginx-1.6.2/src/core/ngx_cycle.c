@@ -518,57 +518,15 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
                         nls[n].listen = 1;
                     }
 
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined SO_ACCEPTFILTER)
-
-                    /*
-                     * FreeBSD, except the most recent versions,
-                     * could not remove accept filter
-                     */
-                    nls[n].deferred_accept = ls[i].deferred_accept;
-
-                    if (ls[i].accept_filter && nls[n].accept_filter) {
-                        if (ngx_strcmp(ls[i].accept_filter,
-                                       nls[n].accept_filter)
-                            != 0)
-                        {
-                            nls[n].delete_deferred = 1;
-                            nls[n].add_deferred = 1;
-                        }
-
-                    } else if (ls[i].accept_filter) {
-                        nls[n].delete_deferred = 1;
-
-                    } else if (nls[n].accept_filter) {
-                        nls[n].add_deferred = 1;
-                    }
-#endif
-
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined TCP_DEFER_ACCEPT)
-
-                    if (ls[i].deferred_accept && !nls[n].deferred_accept) {
-                        nls[n].delete_deferred = 1;
-
-                    } else if (ls[i].deferred_accept != nls[n].deferred_accept)
-                    {
-                        nls[n].add_deferred = 1;
-                    }
-#endif
                     break;
                 }
             }
 
             if (nls[n].fd == (ngx_socket_t) -1) {
                 nls[n].open = 1;
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined SO_ACCEPTFILTER)
-                if (nls[n].accept_filter) {
-                    nls[n].add_deferred = 1;
-                }
-#endif
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined TCP_DEFER_ACCEPT)
                 if (nls[n].deferred_accept) {
                     nls[n].add_deferred = 1;
                 }
-#endif
             }
         }
 
@@ -576,16 +534,9 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
         ls = cycle->listening.elts;
         for (i = 0; i < cycle->listening.nelts; i++) {
             ls[i].open = 1;
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined SO_ACCEPTFILTER)
-            if (ls[i].accept_filter) {
-                ls[i].add_deferred = 1;
-            }
-#endif
-#if (NGX_HAVE_DEFERRED_ACCEPT && defined TCP_DEFER_ACCEPT)
             if (ls[i].deferred_accept) {
                 ls[i].add_deferred = 1;
             }
-#endif
         }
     }
 
@@ -910,8 +861,9 @@ ngx_init_zone_pool(ngx_cycle_t *cycle, ngx_shm_zone_t *zn)
     return NGX_OK;
 }
 
-// ngx_open_file(name)
-// output ngx_pid to file
+// create = ngx_test_config ? NGX_FILE_CREATE_OR_OPEN : NGX_FILE_TRUNCATE;
+// ngx_open_file(name, create)
+// if (!ngx_test_config) output ngx_pid to file;
 ngx_int_t
 ngx_create_pidfile(ngx_str_t *name, ngx_log_t *log)
 {

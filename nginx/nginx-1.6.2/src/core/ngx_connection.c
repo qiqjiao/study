@@ -370,23 +370,6 @@ ngx_open_listening_sockets(ngx_cycle_t *cycle)
                 return NGX_ERROR;
             }
 
-#if (NGX_HAVE_INET6 && defined IPV6_V6ONLY)
-
-            if (ls[i].sockaddr->sa_family == AF_INET6) {
-                int  ipv6only;
-
-                ipv6only = ls[i].ipv6only;
-
-                if (setsockopt(s, IPPROTO_IPV6, IPV6_V6ONLY,
-                               (const void *) &ipv6only, sizeof(int))
-                    == -1)
-                {
-                    ngx_log_error(NGX_LOG_EMERG, log, ngx_socket_errno,
-                                  "setsockopt(IPV6_V6ONLY) %V failed, ignored",
-                                  &ls[i].addr_text);
-                }
-            }
-#endif
             /* TODO: close on exit */
 
             if (!(ngx_event_flags & NGX_USE_AIO_EVENT)) {

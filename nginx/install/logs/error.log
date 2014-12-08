@@ -3101,3 +3101,21 @@
 2014/12/04 10:45:02 [notice] 8507#0: signal 29 (SIGIO) received
 2014/12/04 10:48:27 [info] 8599#0: *12 client 127.0.0.1 closed keepalive connection
 2014/12/04 10:48:35 [info] 8599#0: *15 client 127.0.0.1 closed keepalive connection
+2014/12/07 11:39:23 [notice] 8507#0: signal 15 (SIGTERM) received, exiting
+2014/12/07 11:39:23 [notice] 8507#0: signal 15 (SIGTERM) received, exiting
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8599#0: signal 15 (SIGTERM) received, exiting
+2014/12/07 11:39:23 [notice] 8599#0: signal 15 (SIGTERM) received, exiting
+2014/12/07 11:39:23 [info] 8599#0: epoll_wait() failed (4: Interrupted system call)
+2014/12/07 11:39:23 [notice] 8599#0: exiting
+2014/12/07 11:39:23 [notice] 8599#0: exiting
+2014/12/07 11:39:23 [notice] 8599#0: exit
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8507#0: signal 17 (SIGCHLD) received
+2014/12/07 11:39:23 [notice] 8507#0: worker process 8599 exited with code 0
+2014/12/07 11:39:23 [notice] 8507#0: worker process 8599 exited with code 0
+2014/12/07 11:39:23 [notice] 8507#0: exit
+2014/12/07 11:39:23 [notice] 8507#0: exit

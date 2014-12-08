@@ -513,7 +513,10 @@ ngx_add_path(ngx_conf_t *cf, ngx_path_t **slot)
     return NGX_OK;
 }
 
-
+// for p in cycle->paths
+//   ngx_create_dir(p, 0700)
+//   chown(p, user)
+//   chmod(p, (S_IRUSR|S_IWUSR|S_IXUSR))
 ngx_int_t
 ngx_create_paths(ngx_cycle_t *cycle, ngx_uid_t user)
 {
