@@ -570,6 +570,11 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
     /* close and delete stuff that lefts from an old cycle */
 
     /* free the unnecessary shared memory */
+    // for ozone in old_cycle->shared_memory
+    //   found = false
+    //   for zone in cycle->shared_memory
+    //     if (ozone.name == zone.name) found = true;
+    //   if (! found) ngx_shm_free(ozone)
 
     opart = &old_cycle->shared_memory.part;
     oshm_zone = opart->elts;
@@ -655,6 +660,10 @@ old_shm_zone_done:
 
 
     /* close the unnecessary open files */
+    // for f in old_cycle->open_files
+    //   if (f.fd == NGX_INVALID_FILE || f.fd == ngx_stderr)
+    //     continue;
+    //   ngx_close_file(f.fd);
 
     part = &old_cycle->open_files.part;
     file = part->elts;

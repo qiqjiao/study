@@ -300,7 +300,11 @@ ngx_set_inherited_sockets(ngx_cycle_t *cycle)
     return NGX_OK;
 }
 
-
+// for ls in cycle->listening:
+//   ls.fd = ngx_socket(ls.sockaddr->sa_family, ls.type, 0);
+//   bind(s, ls.sockaddr, ls.socklen);
+//   listen(s, ls[i].backlog);
+//   ls[i].listen = 1;
 ngx_int_t
 ngx_open_listening_sockets(ngx_cycle_t *cycle)
 {
@@ -579,19 +583,6 @@ ngx_configure_listening_sockets(ngx_cycle_t *cycle)
 
 #endif
 
-#if (NGX_HAVE_SETFIB)
-        if (ls[i].setfib != -1) {
-            if (setsockopt(ls[i].fd, SOL_SOCKET, SO_SETFIB,
-                           (const void *) &ls[i].setfib, sizeof(int))
-                == -1)
-            {
-                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
-                              "setsockopt(SO_SETFIB, %d) %V failed, ignored",
-                              ls[i].setfib, &ls[i].addr_text);
-            }
-        }
-#endif
-
 #if (NGX_HAVE_TCP_FASTOPEN)
         if (ls[i].fastopen != -1) {
             if (setsockopt(ls[i].fd, IPPROTO_TCP, TCP_FASTOPEN,
@@ -601,21 +592,6 @@ ngx_configure_listening_sockets(ngx_cycle_t *cycle)
                 ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
                               "setsockopt(TCP_FASTOPEN, %d) %V failed, ignored",
                               ls[i].fastopen, &ls[i].addr_text);
-            }
-        }
-#endif
-
-#if 0
-        if (1) {
-            int tcp_nodelay = 1;
-
-            if (setsockopt(ls[i].fd, IPPROTO_TCP, TCP_NODELAY,
-                       (const void *) &tcp_nodelay, sizeof(int))
-                == -1)
-            {
-                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
-                              "setsockopt(TCP_NODELAY) %V failed, ignored",
-                              &ls[i].addr_text);
             }
         }
 #endif
@@ -637,51 +613,6 @@ ngx_configure_listening_sockets(ngx_cycle_t *cycle)
          */
 
 #if (NGX_HAVE_DEFERRED_ACCEPT)
-
-#ifdef SO_ACCEPTFILTER
-
-        if (ls[i].delete_deferred) {
-            if (setsockopt(ls[i].fd, SOL_SOCKET, SO_ACCEPTFILTER, NULL, 0)
-                == -1)
-            {
-                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
-                              "setsockopt(SO_ACCEPTFILTER, NULL) "
-                              "for %V failed, ignored",
-                              &ls[i].addr_text);
-
-                if (ls[i].accept_filter) {
-                    ngx_log_error(NGX_LOG_ALERT, cycle->log, 0,
-                                  "could not change the accept filter "
-                                  "to \"%s\" for %V, ignored",
-                                  ls[i].accept_filter, &ls[i].addr_text);
-                }
-
-                continue;
-            }
-
-            ls[i].deferred_accept = 0;
-        }
-
-        if (ls[i].add_deferred) {
-            ngx_memzero(&af, sizeof(struct accept_filter_arg));
-            (void) ngx_cpystrn((u_char *) af.af_name,
-                               (u_char *) ls[i].accept_filter, 16);
-
-            if (setsockopt(ls[i].fd, SOL_SOCKET, SO_ACCEPTFILTER,
-                           &af, sizeof(struct accept_filter_arg))
-                == -1)
-            {
-                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
-                              "setsockopt(SO_ACCEPTFILTER, \"%s\") "
-                              "for %V failed, ignored",
-                              ls[i].accept_filter, &ls[i].addr_text);
-                continue;
-            }
-
-            ls[i].deferred_accept = 1;
-        }
-
-#endif
 
 #ifdef TCP_DEFER_ACCEPT
 

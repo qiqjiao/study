@@ -88,7 +88,7 @@ typedef uint32_t                    ngx_atomic_uint_t;
 typedef volatile ngx_atomic_uint_t  ngx_atomic_t;
 
 
-#elif (NGX_HAVE_GCC_ATOMIC)
+#elif (NGX_HAVE_GCC_ATOMIC) // TRUE
 
 /* GCC 4.1 builtin atomic operations */
 

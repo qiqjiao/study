@@ -12,10 +12,10 @@ install:
 	$(MAKE) -f objs/Makefile install
 
 upgrade:
-	/home/jqq/study/nginx/install/sbin/nginx -t
+	/home/qjiao/study/nginx/install/sbin/nginx -t
 
-	kill -USR2 `cat /home/jqq/study/nginx/install/logs/nginx.pid`
+	kill -USR2 `cat /home/qjiao/study/nginx/install/logs/nginx.pid`
 	sleep 1
-	test -f /home/jqq/study/nginx/install/logs/nginx.pid.oldbin
+	test -f /home/qjiao/study/nginx/install/logs/nginx.pid.oldbin
 
-	kill -QUIT `cat /home/jqq/study/nginx/install/logs/nginx.pid.oldbin`
+	kill -QUIT `cat /home/qjiao/study/nginx/install/logs/nginx.pid.oldbin`

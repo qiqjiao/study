@@ -1,12 +1,7 @@
-#define NGX_CONFIGURE " --prefix=/home/jqq/study/nginx/install --add-module=module/ngx_devel_kit --add-module=module/echo-nginx-module-0.54 --add-module=module/set-misc-nginx-module-0.24 --add-module=module/lua-nginx-module-0.9.10 --with-http_ssl_module --with-debug --with-http_realip_module --add-module=addon"
-
-#ifndef NGX_DEBUG
-#define NGX_DEBUG  1
-#endif
-
+#define NGX_CONFIGURE " --prefix=/home/qjiao/study/nginx/install"
 
 #ifndef NGX_COMPILER
-#define NGX_COMPILER  "gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) "
+#define NGX_COMPILER  "gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) "
 #endif
 
 
@@ -120,11 +115,6 @@
 
 #ifndef NGX_HAVE_KEEPALIVE_TUNABLE
 #define NGX_HAVE_KEEPALIVE_TUNABLE  1
-#endif
-
-
-#ifndef NGX_HAVE_TCP_FASTOPEN
-#define NGX_HAVE_TCP_FASTOPEN  1
 #endif
 
 
@@ -293,11 +283,6 @@
 #endif
 
 
-#ifndef NGX_HTTP_REALIP
-#define NGX_HTTP_REALIP  1
-#endif
-
-
 #ifndef NGX_HTTP_X_FORWARDED_FOR
 #define NGX_HTTP_X_FORWARDED_FOR  1
 #endif
@@ -305,26 +290,6 @@
 
 #ifndef NGX_HTTP_X_FORWARDED_FOR
 #define NGX_HTTP_X_FORWARDED_FOR  1
-#endif
-
-
-#ifndef NGX_HTTP_SSL
-#define NGX_HTTP_SSL  1
-#endif
-
-
-#ifndef NGX_HTTP_X_FORWARDED_FOR
-#define NGX_HTTP_X_FORWARDED_FOR  1
-#endif
-
-
-#ifndef NDK
-#define NDK  1
-#endif
-
-
-#ifndef NGX_HTTP_LUA_HAVE_SO_PASSCRED
-#define NGX_HTTP_LUA_HAVE_SO_PASSCRED  1
 #endif
 
 
@@ -333,18 +298,8 @@
 #endif
 
 
-#ifndef NGX_HAVE_PCRE_JIT
-#define NGX_HAVE_PCRE_JIT  1
-#endif
-
-
-#ifndef NGX_OPENSSL
-#define NGX_OPENSSL  1
-#endif
-
-
-#ifndef NGX_SSL
-#define NGX_SSL  1
+#ifndef NGX_OPENSSL_MD5
+#define NGX_OPENSSL_MD5  1
 #endif
 
 
@@ -353,23 +308,18 @@
 #endif
 
 
-#ifndef NGX_OPENSSL_MD5
-#define NGX_OPENSSL_MD5  1
-#endif
-
-
 #ifndef NGX_HAVE_MD5
 #define NGX_HAVE_MD5  1
 #endif
 
 
-#ifndef NGX_HAVE_OPENSSL_SHA1_H
-#define NGX_HAVE_OPENSSL_SHA1_H  1
+#ifndef NGX_HAVE_SHA1
+#define NGX_HAVE_SHA1  1
 #endif
 
 
-#ifndef NGX_HAVE_SHA1
-#define NGX_HAVE_SHA1  1
+#ifndef NGX_HAVE_OPENSSL_SHA1_H
+#define NGX_HAVE_OPENSSL_SHA1_H  1
 #endif
 
 
@@ -379,7 +329,7 @@
 
 
 #ifndef NGX_PREFIX
-#define NGX_PREFIX  "/home/jqq/study/nginx/install/"
+#define NGX_PREFIX  "/home/qjiao/study/nginx/install/"
 #endif
 
 

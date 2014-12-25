@@ -74,10 +74,10 @@ struct ngx_event_s {
     /* the pending eof reported by kqueue, epoll or in aio chain operation */
     unsigned         pending_eof:1;
 
-//#if !(NGX_THREADS)
-//    unsigned         posted_ready:1;
-//#endif
-//
+#if !(NGX_THREADS)
+    unsigned         posted_ready:1;
+#endif
+
 //#if (NGX_WIN32)
 //    /* setsockopt(SO_UPDATE_ACCEPT_CONTEXT) was successful */
 //    unsigned         accept_context_updated:1;
@@ -476,10 +476,6 @@ typedef struct {
     ngx_msec_t    accept_mutex_delay;
 
     u_char       *name;
-
-#if (NGX_DEBUG)
-    ngx_array_t   debug_connection;
-#endif
 } ngx_event_conf_t;
 
 

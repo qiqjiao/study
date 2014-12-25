@@ -3119,3 +3119,145 @@
 2014/12/07 11:39:23 [notice] 8507#0: worker process 8599 exited with code 0
 2014/12/07 11:39:23 [notice] 8507#0: exit
 2014/12/07 11:39:23 [notice] 8507#0: exit
+2014/12/10 13:06:18 [notice] 5508#0: using the "epoll" event method
+2014/12/10 13:06:18 [notice] 5508#0: using the "epoll" event method
+2014/12/10 13:06:18 [notice] 5508#0: nginx/1.6.2
+2014/12/10 13:06:18 [notice] 5508#0: nginx/1.6.2
+2014/12/10 13:06:18 [notice] 5508#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/10 13:06:18 [notice] 5508#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/10 13:06:18 [notice] 5508#0: OS: Linux 3.13.0-32-generic
+2014/12/10 13:06:18 [notice] 5508#0: OS: Linux 3.13.0-32-generic
+2014/12/10 13:06:18 [notice] 5508#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/10 13:06:18 [notice] 5508#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/10 13:06:18 [notice] 5509#0: start worker processes
+2014/12/10 13:06:18 [notice] 5509#0: start worker processes
+2014/12/10 13:06:18 [notice] 5509#0: start worker process 5510
+2014/12/10 13:06:18 [notice] 5509#0: start worker process 5510
+2014/12/10 13:07:04 [notice] 5509#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/10 13:07:04 [notice] 5509#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/10 13:07:04 [notice] 5509#0: reconfiguring
+2014/12/10 13:07:04 [notice] 5509#0: reconfiguring
+2014/12/10 13:07:04 [notice] 5509#0: using the "epoll" event method
+2014/12/10 13:07:04 [notice] 5509#0: using the "epoll" event method
+2014/12/10 13:07:04 [notice] 5509#0: start worker processes
+2014/12/10 13:07:04 [notice] 5509#0: start worker processes
+2014/12/10 13:07:04 [notice] 5509#0: start worker process 5531
+2014/12/10 13:07:04 [notice] 5509#0: start worker process 5531
+2014/12/10 13:07:04 [notice] 5510#0: gracefully shutting down
+2014/12/10 13:07:04 [notice] 5510#0: gracefully shutting down
+2014/12/10 13:07:04 [notice] 5510#0: exiting
+2014/12/10 13:07:04 [notice] 5510#0: exiting
+2014/12/10 13:07:04 [notice] 5510#0: exit
+2014/12/10 13:07:04 [notice] 5509#0: signal 17 (SIGCHLD) received
+2014/12/10 13:07:04 [notice] 5509#0: signal 17 (SIGCHLD) received
+2014/12/10 13:07:04 [notice] 5509#0: worker process 5510 exited with code 0
+2014/12/10 13:07:04 [notice] 5509#0: worker process 5510 exited with code 0
+2014/12/10 13:07:04 [notice] 5509#0: signal 29 (SIGIO) received
+2014/12/10 13:07:04 [notice] 5509#0: signal 29 (SIGIO) received
+2014/12/10 13:07:25 [info] 5531#0: *1 client 127.0.0.1 closed keepalive connection
+2014/12/10 13:07:55 [info] 5531#0: *2 client sent HTTP/1.1 request without "Host" header while reading client request headers, client: 127.0.0.1, server: abc.com, request: "GET / HTTP/1.1"
+2014/12/15 10:52:26 [notice] 1399#0: using the "epoll" event method
+2014/12/15 10:52:26 [notice] 1399#0: using the "epoll" event method
+2014/12/15 10:52:26 [notice] 1399#0: nginx/1.6.2
+2014/12/15 10:52:26 [notice] 1399#0: nginx/1.6.2
+2014/12/15 10:52:26 [notice] 1399#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/15 10:52:26 [notice] 1399#0: built by gcc 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
+2014/12/15 10:52:26 [notice] 1399#0: OS: Linux 3.13.0-32-generic
+2014/12/15 10:52:26 [notice] 1399#0: OS: Linux 3.13.0-32-generic
+2014/12/15 10:52:26 [notice] 1399#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/15 10:52:26 [notice] 1399#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/15 10:52:26 [notice] 1400#0: start worker processes
+2014/12/15 10:52:26 [notice] 1400#0: start worker processes
+2014/12/15 10:52:26 [notice] 1400#0: start worker process 1401
+2014/12/15 10:52:26 [notice] 1400#0: start worker process 1401
+2014/12/15 10:52:30 [info] 1401#0: *1 client sent HTTP/1.1 request without "Host" header while reading client request headers, client: 127.0.0.1, server: abc.com, request: "GET / HTTP/1.1"
+2014/12/15 10:52:46 [info] 1401#0: *2 client 127.0.0.1 closed keepalive connection
+2014/12/15 10:53:11 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:11 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:11 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:11 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:11 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:11 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:11 [notice] 1400#0: start worker processes
+2014/12/15 10:53:11 [notice] 1400#0: start worker processes
+2014/12/15 10:53:11 [notice] 1400#0: start worker process 1405
+2014/12/15 10:53:11 [notice] 1400#0: start worker process 1405
+2014/12/15 10:53:11 [notice] 1401#0: gracefully shutting down
+2014/12/15 10:53:11 [notice] 1401#0: gracefully shutting down
+2014/12/15 10:53:11 [notice] 1401#0: exiting
+2014/12/15 10:53:11 [notice] 1401#0: exiting
+2014/12/15 10:53:11 [notice] 1401#0: exit
+2014/12/15 10:53:11 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:11 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:11 [notice] 1400#0: worker process 1401 exited with code 0
+2014/12/15 10:53:11 [notice] 1400#0: worker process 1401 exited with code 0
+2014/12/15 10:53:11 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:11 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:14 [info] 1405#0: *3 client 127.0.0.1 closed keepalive connection
+2014/12/15 10:53:43 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:43 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:43 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:43 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:43 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:43 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:43 [notice] 1400#0: start worker processes
+2014/12/15 10:53:43 [notice] 1400#0: start worker processes
+2014/12/15 10:53:43 [notice] 1400#0: start worker process 1407
+2014/12/15 10:53:43 [notice] 1400#0: start worker process 1407
+2014/12/15 10:53:43 [notice] 1405#0: gracefully shutting down
+2014/12/15 10:53:43 [notice] 1405#0: gracefully shutting down
+2014/12/15 10:53:43 [notice] 1405#0: exiting
+2014/12/15 10:53:43 [notice] 1405#0: exiting
+2014/12/15 10:53:43 [notice] 1405#0: exit
+2014/12/15 10:53:43 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:43 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:43 [notice] 1400#0: worker process 1405 exited with code 0
+2014/12/15 10:53:43 [notice] 1400#0: worker process 1405 exited with code 0
+2014/12/15 10:53:43 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:43 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:44 [info] 1407#0: *4 client 127.0.0.1 closed keepalive connection
+2014/12/15 10:53:56 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:56 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:53:56 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:56 [notice] 1400#0: reconfiguring
+2014/12/15 10:53:56 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:56 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:53:56 [notice] 1400#0: start worker processes
+2014/12/15 10:53:56 [notice] 1400#0: start worker processes
+2014/12/15 10:53:56 [notice] 1400#0: start worker process 1409
+2014/12/15 10:53:56 [notice] 1400#0: start worker process 1409
+2014/12/15 10:53:56 [notice] 1407#0: gracefully shutting down
+2014/12/15 10:53:56 [notice] 1407#0: gracefully shutting down
+2014/12/15 10:53:56 [notice] 1407#0: exiting
+2014/12/15 10:53:56 [notice] 1407#0: exiting
+2014/12/15 10:53:56 [notice] 1407#0: exit
+2014/12/15 10:53:56 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:56 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:53:56 [notice] 1400#0: worker process 1407 exited with code 0
+2014/12/15 10:53:56 [notice] 1400#0: worker process 1407 exited with code 0
+2014/12/15 10:53:56 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:56 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:53:58 [info] 1409#0: *5 client 127.0.0.1 closed keepalive connection
+2014/12/15 10:55:52 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:55:52 [notice] 1400#0: signal 1 (SIGHUP) received, reconfiguring
+2014/12/15 10:55:52 [notice] 1400#0: reconfiguring
+2014/12/15 10:55:52 [notice] 1400#0: reconfiguring
+2014/12/15 10:55:52 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:55:52 [notice] 1400#0: using the "epoll" event method
+2014/12/15 10:55:52 [notice] 1400#0: start worker processes
+2014/12/15 10:55:52 [notice] 1400#0: start worker processes
+2014/12/15 10:55:52 [notice] 1400#0: start worker process 1414
+2014/12/15 10:55:52 [notice] 1400#0: start worker process 1414
+2014/12/15 10:55:52 [notice] 1409#0: gracefully shutting down
+2014/12/15 10:55:52 [notice] 1409#0: gracefully shutting down
+2014/12/15 10:55:52 [notice] 1409#0: exiting
+2014/12/15 10:55:52 [notice] 1409#0: exiting
+2014/12/15 10:55:52 [notice] 1409#0: exit
+2014/12/15 10:55:52 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:55:52 [notice] 1400#0: signal 17 (SIGCHLD) received
+2014/12/15 10:55:52 [notice] 1400#0: worker process 1409 exited with code 0
+2014/12/15 10:55:52 [notice] 1400#0: worker process 1409 exited with code 0
+2014/12/15 10:55:52 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:55:52 [notice] 1400#0: signal 29 (SIGIO) received
+2014/12/15 10:55:56 [info] 1414#0: *6 client 127.0.0.1 closed keepalive connection
+2014/12/15 10:56:01 [info] 1414#0: *7 client 127.0.0.1 closed keepalive connection

@@ -4,15 +4,7 @@
 ./src/event/ngx_event_mutex.c
 ./src/event/ngx_event_timer.c
 ./src/event/ngx_event_openssl.h
-./src/event/modules/ngx_kqueue_module.c
 ./src/event/modules/ngx_epoll_module.c
-./src/event/modules/ngx_devpoll_module.c
-./src/event/modules/ngx_rtsig_module.c
-./src/event/modules/ngx_win32_select_module.c
-./src/event/modules/ngx_select_module.c
-./src/event/modules/ngx_eventport_module.c
-./src/event/modules/ngx_poll_module.c
-./src/event/modules/ngx_aio_module.c
 ./src/event/ngx_event_posted.c
 ./src/event/ngx_event_connect.h
 ./src/event/ngx_event.c
