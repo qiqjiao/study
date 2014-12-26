@@ -5,7 +5,7 @@ checking for C compiler
 
 
 ----------------------------------------
-checking for gcc -pipe switch
+checking for gcc -pipe switch -g
 
 
 ----------------------------------------
@@ -159,7 +159,7 @@ cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------------------------------------
 checking for crypt()
 
-/tmp/cctx9g0W.o: In function `main':
+/tmp/ccUm4WWw.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `crypt'
 collect2: ld returned 1 exit status
 ----------
@@ -264,7 +264,7 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/tmp/ccqFAuxM.o: In function `main':
+/tmp/ccO6j9Cc.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `dlopen'
 collect2: ld returned 1 exit status
 ----------
@@ -434,7 +434,7 @@ checking for time_t size
 ----------------------------------------
 checking for setproctitle()
 
-/tmp/cceUTPm0.o: In function `main':
+/tmp/cc3Efxqs.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `setproctitle'
 collect2: ld returned 1 exit status
 ----------
@@ -491,7 +491,7 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/tmp/cczJutmZ.o: In function `main':
+/tmp/ccRdLSIn.o: In function `main':
 autotest.c:(.text+0x29): undefined reference to `sem_init'
 autotest.c:(.text+0x41): undefined reference to `sem_destroy'
 collect2: ld returned 1 exit status
@@ -565,6 +565,199 @@ checking for openat(), fstatat()
 
 ----------------------------------------
 checking for getaddrinfo()
+
+
+----------------------------------------
+checking for Lua library
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -llua -lm
+----------
+
+----------------------------------------
+checking for Lua library in /usr/local/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/lua-5.1 -o objs/autotest objs/autotest.c -L/usr/local/lib -llua5.1 -lm
+----------
+
+----------------------------------------
+checking for Lua library in /usr/local/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include -o objs/autotest objs/autotest.c -L/usr/local/lib -llua -lm
+----------
+
+----------------------------------------
+checking for Lua library in /usr/pkg/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/pkg/include/ -o objs/autotest objs/autotest.c -L/usr/pkg/lib -lm -llua
+----------
+
+----------------------------------------
+checking for Lua library in /opt/local/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /opt/local/include -o objs/autotest objs/autotest.c -L/opt/local/lib -lm -llua
+----------
+
+----------------------------------------
+checking for Lua library in /usr/local/*/lua51/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/lua51 -o objs/autotest objs/autotest.c -L/usr/local/lib/lua51 -llua -lm
+----------
+
+----------------------------------------
+checking for Lua library in /usr/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/include/lua5.1 -o objs/autotest objs/autotest.c -L/usr/lib -lm -llua5.1
+----------
+
+----------------------------------------
+checking for LuaJIT library in /usr/local/
+
+objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <lauxlib.h>
+
+int main() {
+    (void) luaL_newstate();;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/luajit-2.0 -o objs/autotest objs/autotest.c -L/usr/local/lib -lluajit-5.1 -lm
+----------
+
+----------------------------------------
+checking for LuaJIT library in /usr/
+
+
+----------------------------------------
+checking for export symbols by default (-E)
+
+
+----------------------------------------
+checking for export symbols by default (--export-all-symbols)
+
+/usr/bin/ld: unrecognized option '--export-all-symbols'
+/usr/bin/ld: use the --help option for usage information
+collect2: ld returned 1 exit status
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main() {
+    printf("hello");;
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -Wl,--export-all-symbols
+----------
+
+----------------------------------------
+checking for SO_PASSCRED
 
 
 ----------------------------------------

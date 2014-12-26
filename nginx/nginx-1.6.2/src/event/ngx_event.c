@@ -604,6 +604,8 @@ ngx_event_process_init(ngx_cycle_t *cycle)
         struct sigaction  sa;
         struct itimerval  itv;
 
+        ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno,
+                      "event-flags");
         ngx_memzero(&sa, sizeof(struct sigaction));
         sa.sa_handler = ngx_timer_signal_handler;
         sigemptyset(&sa.sa_mask);

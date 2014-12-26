@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --prefix=/home/qjiao/study/nginx/install"
+#define NGX_CONFIGURE " --prefix=/home/qjiao/study/nginx/install --add-module=module/echo-nginx-module-0.54 --add-module=module/lua-nginx-module-0.9.10"
 
 #ifndef NGX_COMPILER
 #define NGX_COMPILER  "gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) "
@@ -290,6 +290,11 @@
 
 #ifndef NGX_HTTP_X_FORWARDED_FOR
 #define NGX_HTTP_X_FORWARDED_FOR  1
+#endif
+
+
+#ifndef NGX_HTTP_LUA_HAVE_SO_PASSCRED
+#define NGX_HTTP_LUA_HAVE_SO_PASSCRED  1
 #endif
 
 
