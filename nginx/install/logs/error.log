@@ -62,3 +62,34 @@
 2014/12/25 15:09:54 [notice] 17198#0: exit
 2014/12/25 15:09:54 [notice] 17198#0: exit
 2014/12/25 15:09:54 [notice] 17198#0: exit
+2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
+2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
+2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
+2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
+2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
+2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
+2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
+2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
+2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
+2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
+2014/12/26 17:15:04 [notice] 2324#0: start worker processes
+2014/12/26 17:15:04 [notice] 2324#0: start worker processes
+2014/12/26 17:15:04 [notice] 2324#0: start worker processes
+2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
+2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
+2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
+2014/12/26 17:15:21 [info] 2325#0: *1 client 127.0.0.1 closed keepalive connection
+2014/12/26 17:15:21 [info] 2325#0: *1 client 127.0.0.1 closed keepalive connection
+2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
+2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
+2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
+2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
+2014/12/26 17:15:24 [info] 2325#0: *2 client 127.0.0.1 closed keepalive connection
+2014/12/26 17:15:24 [info] 2325#0: *2 client 127.0.0.1 closed keepalive connection
+2014/12/26 17:15:27 [info] 2325#0: *3 client 127.0.0.1 closed keepalive connection
+2014/12/26 17:15:27 [info] 2325#0: *3 client 127.0.0.1 closed keepalive connection
