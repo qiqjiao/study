@@ -326,7 +326,7 @@ ngx_epoll_init(ngx_cycle_t *cycle, ngx_msec_t timer)
 
     ngx_event_actions = ngx_epoll_module_ctx.actions;
 
-#if (NGX_HAVE_CLEAR_EVENT)
+#if (NGX_HAVE_CLEAR_EVENT) // =1
     ngx_event_flags = NGX_USE_CLEAR_EVENT
 #else
     ngx_event_flags = NGX_USE_LEVEL_EVENT

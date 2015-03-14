@@ -647,6 +647,15 @@ ngx_event_process_init(ngx_cycle_t *cycle)
 
 #endif
 
+    // cycle->connections  = ngx_connection_t[cycle->connection_n]
+    // cycle->read_events  = ngx_event_t[cycle->connection_n]
+    // cycle->write_events = ngx_event_t[cycle->connection_n]
+    // # build a connection link list
+    // cycle->connections[i].data  = &cycle->connections[i]
+    // cycle->connections[i].read  = &cycle->read_events[i]
+    // cycle->connections[i].write = &cycle->write_events[i]
+    // cycle->free_connections  = &cycle->connections[0]
+    // cycle->free_connection_n = cycle->connection_n;
     cycle->connections =
         ngx_alloc(sizeof(ngx_connection_t) * cycle->connection_n, cycle->log);
     if (cycle->connections == NULL) {
