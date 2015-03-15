@@ -134,10 +134,6 @@ ngx_event_accept(ngx_event_t *ev)
             return;
         }
 
-#if (NGX_STAT_STUB)
-        (void) ngx_atomic_fetch_add(ngx_stat_accepted, 1);
-#endif
-
         ngx_accept_disabled = ngx_cycle->connection_n / 8
                               - ngx_cycle->free_connection_n;
 
@@ -151,10 +147,6 @@ ngx_event_accept(ngx_event_t *ev)
 
             return;
         }
-
-#if (NGX_STAT_STUB)
-        (void) ngx_atomic_fetch_add(ngx_stat_active, 1);
-#endif
 
         c->pool = ngx_create_pool(ls->pool_size, ev->log);
         if (c->pool == NULL) {
@@ -220,10 +212,6 @@ ngx_event_accept(ngx_event_t *ev)
         if (c->sockaddr->sa_family == AF_UNIX) {
             c->tcp_nopush = NGX_TCP_NOPUSH_DISABLED;
             c->tcp_nodelay = NGX_TCP_NODELAY_DISABLED;
-#if (NGX_SOLARIS)
-            /* Solaris's sendfilev() supports AF_NCA, AF_INET, and AF_INET6 */
-            c->sendfile = 0;
-#endif
         }
 #endif
 
@@ -239,9 +227,6 @@ ngx_event_accept(ngx_event_t *ev)
 
         if (ev->deferred_accept) {
             rev->ready = 1;
-#if (NGX_HAVE_KQUEUE)
-            rev->available = 1;
-#endif
         }
 
         rev->log = log;
@@ -257,17 +242,6 @@ ngx_event_accept(ngx_event_t *ev)
          */
 
         c->number = ngx_atomic_fetch_add(ngx_connection_counter, 1);
-
-#if (NGX_STAT_STUB)
-        (void) ngx_atomic_fetch_add(ngx_stat_handled, 1);
-#endif
-
-#if (NGX_THREADS)
-        rev->lock = &c->lock;
-        wev->lock = &c->lock;
-        rev->own_lock = &c->lock;
-        wev->own_lock = &c->lock;
-#endif
 
         if (ls->addr_ntop) {
             c->addr_text.data = ngx_pnalloc(c->pool, ls->addr_text_max_len);

@@ -706,7 +706,11 @@ ngx_event_process_init(ngx_cycle_t *cycle)
     cycle->free_connection_n = cycle->connection_n;
 
     /* for each listening socket */
-
+    // foreach ls : cycle->listening.nelts
+    //   c =  ngx_get_connection(ls.fd, cycle->log);
+    //   c->listening = &ls
+    //   ls.connection = c
+    //   c->read->accept = 1
     ls = cycle->listening.elts;
     for (i = 0; i < cycle->listening.nelts; i++) {
 
@@ -726,7 +730,7 @@ ngx_event_process_init(ngx_cycle_t *cycle)
         rev->log = c->log;
         rev->accept = 1;
 
-#if (NGX_HAVE_DEFERRED_ACCEPT)
+#if (NGX_HAVE_DEFERRED_ACCEPT) = 1
         rev->deferred_accept = ls[i].deferred_accept;
 #endif
 

@@ -731,7 +731,19 @@ ngx_close_listening_sockets(ngx_cycle_t *cycle)
     cycle->listening.nelts = 0;
 }
 
-
+// ngx_connection_t *c = get a connection from ngx_cycle->free_connections
+// c->fd = s
+// c->log = log
+// ngx_event_t *rev = c->read, *wev = c->write
+// instance = rev->instance;
+// rev->instance = !instance;
+// wev->instance = !instance;
+// rev->index = NGX_INVALID_INDEX;
+// wev->index = NGX_INVALID_INDEX;
+// rev->data = c;
+// wev->data = c;
+// wev->write = 1;
+// return c
 ngx_connection_t *
 ngx_get_connection(ngx_socket_t s, ngx_log_t *log)
 {
