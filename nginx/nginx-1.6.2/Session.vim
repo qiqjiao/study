@@ -39,7 +39,6 @@ set cscopeverbose
 set expandtab
 set fileencodings=utf-8,chinese,latin-1
 set helplang=en
-set history=50
 set hlsearch
 set ignorecase
 set incsearch
@@ -71,17 +70,23 @@ badd +65 src/core/nginx.c
 badd +73 src/core/ngx_regex.c
 badd +269 src/core/ngx_cycle.c
 badd +52 src/core/ngx_conf_file.h
-badd +330 src/event/modules/ngx_epoll_module.c
-badd +578 src/event/ngx_event.c
+badd +295 src/event/modules/ngx_epoll_module.c
+badd +763 src/event/ngx_event.c
 badd +15 ~/study/nginx/install/conf/nginx.conf
-badd +0 src/os/unix/ngx_process_cycle.c
+badd +1 src/os/unix/ngx_process_cycle.c
 badd +44 src/event/ngx_event_timer.c
 badd +123 src/core/ngx_rbtree.c
 badd +258 src/event/ngx_event.h
 badd +23 src/os/unix/ngx_posix_init.c
 badd +71 src/os/unix/ngx_recv.c
 badd +29 objs/ngx_auto_config.h
-args src/core/
+badd +1 src/core
+badd +0 src/http/ngx_http.h
+badd +0 src/http/ngx_http.c
+argglobal
+silent! argdel *
+argadd src/core
+set stal=2
 edit src/core/nginx.c
 set splitbelow splitright
 set nosplitbelow
@@ -92,7 +97,10 @@ argglobal
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -147,6 +155,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -186,13 +195,14 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 311 - ((19 * winheight(0) + 32) / 65)
+let s:l = 311 - ((20 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -209,13 +219,16 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 111 + 111) / 223)
-exe 'vert 2resize ' . ((&columns * 111 + 111) / 223)
+exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
 argglobal
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -270,6 +283,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -309,13 +323,14 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 300 - ((22 * winheight(0) + 32) / 65)
+let s:l = 300 - ((22 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -328,7 +343,10 @@ edit ~/study/nginx/nginx-1.6.2/src/core/ngx_cycle.c
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -383,6 +401,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -422,13 +441,14 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1211 - ((0 * winheight(0) + 32) / 65)
+let s:l = 1211 - ((0 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -436,9 +456,9 @@ normal! zt
 normal! 0
 lcd ~/study/nginx/nginx-1.6.2
 wincmd w
-exe 'vert 1resize ' . ((&columns * 111 + 111) / 223)
-exe 'vert 2resize ' . ((&columns * 111 + 111) / 223)
-tabedit ~/study/nginx/nginx-1.6.2/src/event/modules/ngx_epoll_module.c
+exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
+tabedit ~/study/nginx/nginx-1.6.2/src/http/ngx_http.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -448,13 +468,16 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 111 + 111) / 223)
-exe 'vert 2resize ' . ((&columns * 111 + 111) / 223)
+exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
 argglobal
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -481,8 +504,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'c'
-setlocal filetype=c
+if &filetype != 'cpp'
+setlocal filetype=cpp
 endif
 setlocal foldcolumn=0
 setlocal foldenable
@@ -509,6 +532,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -540,34 +564,38 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'c'
-setlocal syntax=c
+if &syntax != 'cpp'
+setlocal syntax=cpp
 endif
 setlocal tabstop=4
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 295 - ((4 * winheight(0) + 32) / 65)
+let s:l = 1 - ((0 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-295
+1
 normal! 0
 lcd ~/study/nginx/nginx-1.6.2
 wincmd w
 argglobal
-edit ~/study/nginx/nginx-1.6.2/src/event/ngx_event.c
+edit ~/study/nginx/nginx-1.6.2/src/http/ngx_http.c
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -622,6 +650,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -661,24 +690,26 @@ setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 773 - ((64 * winheight(0) + 32) / 65)
+let s:l = 1 - ((0 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-773
+1
 normal! 0
 lcd ~/study/nginx/nginx-1.6.2
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 111 + 111) / 223)
-exe 'vert 2resize ' . ((&columns * 111 + 111) / 223)
+exe 'vert 1resize ' . ((&columns * 112 + 112) / 225)
+exe 'vert 2resize ' . ((&columns * 112 + 112) / 225)
 tabnext 3
+set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

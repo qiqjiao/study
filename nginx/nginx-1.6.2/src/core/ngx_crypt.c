@@ -13,14 +13,14 @@
 #endif
 
 
-#if (NGX_CRYPT)
+#if (NGX_CRYPT) // =1
 
 static ngx_int_t ngx_crypt_apr1(ngx_pool_t *pool, u_char *key, u_char *salt,
     u_char **encrypted);
 static ngx_int_t ngx_crypt_plain(ngx_pool_t *pool, u_char *key, u_char *salt,
     u_char **encrypted);
 
-#if (NGX_HAVE_SHA1)
+#if (NGX_HAVE_SHA1) // =0
 
 static ngx_int_t ngx_crypt_ssha(ngx_pool_t *pool, u_char *key, u_char *salt,
     u_char **encrypted);
@@ -193,7 +193,7 @@ ngx_crypt_plain(ngx_pool_t *pool, u_char *key, u_char *salt, u_char **encrypted)
 }
 
 
-#if (NGX_HAVE_SHA1)
+#if (NGX_HAVE_SHA1) // =0
 
 static ngx_int_t
 ngx_crypt_ssha(ngx_pool_t *pool, u_char *key, u_char *salt, u_char **encrypted)

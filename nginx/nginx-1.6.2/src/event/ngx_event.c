@@ -198,6 +198,8 @@ ngx_module_t  ngx_event_core_module = {
 };
 
 // http://blog.csdn.net/lengzijian/article/details/7601730
+// http://844604778.iteye.com/blog/1960422
+// http://blog.csdn.net/marcky/article/details/6025651
 void
 ngx_process_events_and_timers(ngx_cycle_t *cycle)
 {

@@ -628,6 +628,7 @@ ngx_epoll_process_events(ngx_cycle_t *cycle, ngx_msec_t timer, ngx_uint_t flags)
         return NGX_ERROR;
     }
 
+    // #if (!NGX_THREADS) #define ngx_mutex_lock(m) #endif
     ngx_mutex_lock(ngx_posted_events_mutex);
 
     for (i = 0; i < events; i++) {
@@ -661,14 +662,6 @@ ngx_epoll_process_events(ngx_cycle_t *cycle, ngx_msec_t timer, ngx_uint_t flags)
                            "epoll_wait() error on fd:%d ev:%04XD",
                            c->fd, revents);
         }
-
-#if 0
-        if (revents & ~(EPOLLIN|EPOLLOUT|EPOLLERR|EPOLLHUP)) {
-            ngx_log_error(NGX_LOG_ALERT, cycle->log, 0,
-                          "strange epoll_wait() events fd:%d ev:%04XD",
-                          c->fd, revents);
-        }
-#endif
 
         if ((revents & (EPOLLERR|EPOLLHUP))
              && (revents & (EPOLLIN|EPOLLOUT)) == 0)
@@ -746,7 +739,7 @@ ngx_epoll_process_events(ngx_cycle_t *cycle, ngx_msec_t timer, ngx_uint_t flags)
 }
 
 
-#if (NGX_HAVE_FILE_AIO)
+#if (NGX_HAVE_FILE_AIO) // =0
 
 static void
 ngx_epoll_eventfd_handler(ngx_event_t *ev)

@@ -29,7 +29,10 @@ struct ngx_queue_s {
 #define ngx_queue_empty(h)                                                    \
     (h == (h)->prev)
 
-
+// h: sentinel
+// h   x1 x2 x3
+//   ^
+//   x
 #define ngx_queue_insert_head(h, x)                                           \
     (x)->next = (h)->next;                                                    \
     (x)->next->prev = x;                                                      \
@@ -83,7 +86,8 @@ struct ngx_queue_s {
 
 #endif
 
-
+// http://blog.csdn.net/commshare/article/details/19030191
+// h x1 x2 .. xn q .. y1 y2 ====> h x1 x2 .. xn  +  n q .. y1 y2 
 #define ngx_queue_split(h, q, n)                                              \
     (n)->prev = (h)->prev;                                                    \
     (n)->prev->next = n;                                                      \

@@ -69,46 +69,6 @@ checking for crypt.h
 
 
 ----------------------------------------
-checking for epoll
-
-
-----------------------------------------
-checking for EPOLLRDHUP
-
-
-----------------------------------------
-checking for O_PATH
-
-
-----------------------------------------
-checking for sendfile()
-
-
-----------------------------------------
-checking for sendfile64()
-
-
-----------------------------------------
-checking for sys/prctl.h
-
-
-----------------------------------------
-checking for prctl(PR_SET_DUMPABLE)
-
-
-----------------------------------------
-checking for sched_setaffinity()
-
-
-----------------------------------------
-checking for crypt_r()
-
-
-----------------------------------------
-checking for sys/vfs.h
-
-
-----------------------------------------
 checking for poll()
 
 
@@ -137,7 +97,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -159,14 +119,19 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
 checking for crypt()
 
+<<<<<<< HEAD
 /tmp/ccMEYyOn.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `crypt'
+=======
+/tmp/ccG8FiAb.o:autotest.c:(.text+0x1c): undefined reference to `crypt'
+/tmp/ccG8FiAb.o:autotest.c:(.text+0x1c): relocation truncated to fit: R_X86_64_PC32 against undefined symbol `crypt'
+>>>>>>> sync
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -180,7 +145,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -207,7 +172,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -238,7 +203,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -262,12 +227,13 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
 checking for statfs()
 
+<<<<<<< HEAD
 
 ----------------------------------------
 checking for statvfs()
@@ -279,23 +245,36 @@ checking for dlopen()
 /tmp/ccKzX3nV.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
+=======
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:20: error: storage size of 'fs' isn't known
+     struct statfs  fs;
+                    ^
+>>>>>>> sync
 ----------
 
 #include <sys/types.h>
 #include <unistd.h>
-#include <dlfcn.h>
+#include <sys/param.h>
+                  #include <sys/mount.h>
+                  
 
 int main() {
-    dlopen(NULL, 0);
+    struct statfs  fs;
+                  statfs(".", &fs);;
     return 0;
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
-checking for dlopen() in libdl
+checking for statvfs()
+
+
+----------------------------------------
+checking for dlopen()
 
 
 ----------------------------------------
@@ -322,7 +301,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -345,24 +324,128 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
 checking for TCP_DEFER_ACCEPT
 
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:32: error: 'TCP_DEFER_ACCEPT' undeclared (first use in this function)
+     setsockopt(0, IPPROTO_TCP, TCP_DEFER_ACCEPT, NULL, 0);
+                                ^
+objs/autotest.c:9:32: note: each undeclared identifier is reported only once for each function it appears in
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+                  #include <netinet/in.h>
+                  #include <netinet/tcp.h>
+
+int main() {
+    setsockopt(0, IPPROTO_TCP, TCP_DEFER_ACCEPT, NULL, 0);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c
+----------
 
 ----------------------------------------
 checking for TCP_KEEPIDLE
 
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:32: error: 'TCP_KEEPIDLE' undeclared (first use in this function)
+     setsockopt(0, IPPROTO_TCP, TCP_KEEPIDLE, NULL, 0);
+                                ^
+objs/autotest.c:9:32: note: each undeclared identifier is reported only once for each function it appears in
+objs/autotest.c:10:46: error: 'TCP_KEEPINTVL' undeclared (first use in this function)
+                   setsockopt(0, IPPROTO_TCP, TCP_KEEPINTVL, NULL, 0);
+                                              ^
+objs/autotest.c:11:46: error: 'TCP_KEEPCNT' undeclared (first use in this function)
+                   setsockopt(0, IPPROTO_TCP, TCP_KEEPCNT, NULL, 0);
+                                              ^
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+                  #include <netinet/in.h>
+                  #include <netinet/tcp.h>
+
+int main() {
+    setsockopt(0, IPPROTO_TCP, TCP_KEEPIDLE, NULL, 0);
+                  setsockopt(0, IPPROTO_TCP, TCP_KEEPINTVL, NULL, 0);
+                  setsockopt(0, IPPROTO_TCP, TCP_KEEPCNT, NULL, 0);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c
+----------
 
 ----------------------------------------
 checking for TCP_FASTOPEN
 
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:32: error: 'TCP_FASTOPEN' undeclared (first use in this function)
+     setsockopt(0, IPPROTO_TCP, TCP_FASTOPEN, NULL, 0);
+                                ^
+objs/autotest.c:9:32: note: each undeclared identifier is reported only once for each function it appears in
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+                  #include <netinet/in.h>
+                  #include <netinet/tcp.h>
+
+int main() {
+    setsockopt(0, IPPROTO_TCP, TCP_FASTOPEN, NULL, 0);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c
+----------
 
 ----------------------------------------
 checking for TCP_INFO
 
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:31: error: invalid application of 'sizeof' to incomplete type 'struct tcp_info'
+     socklen_t optlen = sizeof(struct tcp_info);
+                               ^
+objs/autotest.c:10:35: error: storage size of 'ti' isn't known
+                   struct tcp_info ti;
+                                   ^
+objs/autotest.c:15:46: error: 'TCP_INFO' undeclared (first use in this function)
+                   getsockopt(0, IPPROTO_TCP, TCP_INFO, &ti, &optlen);
+                                              ^
+objs/autotest.c:15:46: note: each undeclared identifier is reported only once for each function it appears in
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+                  #include <netinet/in.h>
+                  #include <netinet/tcp.h>
+
+int main() {
+    socklen_t optlen = sizeof(struct tcp_info);
+                  struct tcp_info ti;
+                  ti.tcpi_rtt = 0;
+                  ti.tcpi_rttvar = 0;
+                  ti.tcpi_snd_cwnd = 0;
+                  ti.tcpi_rcv_space = 0;
+                  getsockopt(0, IPPROTO_TCP, TCP_INFO, &ti, &optlen);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c
+----------
 
 ----------------------------------------
 checking for accept4()
@@ -431,8 +514,13 @@ checking for time_t size
 ----------------------------------------
 checking for setproctitle()
 
+<<<<<<< HEAD
 /tmp/ccw68p8X.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `setproctitle'
+=======
+/tmp/ccNTbUc6.o:autotest.c:(.text+0x15): undefined reference to `setproctitle'
+/tmp/ccNTbUc6.o:autotest.c:(.text+0x15): relocation truncated to fit: R_X86_64_PC32 against undefined symbol `setproctitle'
+>>>>>>> sync
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -446,7 +534,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -460,9 +548,13 @@ checking for pwrite()
 ----------------------------------------
 checking for sys_nerr
 
+<<<<<<< HEAD
 /tmp/ccysqObC.o: In function `main':
 autotest.c:(.text+0x6): warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
+=======
+144
+>>>>>>> sync
 ----------------------------------------
 checking for localtime_r()
 
@@ -486,6 +578,7 @@ checking for mmap("/dev/zero", MAP_SHARED)
 ----------------------------------------
 checking for System V shared memory
 
+<<<<<<< HEAD
 
 ----------------------------------------
 checking for POSIX semaphores
@@ -494,25 +587,37 @@ checking for POSIX semaphores
 autotest.c:(.text+0x29): undefined reference to `sem_init'
 autotest.c:(.text+0x41): undefined reference to `sem_destroy'
 collect2: error: ld returned 1 exit status
+=======
+objs/autotest.c: In function 'main':
+objs/autotest.c:9:51: error: 'SHM_R' undeclared (first use in this function)
+                   id = shmget(IPC_PRIVATE, 4096, (SHM_R|SHM_W|IPC_CREAT));
+                                                   ^
+objs/autotest.c:9:51: note: each undeclared identifier is reported only once for each function it appears in
+objs/autotest.c:9:57: error: 'SHM_W' undeclared (first use in this function)
+                   id = shmget(IPC_PRIVATE, 4096, (SHM_R|SHM_W|IPC_CREAT));
+                                                         ^
+>>>>>>> sync
 ----------
 
 #include <sys/types.h>
 #include <unistd.h>
-#include <semaphore.h>
+#include <sys/ipc.h>
+                  #include <sys/shm.h>
 
 int main() {
-    sem_t  sem;
-                  if (sem_init(&sem, 1, 0) == -1) return 1;
-                  sem_destroy(&sem);;
+    int  id;
+                  id = shmget(IPC_PRIVATE, 4096, (SHM_R|SHM_W|IPC_CREAT));
+                  if (id == -1) return 1;
+                  shmctl(id, IPC_RMID, NULL);;
     return 0;
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
-checking for POSIX semaphores in libpthread
+checking for POSIX semaphores
 
 
 ----------------------------------------
@@ -551,7 +656,7 @@ int main() {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -573,210 +678,124 @@ checking for getaddrinfo()
 ----------------------------------------
 checking for Lua library
 
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -llua -lm
-----------
-
-----------------------------------------
-checking for Lua library in /usr/local/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/lua-5.1 -o objs/autotest objs/autotest.c -L/usr/local/lib -llua5.1 -lm
-----------
-
-----------------------------------------
-checking for Lua library in /usr/local/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include -o objs/autotest objs/autotest.c -L/usr/local/lib -llua -lm
-----------
-
-----------------------------------------
-checking for Lua library in /usr/pkg/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/pkg/include/ -o objs/autotest objs/autotest.c -L/usr/pkg/lib -lm -llua
-----------
-
-----------------------------------------
-checking for Lua library in /opt/local/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /opt/local/include -o objs/autotest objs/autotest.c -L/opt/local/lib -lm -llua
-----------
-
-----------------------------------------
-checking for Lua library in /usr/local/*/lua51/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/lua51 -o objs/autotest objs/autotest.c -L/usr/local/lib/lua51 -llua -lm
-----------
-
-----------------------------------------
-checking for Lua library in /usr/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/include/lua5.1 -o objs/autotest objs/autotest.c -L/usr/lib -lm -llua5.1
-----------
-
-----------------------------------------
-checking for LuaJIT library in /usr/local/
-
-objs/autotest.c:4:21: fatal error: lauxlib.h: No such file or directory
- #include <lauxlib.h>
-                     ^
-compilation terminated.
-----------
-
-#include <sys/types.h>
-#include <unistd.h>
-#include <lauxlib.h>
-
-int main() {
-    (void) luaL_newstate();;
-    return 0;
-}
-
-----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -I /usr/local/include/luajit-2.0 -o objs/autotest objs/autotest.c -L/usr/local/lib -lluajit-5.1 -lm
-----------
-
-----------------------------------------
-checking for LuaJIT library in /usr/
-
 
 ----------------------------------------
 checking for export symbols by default (-E)
 
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/../../../../x86_64-pc-cygwin/bin/ld: warning: --export-dynamic is not supported for PE+ targets, did you mean --export-all-symbols?
 
 ----------------------------------------
 checking for export symbols by default (--export-all-symbols)
 
-/usr/bin/ld: unrecognized option '--export-all-symbols'
-/usr/bin/ld: use the --help option for usage information
-collect2: error: ld returned 1 exit status
+
+----------------------------------------
+checking for SO_PASSCRED
+
+objs/autotest.c: In function 'main':
+objs/autotest.c:8:31: error: 'SO_PASSCRED' undeclared (first use in this function)
+     setsockopt(1, SOL_SOCKET, SO_PASSCRED, NULL, 0);;
+                               ^
+objs/autotest.c:8:31: note: each undeclared identifier is reported only once for each function it appears in
 ----------
 
 #include <sys/types.h>
 #include <unistd.h>
-#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
 
 int main() {
-    printf("hello");;
+    setsockopt(1, SOL_SOCKET, SO_PASSCRED, NULL, 0);;
     return 0;
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -Wl,--export-all-symbols
+cc -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
-checking for SO_PASSCRED
+checking for PCRE library
+
+
+----------------------------------------
+checking for PCRE JIT support
+
+
+----------------------------------------
+checking for md5 in system md library
+
+objs/autotest.c:4:17: fatal error: md5.h: No such file or directory
+ #include <md5.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <md5.h>
+
+int main() {
+    MD5_CTX md5; MD5Init(&md5);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c -lmd
+----------
+
+----------------------------------------
+checking for md5 in system md5 library
+
+objs/autotest.c:4:17: fatal error: md5.h: No such file or directory
+ #include <md5.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <md5.h>
+
+int main() {
+    MD5_CTX md5; MD5Init(&md5);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c -lmd5
+----------
+
+----------------------------------------
+checking for md5 in system OpenSSL crypto library
+
+
+----------------------------------------
+checking for sha1 in system md library
+
+objs/autotest.c:4:17: fatal error: sha.h: No such file or directory
+ #include <sha.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sha.h>
+
+int main() {
+    SHA_CTX sha1; SHA1_Init(&sha1);
+    return 0;
+}
+
+----------
+cc -o objs/autotest objs/autotest.c -lmd
+----------
+
+----------------------------------------
+checking for sha1 in system OpenSSL crypto library
+
+
+----------------------------------------
+checking for zlib library
 
 
 ----------------------------------------
