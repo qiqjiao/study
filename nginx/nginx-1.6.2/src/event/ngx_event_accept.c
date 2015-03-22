@@ -339,7 +339,8 @@ ngx_event_accept(ngx_event_t *ev)
     } while (ev->available);
 }
 
-
+// http://blog.csdn.net/brainkick/article/details/9081017
+// http://844604778.iteye.com/blog/1960422
 ngx_int_t
 ngx_trylock_accept_mutex(ngx_cycle_t *cycle)
 {

@@ -10,6 +10,12 @@
 #include <ngx_channel.h>
 
 
+//typedef struct {
+//     ngx_uint_t  command;
+//     ngx_pid_t   pid;
+//     ngx_int_t   slot;
+//     ngx_fd_t    fd;
+//} ngx_channel_t;
 ngx_int_t
 ngx_write_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size,
     ngx_log_t *log)
@@ -19,7 +25,6 @@ ngx_write_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size,
     struct iovec        iov[1];
     struct msghdr       msg;
 
-#if (NGX_HAVE_MSGHDR_MSG_CONTROL)
 
     union {
         struct cmsghdr  cm;
@@ -31,6 +36,7 @@ ngx_write_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size,
         msg.msg_controllen = 0;
 
     } else {
+        // http://man7.org/linux/man-pages/man3/cmsg.3.html
         msg.msg_control = (caddr_t) &cmsg;
         msg.msg_controllen = sizeof(cmsg);
 
@@ -53,20 +59,9 @@ ngx_write_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size,
         ngx_memcpy(CMSG_DATA(&cmsg.cm), &ch->fd, sizeof(int));
     }
 
+    // http://man7.org/linux/man-pages/man2/sendmsg.2.html
+    // http://pubs.opengroup.org/onlinepubs/009695399/basedefs/sys/socket.h.html
     msg.msg_flags = 0;
-
-#else
-
-    if (ch->fd == -1) {
-        msg.msg_accrights = NULL;
-        msg.msg_accrightslen = 0;
-
-    } else {
-        msg.msg_accrights = (caddr_t) &ch->fd;
-        msg.msg_accrightslen = sizeof(int);
-    }
-
-#endif
 
     iov[0].iov_base = (char *) ch;
     iov[0].iov_len = size;
@@ -100,14 +95,10 @@ ngx_read_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size, ngx_log_t *log)
     struct iovec        iov[1];
     struct msghdr       msg;
 
-#if (NGX_HAVE_MSGHDR_MSG_CONTROL)
     union {
         struct cmsghdr  cm;
         char            space[CMSG_SPACE(sizeof(int))];
     } cmsg;
-#else
-    int                 fd;
-#endif
 
     iov[0].iov_base = (char *) ch;
     iov[0].iov_len = size;
@@ -117,13 +108,8 @@ ngx_read_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size, ngx_log_t *log)
     msg.msg_iov = iov;
     msg.msg_iovlen = 1;
 
-#if (NGX_HAVE_MSGHDR_MSG_CONTROL)
     msg.msg_control = (caddr_t) &cmsg;
     msg.msg_controllen = sizeof(cmsg);
-#else
-    msg.msg_accrights = (caddr_t) &fd;
-    msg.msg_accrightslen = sizeof(int);
-#endif
 
     n = recvmsg(s, &msg, 0);
 
@@ -148,7 +134,6 @@ ngx_read_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size, ngx_log_t *log)
         return NGX_ERROR;
     }
 
-#if (NGX_HAVE_MSGHDR_MSG_CONTROL)
 
     if (ch->command == NGX_CMD_OPEN_CHANNEL) {
 
@@ -177,20 +162,6 @@ ngx_read_channel(ngx_socket_t s, ngx_channel_t *ch, size_t size, ngx_log_t *log)
                       "recvmsg() truncated data");
     }
 
-#else
-
-    if (ch->command == NGX_CMD_OPEN_CHANNEL) {
-        if (msg.msg_accrightslen != sizeof(int)) {
-            ngx_log_error(NGX_LOG_ALERT, log, 0,
-                          "recvmsg() returned no ancillary data");
-            return NGX_ERROR;
-        }
-
-        ch->fd = fd;
-    }
-
-#endif
-
     return n;
 }
 
@@ -215,13 +186,6 @@ ngx_add_channel_event(ngx_cycle_t *cycle, ngx_fd_t fd, ngx_int_t event,
 
     rev->log = cycle->log;
     wev->log = cycle->log;
-
-#if (NGX_THREADS)
-    rev->lock = &c->lock;
-    wev->lock = &c->lock;
-    rev->own_lock = &c->lock;
-    wev->own_lock = &c->lock;
-#endif
 
     rev->channel = 1;
     wev->channel = 1;

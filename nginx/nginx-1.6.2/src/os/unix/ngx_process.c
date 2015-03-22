@@ -82,7 +82,40 @@ ngx_signal_t  signals[] = {
     { 0, NULL, "", NULL }
 };
 
-
+// int s = respawn >= 0 ? respawn : first index that ngx_processes[s].pid == -1
+// if (respawn == NGX_PROCESS_DETACHED(-5)) {
+//    ngx_processes[s].channel[0] = -1;
+//    ngx_processes[s].channel[1] = -1;
+// } else {
+//   socketpair(AF_UNIX, SOCK_STREAM, 0, ngx_processes[s].channel)
+//   ngx_nonblocking(ngx_processes[s].channel[0])
+//   ngx_nonblocking(ngx_processes[s].channel[1])
+//   on = 1;
+//   ioctl(ngx_processes[s].channel[0], FIOASYNC, &on) 
+//   fcntl(ngx_processes[s].channel[0], F_SETOWN, ngx_pid)
+//   fcntl(ngx_processes[s].channel[0], F_SETFD, FD_CLOEXEC)
+//   fcntl(ngx_processes[s].channel[1], F_SETFD, FD_CLOEXEC)
+//   ngx_channel = ngx_processes[s].channel[1];
+// }
+// ngx_process_slot = s;
+// pid = fork();
+// if (pid == 0) {
+//     ngx_pid = ngx_getpid();
+//     proc(cycle, data);
+// }
+// ngx_processes[s].pid = pid;
+// ngx_processes[s].exited = 0;
+// if (respawn >= 0) { return pid; }
+// ngx_processes[s].proc = proc;
+// ngx_processes[s].data = data;
+// ngx_processes[s].name = name;
+// ngx_processes[s].exiting = 0;
+// #Set respawn/just_spawn/detached according to respawn
+// ngx_processes[s].respawn    = 1 (NGX_PROCESS_RESPAWN, NGX_PROCESS_JUST_RESPAWN)
+// ngx_processes[s].just_spawn = 1 (NGX_PROCESS_JUST_SPAWN, NGX_PROCESS_JUST_RESPAWN)
+// ngx_processes[s].detached   = 1 (NGX_PROCESS_DETACHED)
+// if (s == ngx_last_process) { ngx_last_process++; }
+// return pid;
 ngx_pid_t
 ngx_spawn_process(ngx_cycle_t *cycle, ngx_spawn_proc_pt proc, void *data,
     char *name, ngx_int_t respawn)

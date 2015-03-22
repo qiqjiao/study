@@ -197,7 +197,7 @@ ngx_module_t  ngx_event_core_module = {
     NGX_MODULE_V1_PADDING
 };
 
-
+// http://blog.csdn.net/lengzijian/article/details/7601730
 void
 ngx_process_events_and_timers(ngx_cycle_t *cycle)
 {
@@ -212,13 +212,6 @@ ngx_process_events_and_timers(ngx_cycle_t *cycle)
         timer = ngx_event_find_timer();
         flags = NGX_UPDATE_TIME;
 
-#if (NGX_THREADS)
-
-        if (timer == NGX_TIMER_INFINITE || timer > 500) {
-            timer = 500;
-        }
-
-#endif
     }
 
     if (ngx_use_accept_mutex) {
@@ -566,6 +559,8 @@ ngx_event_process_init(ngx_cycle_t *cycle)
     ccf = (ngx_core_conf_t *) ngx_get_conf(cycle->conf_ctx, ngx_core_module);
     ecf = ngx_event_get_conf(cycle->conf_ctx, ngx_event_core_module);
 
+    ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno, "entering ngx_event_process_init %p", cycle);
+
     if (ccf->master && ccf->worker_processes > 1 && ecf->accept_mutex) {
         ngx_use_accept_mutex = 1;
         ngx_accept_mutex_held = 0;
@@ -730,7 +725,7 @@ ngx_event_process_init(ngx_cycle_t *cycle)
         rev->log = c->log;
         rev->accept = 1;
 
-#if (NGX_HAVE_DEFERRED_ACCEPT) = 1
+#if (NGX_HAVE_DEFERRED_ACCEPT) // = 1
         rev->deferred_accept = ls[i].deferred_accept;
 #endif
 
@@ -757,8 +752,10 @@ ngx_event_process_init(ngx_cycle_t *cycle)
         rev->handler = ngx_event_accept;
 
         if (ngx_use_accept_mutex) {
+            ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno, "continue listen %d", i);
             continue;
         }
+        ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno, "not continue listen %d", i);
 
         if (ngx_event_flags & NGX_USE_RTSIG_EVENT) {
             if (ngx_add_conn(c) == NGX_ERROR) {

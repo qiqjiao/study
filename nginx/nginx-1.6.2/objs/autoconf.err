@@ -165,7 +165,7 @@ cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------------------------------------
 checking for crypt()
 
-/tmp/cc8SWmJn.o: In function `main':
+/tmp/ccMEYyOn.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 ----------
@@ -276,7 +276,7 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/tmp/ccyK8qAM.o: In function `main':
+/tmp/ccKzX3nV.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 ----------
@@ -431,7 +431,7 @@ checking for time_t size
 ----------------------------------------
 checking for setproctitle()
 
-/tmp/cc6nV8or.o: In function `main':
+/tmp/ccw68p8X.o: In function `main':
 autotest.c:(.text+0xf): undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 ----------
@@ -460,7 +460,7 @@ checking for pwrite()
 ----------------------------------------
 checking for sys_nerr
 
-/tmp/cc2INQs9.o: In function `main':
+/tmp/ccysqObC.o: In function `main':
 autotest.c:(.text+0x6): warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
 ----------------------------------------
@@ -490,7 +490,7 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/tmp/cch0N49r.o: In function `main':
+/tmp/ccPCIJr6.o: In function `main':
 autotest.c:(.text+0x29): undefined reference to `sem_init'
 autotest.c:(.text+0x41): undefined reference to `sem_destroy'
 collect2: error: ld returned 1 exit status
@@ -777,4 +777,126 @@ cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -Wl,--e
 
 ----------------------------------------
 checking for SO_PASSCRED
+
+
+----------------------------------------
+checking for PCRE library
+
+
+----------------------------------------
+checking for PCRE JIT support
+
+
+----------------------------------------
+checking for md5 in system md library
+
+objs/autotest.c:4:17: fatal error: md5.h: No such file or directory
+ #include <md5.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <md5.h>
+
+int main() {
+    MD5_CTX md5; MD5Init(&md5);
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -lmd
+----------
+
+----------------------------------------
+checking for md5 in system md5 library
+
+objs/autotest.c:4:17: fatal error: md5.h: No such file or directory
+ #include <md5.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <md5.h>
+
+int main() {
+    MD5_CTX md5; MD5Init(&md5);
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -lmd5
+----------
+
+----------------------------------------
+checking for md5 in system OpenSSL crypto library
+
+objs/autotest.c:4:25: fatal error: openssl/md5.h: No such file or directory
+ #include <openssl/md5.h>
+                         ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <openssl/md5.h>
+
+int main() {
+    MD5_CTX md5; MD5_Init(&md5);
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -lcrypto
+----------
+
+----------------------------------------
+checking for sha1 in system md library
+
+objs/autotest.c:4:17: fatal error: sha.h: No such file or directory
+ #include <sha.h>
+                 ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <sha.h>
+
+int main() {
+    SHA_CTX sha1; SHA1_Init(&sha1);
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -lmd
+----------
+
+----------------------------------------
+checking for sha1 in system OpenSSL crypto library
+
+objs/autotest.c:4:25: fatal error: openssl/sha.h: No such file or directory
+ #include <openssl/sha.h>
+                         ^
+compilation terminated.
+----------
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <openssl/sha.h>
+
+int main() {
+    SHA_CTX sha1; SHA1_Init(&sha1);
+    return 0;
+}
+
+----------
+cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c -lcrypto
+----------
+
+----------------------------------------
+checking for zlib library
 

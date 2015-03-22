@@ -372,6 +372,7 @@ ngx_start_worker_processes(ngx_cycle_t *cycle, ngx_int_t n, ngx_int_t type)
 
         ch.pid = ngx_processes[ngx_process_slot].pid;
         ch.slot = ngx_process_slot;
+        // ngx_channel (of child process) <= ngx_processes[ngx_process_slot].channel[1];
         ch.fd = ngx_processes[ngx_process_slot].channel[0];
 
         ngx_pass_open_channel(cycle, &ch);
@@ -434,7 +435,7 @@ ngx_start_cache_manager_processes(ngx_cycle_t *cycle, ngx_uint_t respawn)
     ngx_pass_open_channel(cycle, &ch);
 }
 
-
+// http://www.cnblogs.com/fll369/archive/2012/11/26/2788970.html
 static void
 ngx_pass_open_channel(ngx_cycle_t *cycle, ngx_channel_t *ch)
 {
@@ -802,7 +803,19 @@ ngx_worker_process_cycle(ngx_cycle_t *cycle, void *data)
     }
 }
 
-
+// ngx_set_environment(cycle, NULL) ???
+// setpriority, setrlimit
+// setgid, initgroups, setuid
+// ngx_setaffinity
+// prctl(PR_SET_DUMPABLE, 1, 0, 0, 0)
+// chdir( ccf->working_directory.data)
+// sigemptyset(&set);
+// sigprocmask(SIG_SETMASK, &set, NULL)
+// for ls in cycle->listening.nelts: ls.previous = NULL
+// for m in ngx_modules: m->init_process(cycle)
+// for p in other ngx_processes: close(p.channel[1])
+// close(ngx_processes[ngx_process_slot].channel[0])
+// ngx_add_channel_event(cycle, ngx_channel, NGX_READ_EVENT, ngx_channel_handler)
 static void
 ngx_worker_process_init(ngx_cycle_t *cycle, ngx_int_t worker)
 {
@@ -880,7 +893,7 @@ ngx_worker_process_init(ngx_cycle_t *cycle, ngx_int_t worker)
         }
     }
 
-#if (NGX_HAVE_PR_SET_DUMPABLE)
+#if (NGX_HAVE_PR_SET_DUMPABLE) // =1
 
     /* allow coredump after setuid() in Linux 2.4.x */
 

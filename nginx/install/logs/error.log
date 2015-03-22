@@ -1,95 +1,77 @@
-2014/12/25 15:08:44 [notice] 17089#0: using the "epoll" event method
-2014/12/25 15:08:44 [notice] 17089#0: using the "epoll" event method
-2014/12/25 15:08:44 [notice] 17089#0: nginx/1.6.2
-2014/12/25 15:08:44 [notice] 17089#0: nginx/1.6.2
-2014/12/25 15:08:44 [notice] 17089#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/25 15:08:44 [notice] 17089#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/25 15:08:44 [notice] 17089#0: OS: Linux 3.13.0-32-generic
-2014/12/25 15:08:44 [notice] 17089#0: OS: Linux 3.13.0-32-generic
-2014/12/25 15:08:44 [notice] 17089#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/25 15:08:44 [notice] 17089#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/25 15:08:44 [notice] 17090#0: start worker processes
-2014/12/25 15:08:44 [notice] 17090#0: start worker processes
-2014/12/25 15:08:44 [notice] 17090#0: start worker process 17091
-2014/12/25 15:08:44 [notice] 17090#0: start worker process 17091
-2014/12/25 15:09:01 [notice] 17120#0: signal process started
-2014/12/25 15:09:01 [notice] 17090#0: signal 15 (SIGTERM) received, exiting
-2014/12/25 15:09:01 [notice] 17090#0: signal 15 (SIGTERM) received, exiting
-2014/12/25 15:09:01 [notice] 17091#0: exiting
-2014/12/25 15:09:01 [notice] 17091#0: exiting
-2014/12/25 15:09:01 [notice] 17091#0: exit
-2014/12/25 15:09:01 [notice] 17090#0: signal 17 (SIGCHLD) received
-2014/12/25 15:09:01 [notice] 17090#0: signal 17 (SIGCHLD) received
-2014/12/25 15:09:01 [notice] 17090#0: worker process 17091 exited with code 0
-2014/12/25 15:09:01 [notice] 17090#0: worker process 17091 exited with code 0
-2014/12/25 15:09:01 [notice] 17090#0: exit
-2014/12/25 15:09:01 [notice] 17090#0: exit
-2014/12/25 15:09:40 [notice] 17197#0: using the "epoll" event method
-2014/12/25 15:09:40 [notice] 17197#0: using the "epoll" event method
-2014/12/25 15:09:40 [notice] 17197#0: using the "epoll" event method
-2014/12/25 15:09:40 [notice] 17197#0: nginx/1.6.2
-2014/12/25 15:09:40 [notice] 17197#0: nginx/1.6.2
-2014/12/25 15:09:40 [notice] 17197#0: nginx/1.6.2
-2014/12/25 15:09:40 [notice] 17197#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/25 15:09:40 [notice] 17197#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/25 15:09:40 [notice] 17197#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/25 15:09:40 [notice] 17197#0: OS: Linux 3.13.0-32-generic
-2014/12/25 15:09:40 [notice] 17197#0: OS: Linux 3.13.0-32-generic
-2014/12/25 15:09:40 [notice] 17197#0: OS: Linux 3.13.0-32-generic
-2014/12/25 15:09:40 [notice] 17197#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/25 15:09:40 [notice] 17197#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/25 15:09:40 [notice] 17197#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/25 15:09:40 [notice] 17198#0: start worker processes
-2014/12/25 15:09:40 [notice] 17198#0: start worker processes
-2014/12/25 15:09:40 [notice] 17198#0: start worker processes
-2014/12/25 15:09:40 [notice] 17198#0: start worker process 17199
-2014/12/25 15:09:40 [notice] 17198#0: start worker process 17199
-2014/12/25 15:09:40 [notice] 17198#0: start worker process 17199
-2014/12/25 15:09:54 [notice] 17228#0: signal process started
-2014/12/25 15:09:54 [notice] 17198#0: signal 15 (SIGTERM) received, exiting
-2014/12/25 15:09:54 [notice] 17198#0: signal 15 (SIGTERM) received, exiting
-2014/12/25 15:09:54 [notice] 17198#0: signal 15 (SIGTERM) received, exiting
-2014/12/25 15:09:54 [notice] 17199#0: exiting
-2014/12/25 15:09:54 [notice] 17199#0: exiting
-2014/12/25 15:09:54 [notice] 17199#0: exiting
-2014/12/25 15:09:54 [notice] 17199#0: exit
-2014/12/25 15:09:54 [notice] 17198#0: signal 17 (SIGCHLD) received
-2014/12/25 15:09:54 [notice] 17198#0: signal 17 (SIGCHLD) received
-2014/12/25 15:09:54 [notice] 17198#0: signal 17 (SIGCHLD) received
-2014/12/25 15:09:54 [notice] 17198#0: worker process 17199 exited with code 0
-2014/12/25 15:09:54 [notice] 17198#0: worker process 17199 exited with code 0
-2014/12/25 15:09:54 [notice] 17198#0: worker process 17199 exited with code 0
-2014/12/25 15:09:54 [notice] 17198#0: exit
-2014/12/25 15:09:54 [notice] 17198#0: exit
-2014/12/25 15:09:54 [notice] 17198#0: exit
-2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
-2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
-2014/12/26 17:15:04 [notice] 2323#0: using the "epoll" event method
-2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
-2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
-2014/12/26 17:15:04 [notice] 2323#0: nginx/1.6.2
-2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/26 17:15:04 [notice] 2323#0: built by gcc 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
-2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
-2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
-2014/12/26 17:15:04 [notice] 2323#0: OS: Linux 3.13.0-32-generic
-2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/26 17:15:04 [notice] 2323#0: getrlimit(RLIMIT_NOFILE): 1024:4096
-2014/12/26 17:15:04 [notice] 2324#0: start worker processes
-2014/12/26 17:15:04 [notice] 2324#0: start worker processes
-2014/12/26 17:15:04 [notice] 2324#0: start worker processes
-2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
-2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
-2014/12/26 17:15:04 [notice] 2324#0: start worker process 2325
-2014/12/26 17:15:21 [info] 2325#0: *1 client 127.0.0.1 closed keepalive connection
-2014/12/26 17:15:21 [info] 2325#0: *1 client 127.0.0.1 closed keepalive connection
-2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
-2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
-2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
-2014/12/26 17:15:24 [error] 2325#0: *2 open() "/home/qjiao/study/nginx/install/html/searc" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /searc HTTP/1.1", host: "localhost:8081"
-2014/12/26 17:15:24 [info] 2325#0: *2 client 127.0.0.1 closed keepalive connection
-2014/12/26 17:15:24 [info] 2325#0: *2 client 127.0.0.1 closed keepalive connection
-2014/12/26 17:15:27 [info] 2325#0: *3 client 127.0.0.1 closed keepalive connection
-2014/12/26 17:15:27 [info] 2325#0: *3 client 127.0.0.1 closed keepalive connection
+2015/03/17 23:20:55 [alert] 2910#0: entering ngx_event_process_init 0000000001F05610 (17: File exists)
+2015/03/17 23:20:55 [alert] 2910#0: continue listen 0 (17: File exists)
+2015/03/17 23:20:55 [alert] 2910#0: continue listen 1 (17: File exists)
+2015/03/17 23:20:55 [alert] 2910#0: continue listen 2 (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: entering ngx_event_process_init 0000000001F05610 (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: continue listen 0 (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: continue listen 1 (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: continue listen 2 (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f26f]
+nginx: master process ./sbin/nginx() [0x42f313]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b702]
+nginx: master process ./sbin/nginx() [0x42d335]
+nginx: master process ./sbin/nginx() [0x42d6b1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c2c6]
+nginx: master process ./sbin/nginx() [0x42d8b9]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e10b]
+nginx: master process ./sbin/nginx(main+0xa18) [0x4122d0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f3b00ba0ec5]
+nginx: master process ./sbin/nginx() [0x411029]
+) (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f26f]
+nginx: worker process() [0x42f313]
+nginx: worker process() [0x4284e1]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c4b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427b8e]
+nginx: worker process() [0x42d760]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c2c6]
+nginx: worker process() [0x42d8b9]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e10b]
+nginx: worker process(main+0xa18) [0x4122d0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f3b00ba0ec5]
+nginx: worker process() [0x411029]
+) (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f26f]
+nginx: worker process() [0x42f313]
+nginx: worker process() [0x4284e1]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c4b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427b8e]
+nginx: worker process() [0x42d760]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c2c6]
+nginx: worker process() [0x42d8b9]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e10b]
+nginx: worker process(main+0xa18) [0x4122d0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f3b00ba0ec5]
+nginx: worker process() [0x411029]
+) (17: File exists)
+2015/03/17 23:20:55 [alert] 2911#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f26f]
+nginx: worker process() [0x42f313]
+nginx: worker process() [0x4284e1]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c4b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427b8e]
+nginx: worker process() [0x42d760]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c2c6]
+nginx: worker process() [0x42d8b9]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e10b]
+nginx: worker process(main+0xa18) [0x4122d0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f3b00ba0ec5]
+nginx: worker process() [0x411029]
+) (17: File exists)
+2015/03/17 23:20:55 [alert] 2910#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f26f]
+nginx: master process ./sbin/nginx() [0x42f313]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b702]
+nginx: master process ./sbin/nginx() [0x42d335]
+nginx: master process ./sbin/nginx() [0x42d6b1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c2c6]
+nginx: master process ./sbin/nginx() [0x42d8b9]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e10b]
+nginx: master process ./sbin/nginx(main+0xa18) [0x4122d0]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f3b00ba0ec5]
+nginx: master process ./sbin/nginx() [0x411029]
+) (17: File exists)
+2015/03/17 23:22:26 [notice] 2927#0: signal process started

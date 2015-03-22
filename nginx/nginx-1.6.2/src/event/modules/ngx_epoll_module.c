@@ -4,6 +4,7 @@
  * Copyright (C) Nginx, Inc.
  */
 
+#include <execinfo.h>
 
 #include <ngx_config.h>
 #include <ngx_core.h>
@@ -89,8 +90,24 @@
 //
 //#endif
 //#endif
+// -------------------------------
+const char* cur_backtrace() {
+  static char s[16384];
 
+  void *buffer[255];
+  const int calls = backtrace(buffer, sizeof(buffer) / sizeof(void *));
+  char **p = backtrace_symbols(buffer, calls);
+  char *d = s;
+  int i;
 
+  //abort();
+  for (i = 0; i < calls; ++i) {
+    d += sprintf(d, "%s\n", p[i]);
+  }
+  free(p);
+  return s;
+}
+// -------------------------------
 typedef struct {
     ngx_uint_t  events;
     ngx_uint_t  aio_requests;
@@ -379,6 +396,7 @@ ngx_epoll_done(ngx_cycle_t *cycle)
 static ngx_int_t
 ngx_epoll_add_event(ngx_event_t *ev, ngx_int_t event, ngx_uint_t flags)
 {
+    //static int i = 0;
     int                  op;
     uint32_t             events, prev;
     ngx_event_t         *e;
@@ -388,6 +406,10 @@ ngx_epoll_add_event(ngx_event_t *ev, ngx_int_t event, ngx_uint_t flags)
     c = ev->data;
 
     events = (uint32_t) event;
+
+    //if (++i == 2) { abort(); }
+    ngx_log_error(NGX_LOG_ALERT, ev->log, ngx_errno, "ngx_epoll_add_event (%d)\n(%s)",
+                  event, cur_backtrace());
 
     if (event == NGX_READ_EVENT) {
         e = c->write;

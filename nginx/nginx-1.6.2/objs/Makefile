@@ -1,6 +1,6 @@
 
 CC =	cc
-CFLAGS =  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g  -DNDK_SET_VAR
+CFLAGS =  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter -Werror -g  -DNDK_SET_VAR -DNDK_SET_VAR -DNDK_UPSTREAM_LIST
 CPP =	cc -E
 LINK =	$(CC)
 
@@ -11,9 +11,12 @@ ALL_INCS = -I src/core \
 	-I src/os/unix \
 	-I /usr/include/luajit-2.0 \
 	-I module/lua-nginx-module-0.9.10/src/api \
+	-I module/ngx_devel_kit/objs \
+	-I objs/addon/ndk \
 	-I objs \
 	-I src/http \
 	-I src/http/modules \
+	-I module/ngx_devel_kit/src \
 	-I src/mail
 
 
@@ -82,6 +85,8 @@ CORE_INCS = -I src/core \
 	-I src/os/unix \
 	-I /usr/include/luajit-2.0 \
 	-I module/lua-nginx-module-0.9.10/src/api \
+	-I module/ngx_devel_kit/objs \
+	-I objs/addon/ndk \
 	-I objs
 
 
@@ -99,10 +104,11 @@ HTTP_DEPS = src/http/ngx_http.h \
 
 
 HTTP_INCS = -I src/http \
-	-I src/http/modules
+	-I src/http/modules \
+	-I module/ngx_devel_kit/src
 
 
-ADDON_DEPS = $(CORE_DEPS)  module/echo-nginx-module-0.54/src/ngx_http_echo_module.h module/echo-nginx-module-0.54/src/ddebug.h module/echo-nginx-module-0.54/src/ngx_http_echo_handler.h module/echo-nginx-module-0.54/src/ngx_http_echo_util.h module/echo-nginx-module-0.54/src/ngx_http_echo_sleep.h module/echo-nginx-module-0.54/src/ngx_http_echo_filter.h module/echo-nginx-module-0.54/src/ngx_http_echo_var.h module/echo-nginx-module-0.54/src/ngx_http_echo_location.h module/echo-nginx-module-0.54/src/ngx_http_echo_echo.h module/echo-nginx-module-0.54/src/ngx_http_echo_request_info.h module/echo-nginx-module-0.54/src/ngx_http_echo_subrequest.h module/echo-nginx-module-0.54/src/ngx_http_echo_foreach.h                 module/lua-nginx-module-0.9.10/src/ddebug.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_script.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_log.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_subrequest.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_ndk.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_control.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_time.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_string.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_misc.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_variable.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_output.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_uri.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_req_body.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_args.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_ctx.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_regex.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_common.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_directive.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers_out.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers_in.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_consts.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_exception.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_util.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_cache.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_contentby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_rewriteby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_accessby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_setby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_capturefilter.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_clfactory.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_pcrefix.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headerfilterby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_shdict.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_socket_tcp.h                 module/lua-nginx-module-0.9.10/src/api/ngx_http_lua_api.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_logby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_sleep.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_coroutine.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_bodyfilterby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_initby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_initworkerby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_socket_udp.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_req_method.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_phase.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_probe.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_uthread.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_timer.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_config.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_worker.h                  $(HTTP_DEPS)
+ADDON_DEPS = $(CORE_DEPS)  module/echo-nginx-module-0.54/src/ngx_http_echo_module.h module/echo-nginx-module-0.54/src/ddebug.h module/echo-nginx-module-0.54/src/ngx_http_echo_handler.h module/echo-nginx-module-0.54/src/ngx_http_echo_util.h module/echo-nginx-module-0.54/src/ngx_http_echo_sleep.h module/echo-nginx-module-0.54/src/ngx_http_echo_filter.h module/echo-nginx-module-0.54/src/ngx_http_echo_var.h module/echo-nginx-module-0.54/src/ngx_http_echo_location.h module/echo-nginx-module-0.54/src/ngx_http_echo_echo.h module/echo-nginx-module-0.54/src/ngx_http_echo_request_info.h module/echo-nginx-module-0.54/src/ngx_http_echo_subrequest.h module/echo-nginx-module-0.54/src/ngx_http_echo_foreach.h                 module/lua-nginx-module-0.9.10/src/ddebug.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_script.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_log.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_subrequest.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_ndk.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_control.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_time.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_string.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_misc.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_variable.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_output.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_uri.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_req_body.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_args.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_ctx.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_regex.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_common.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_directive.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers_out.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headers_in.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_consts.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_exception.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_util.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_cache.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_contentby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_rewriteby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_accessby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_setby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_capturefilter.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_clfactory.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_pcrefix.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_headerfilterby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_shdict.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_socket_tcp.h                 module/lua-nginx-module-0.9.10/src/api/ngx_http_lua_api.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_logby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_sleep.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_coroutine.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_bodyfilterby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_initby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_initworkerby.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_socket_udp.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_req_method.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_phase.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_probe.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_uthread.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_timer.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_config.h                 module/lua-nginx-module-0.9.10/src/ngx_http_lua_worker.h                  module/set-misc-nginx-module-0.24/src/ddebug.h module/set-misc-nginx-module-0.24/src/ngx_http_set_default_value.h module/set-misc-nginx-module-0.24/src/ngx_http_set_hashed_upstream.h module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_sql.h module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_json.h module/set-misc-nginx-module-0.24/src/ngx_http_set_unescape_uri.h module/set-misc-nginx-module-0.24/src/ngx_http_set_escape_uri.h module/set-misc-nginx-module-0.24/src/ngx_http_set_hash.h module/set-misc-nginx-module-0.24/src/ngx_http_set_local_today.h module/set-misc-nginx-module-0.24/src/ngx_http_set_hex.h module/set-misc-nginx-module-0.24/src/ngx_http_set_base64.h module/set-misc-nginx-module-0.24/src/ngx_http_set_random.h module/set-misc-nginx-module-0.24/src/ngx_http_set_rotate.h module/set-misc-nginx-module-0.24/src/ngx_http_set_secure_random.h module/set-misc-nginx-module-0.24/src/ngx_http_set_misc_module.h $(HTTP_DEPS)
 
 
 objs/nginx:	objs/src/core/nginx.o \
@@ -273,6 +279,22 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/addon/src/ngx_http_lua_timer.o \
 	objs/addon/src/ngx_http_lua_config.o \
 	objs/addon/src/ngx_http_lua_worker.o \
+	objs/addon/src/ndk.o \
+	objs/addon/src/ngx_http_set_base32.o \
+	objs/addon/src/ngx_http_set_default_value.o \
+	objs/addon/src/ngx_http_set_hashed_upstream.o \
+	objs/addon/src/ngx_http_set_quote_sql.o \
+	objs/addon/src/ngx_http_set_quote_json.o \
+	objs/addon/src/ngx_http_set_unescape_uri.o \
+	objs/addon/src/ngx_http_set_misc_module.o \
+	objs/addon/src/ngx_http_set_escape_uri.o \
+	objs/addon/src/ngx_http_set_hash.o \
+	objs/addon/src/ngx_http_set_local_today.o \
+	objs/addon/src/ngx_http_set_hex.o \
+	objs/addon/src/ngx_http_set_base64.o \
+	objs/addon/src/ngx_http_set_random.o \
+	objs/addon/src/ngx_http_set_secure_random.o \
+	objs/addon/src/ngx_http_set_rotate.o \
 	objs/ngx_modules.o
 
 	$(LINK) -o objs/nginx \
@@ -444,8 +466,24 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/addon/src/ngx_http_lua_timer.o \
 	objs/addon/src/ngx_http_lua_config.o \
 	objs/addon/src/ngx_http_lua_worker.o \
+	objs/addon/src/ndk.o \
+	objs/addon/src/ngx_http_set_base32.o \
+	objs/addon/src/ngx_http_set_default_value.o \
+	objs/addon/src/ngx_http_set_hashed_upstream.o \
+	objs/addon/src/ngx_http_set_quote_sql.o \
+	objs/addon/src/ngx_http_set_quote_json.o \
+	objs/addon/src/ngx_http_set_unescape_uri.o \
+	objs/addon/src/ngx_http_set_misc_module.o \
+	objs/addon/src/ngx_http_set_escape_uri.o \
+	objs/addon/src/ngx_http_set_hash.o \
+	objs/addon/src/ngx_http_set_local_today.o \
+	objs/addon/src/ngx_http_set_hex.o \
+	objs/addon/src/ngx_http_set_base64.o \
+	objs/addon/src/ngx_http_set_random.o \
+	objs/addon/src/ngx_http_set_secure_random.o \
+	objs/addon/src/ngx_http_set_rotate.o \
 	objs/ngx_modules.o \
-	-Wl,-E -lpthread -lcrypt -L/usr/lib -lm -lluajit-5.1 -lpcre -lcrypto -lcrypto -lz
+	-Wl,-E -lpthread -lcrypt -L/usr/lib -lm -lluajit-5.1 -lpcre -lz
 	
 
 
@@ -1630,6 +1668,118 @@ objs/addon/src/ngx_http_lua_worker.o:	$(ADDON_DEPS) \
 	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
 		-o objs/addon/src/ngx_http_lua_worker.o \
 		module/lua-nginx-module-0.9.10/src/ngx_http_lua_worker.c
+
+
+objs/addon/src/ndk.o:	$(ADDON_DEPS) \
+	module/ngx_devel_kit/src/ndk.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ndk.o \
+		module/ngx_devel_kit/src/ndk.c
+
+
+objs/addon/src/ngx_http_set_base32.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_base32.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_base32.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_base32.c
+
+
+objs/addon/src/ngx_http_set_default_value.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_default_value.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_default_value.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_default_value.c
+
+
+objs/addon/src/ngx_http_set_hashed_upstream.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_hashed_upstream.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_hashed_upstream.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_hashed_upstream.c
+
+
+objs/addon/src/ngx_http_set_quote_sql.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_sql.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_quote_sql.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_sql.c
+
+
+objs/addon/src/ngx_http_set_quote_json.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_json.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_quote_json.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_quote_json.c
+
+
+objs/addon/src/ngx_http_set_unescape_uri.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_unescape_uri.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_unescape_uri.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_unescape_uri.c
+
+
+objs/addon/src/ngx_http_set_misc_module.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_misc_module.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_misc_module.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_misc_module.c
+
+
+objs/addon/src/ngx_http_set_escape_uri.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_escape_uri.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_escape_uri.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_escape_uri.c
+
+
+objs/addon/src/ngx_http_set_hash.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_hash.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_hash.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_hash.c
+
+
+objs/addon/src/ngx_http_set_local_today.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_local_today.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_local_today.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_local_today.c
+
+
+objs/addon/src/ngx_http_set_hex.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_hex.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_hex.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_hex.c
+
+
+objs/addon/src/ngx_http_set_base64.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_base64.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_base64.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_base64.c
+
+
+objs/addon/src/ngx_http_set_random.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_random.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_random.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_random.c
+
+
+objs/addon/src/ngx_http_set_secure_random.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_secure_random.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_secure_random.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_secure_random.c
+
+
+objs/addon/src/ngx_http_set_rotate.o:	$(ADDON_DEPS) \
+	module/set-misc-nginx-module-0.24/src/ngx_http_set_rotate.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/src/ngx_http_set_rotate.o \
+		module/set-misc-nginx-module-0.24/src/ngx_http_set_rotate.c
 
 
 manpage:	objs/nginx.8
