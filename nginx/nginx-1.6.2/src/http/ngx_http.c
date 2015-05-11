@@ -114,7 +114,29 @@ ngx_module_t  ngx_http_module = {
     NGX_MODULE_V1_PADDING
 };
 
-
+// ngx_http_max_module = Number of NGX_HTTP_MODULE
+// *(ngx_http_conf_ctx_t **) conf = ctx;
+// ctx->main_conf = void *[ngx_http_max_module]
+// ctx->srv_conf = void *[ngx_http_max_module]
+// ctx->loc_conf = void *[ngx_http_max_module]
+// for m in http ngx_modules:
+//   ctx->main_conf[m->ctx_index] = m->create_main_conf(cf)
+//   ctx->srv_conf[m->ctx_index] = m->create_srv_conf(cf)
+//   ctx->loc_conf[m->ctx_index] = m->create_loc_conf(cf)
+// for m in ngx_modules:
+//   m->preconfiguration(cf)
+//
+// ngx_conf_parse(cf, NULL)
+//
+// for m in http ngx_modules:
+//   module->init_main_conf(cf, ctx->main_conf[m->ctx_index]);
+//   ngx_http_merge_servers(cf, cmcf, m->ctx, m->ctx_index);
+// 
+// for m in http ngx_modules:
+//   m->postconfiguration(cf)
+// ngx_http_variables_init_vars(cf)
+// ngx_http_init_phase_handlers(cf, cmcf)
+// ngx_http_optimize_servers(cf, cmcf, cmcf->ports)
 static char *
 ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
