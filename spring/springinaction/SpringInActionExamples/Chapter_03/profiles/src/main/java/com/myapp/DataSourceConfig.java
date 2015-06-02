@@ -11,6 +11,14 @@ import org.springframework.jndi.JndiObjectFactoryBean;
 
 @Configuration
 public class DataSourceConfig {
+
+  @Bean(name="x")
+  @Profile("dev")
+  public String dev_x() { return "x.dev"; }
+
+  @Bean(name="x")
+  @Profile("prod")
+  public String prod_x() { return "x.prod"; }
   
   @Bean(destroyMethod = "shutdown")
   @Profile("dev")

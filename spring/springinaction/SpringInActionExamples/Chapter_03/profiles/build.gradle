@@ -1,6 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "com.myapp.App"
+//applicationDefaultJvmArgs = ["-Dpring.profiles.active=dev"]
+
 
 jar {
     baseName = 'profiles'
