@@ -6,6 +6,9 @@ apply plugin: 'application'
 mainClassName = "com.myapp.App"
 //applicationDefaultJvmArgs = ["-Dpring.profiles.active=dev"]
 
+run {
+    systemProperties['pring.profiles.active'] = 'dev'
+}
 
 jar {
     baseName = 'profiles'
