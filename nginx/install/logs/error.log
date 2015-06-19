@@ -75,3 +75,1230 @@ nginx: master process ./sbin/nginx(main+0xa18) [0x4122d0]
 nginx: master process ./sbin/nginx() [0x411029]
 ) (17: File exists)
 2015/03/17 23:22:26 [notice] 2927#0: signal process started
+2015/06/19 16:38:08 [alert] 9279#0: entering ngx_event_process_init 0000000000F5B5B0 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9279#0: continue listen 0 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9279#0: continue listen 1 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9279#0: continue listen 2 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9278#0: entering ngx_event_process_init 0000000000F5B5B0 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9279#0: ngx_epoll_add_event (8193)
+(nginx: master process ./objs/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./objs/nginx() [0x42f359]
+nginx: master process ./objs/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./objs/nginx() [0x42d375]
+nginx: master process ./objs/nginx() [0x42d6f1]
+nginx: master process ./objs/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./objs/nginx() [0x42d903]
+nginx: master process ./objs/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./objs/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fe3aef50ec5]
+nginx: master process ./objs/nginx() [0x411069]
+) (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9278#0: continue listen 0 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9278#0: continue listen 1 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9278#0: continue listen 2 (2: No such file or directory)
+2015/06/19 16:38:08 [alert] 9278#0: ngx_epoll_add_event (8193)
+(nginx: master process ./objs/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./objs/nginx() [0x42f359]
+nginx: master process ./objs/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./objs/nginx() [0x42d375]
+nginx: master process ./objs/nginx() [0x42d6f1]
+nginx: master process ./objs/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./objs/nginx() [0x42d903]
+nginx: master process ./objs/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./objs/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fe3aef50ec5]
+nginx: master process ./objs/nginx() [0x411069]
+) (2: No such file or directory)
+2015/06/19 16:38:23 [alert] 9277#0: worker process 9279 exited on signal 9
+2015/06/19 16:38:23 [alert] 9277#0: worker process 9278 exited on signal 9
+2015/06/19 16:39:21 [alert] 9309#0: entering ngx_event_process_init 00000000012835B0 (17: File exists)
+2015/06/19 16:39:21 [alert] 9309#0: continue listen 0 (17: File exists)
+2015/06/19 16:39:21 [alert] 9309#0: continue listen 1 (17: File exists)
+2015/06/19 16:39:21 [alert] 9309#0: continue listen 2 (17: File exists)
+2015/06/19 16:39:21 [alert] 9310#0: entering ngx_event_process_init 00000000012835B0 (17: File exists)
+2015/06/19 16:39:21 [alert] 9309#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fe8ad4b2ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:39:21 [alert] 9310#0: continue listen 0 (17: File exists)
+2015/06/19 16:39:21 [alert] 9310#0: continue listen 1 (17: File exists)
+2015/06/19 16:39:21 [alert] 9310#0: continue listen 2 (17: File exists)
+2015/06/19 16:39:21 [alert] 9310#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fe8ad4b2ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:39:30 [notice] 9313#0: signal process started
+2015/06/19 16:39:33 [alert] 9308#0: worker process 9310 exited on signal 9
+2015/06/19 16:39:33 [alert] 9308#0: worker process 9309 exited on signal 9
+2015/06/19 16:40:05 [alert] 9319#0: entering ngx_event_process_init 000000000077E5B0 (17: File exists)
+2015/06/19 16:40:05 [alert] 9320#0: entering ngx_event_process_init 000000000077E5B0 (17: File exists)
+2015/06/19 16:40:05 [alert] 9320#0: continue listen 0 (17: File exists)
+2015/06/19 16:40:05 [alert] 9320#0: continue listen 1 (17: File exists)
+2015/06/19 16:40:05 [alert] 9320#0: continue listen 2 (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: continue listen 0 (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: continue listen 1 (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: continue listen 2 (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:05 [alert] 9320#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:05 [alert] 9319#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:25 [alert] 9319#0: *1 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:40:29 [alert] 9319#0: *2 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:40:31 [alert] 9319#0: *3 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:40:32 [alert] 9319#0: *4 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:40:42 [alert] 9327#0: entering ngx_event_process_init 00000000007825C0 (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: continue listen 0 (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: continue listen 1 (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: continue listen 2 (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:42 [alert] 9326#0: entering ngx_event_process_init 00000000007825C0 (17: File exists)
+2015/06/19 16:40:42 [alert] 9326#0: continue listen 0 (17: File exists)
+2015/06/19 16:40:42 [alert] 9326#0: continue listen 1 (17: File exists)
+2015/06/19 16:40:42 [alert] 9326#0: continue listen 2 (17: File exists)
+2015/06/19 16:40:42 [alert] 9326#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:40:42 [alert] 9327#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:41:02 [alert] 9327#0: *5 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:41:04 [alert] 9327#0: *6 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4656235ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:42:17 [notice] 9365#0: signal process started
+2015/06/19 16:42:29 [alert] 9368#0: entering ngx_event_process_init 00000000012E65B0 (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: entering ngx_event_process_init 00000000012E65B0 (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: continue listen 0 (17: File exists)
+2015/06/19 16:42:29 [alert] 9368#0: continue listen 0 (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: continue listen 1 (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: continue listen 2 (17: File exists)
+2015/06/19 16:42:29 [alert] 9368#0: continue listen 1 (17: File exists)
+2015/06/19 16:42:29 [alert] 9368#0: continue listen 2 (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:42:29 [alert] 9368#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 127.0.0.1:8090 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:9010 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:8081 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 127.0.0.1:8090 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:9010 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:8081 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 127.0.0.1:8090 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:9010 failed (98: Address already in use)
+2015/06/19 16:42:37 [emerg] 9372#0: bind() to 0.0.0.0:8081 failed (98: Address already in use)
+2015/06/19 16:42:29 [alert] 9369#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:42:29 [alert] 9369#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:42:39 [alert] 9369#0: *1 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f4fcbbf2ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:43:01 [alert] 9378#0: entering ngx_event_process_init 00000000025E85B0 (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: continue listen 0 (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: continue listen 1 (17: File exists)
+2015/06/19 16:43:01 [alert] 9379#0: entering ngx_event_process_init 00000000025E85B0 (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: continue listen 2 (17: File exists)
+2015/06/19 16:43:01 [alert] 9379#0: continue listen 0 (17: File exists)
+2015/06/19 16:43:01 [alert] 9379#0: continue listen 1 (17: File exists)
+2015/06/19 16:43:01 [alert] 9379#0: continue listen 2 (17: File exists)
+2015/06/19 16:43:01 [alert] 9379#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:01 [alert] 9378#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:11 [alert] 9378#0: *1 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:43:14 [alert] 9378#0: *2 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:43:26 [alert] 9386#0: entering ngx_event_process_init 00000000025EC5C0 (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: continue listen 0 (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: continue listen 1 (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: continue listen 2 (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: entering ngx_event_process_init 00000000025EC5C0 (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: continue listen 0 (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: continue listen 1 (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: continue listen 2 (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2b5]
+nginx: master process ./sbin/nginx() [0x42f359]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9386#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:36 [alert] 9386#0: *3 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:43:26 [alert] 9385#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:26 [alert] 9385#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:43:38 [alert] 9385#0: *4 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2b5]
+nginx: worker process() [0x42f359]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aacd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f031b3e4ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:44:15 [notice] 9400#0: signal process started
+2015/06/19 16:44:23 [alert] 9404#0: entering ngx_event_process_init 0000000001D625B0 (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: continue listen 0 (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: continue listen 1 (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: continue listen 2 (17: File exists)
+2015/06/19 16:44:23 [alert] 9405#0: entering ngx_event_process_init 0000000001D625B0 (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:23 [alert] 9405#0: continue listen 0 (17: File exists)
+2015/06/19 16:44:23 [alert] 9405#0: continue listen 1 (17: File exists)
+2015/06/19 16:44:23 [alert] 9405#0: continue listen 2 (17: File exists)
+2015/06/19 16:44:23 [alert] 9405#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:23 [alert] 9404#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:33 [alert] 9404#0: *1 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:44:35 [alert] 9404#0: *2 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:44:35 [alert] 9404#0: *3 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:44:47 [alert] 9404#0: *4 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:44:53 [alert] 9414#0: entering ngx_event_process_init 0000000001D665C0 (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: continue listen 0 (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: continue listen 1 (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: continue listen 2 (17: File exists)
+2015/06/19 16:44:53 [alert] 9413#0: entering ngx_event_process_init 0000000001D665C0 (17: File exists)
+2015/06/19 16:44:53 [alert] 9413#0: continue listen 0 (17: File exists)
+2015/06/19 16:44:53 [alert] 9413#0: continue listen 1 (17: File exists)
+2015/06/19 16:44:53 [alert] 9413#0: continue listen 2 (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:53 [alert] 9413#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:44:53 [alert] 9414#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:45:06 [alert] 9414#0: *5 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x808) [0x42e771]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7f08adda0ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:45:38 [notice] 9417#0: signal process started
+2015/06/19 16:46:01 [alert] 9432#0: entering ngx_event_process_init 0000000001B525B0 (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: continue listen 0 (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: continue listen 1 (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: continue listen 2 (17: File exists)
+2015/06/19 16:46:01 [alert] 9431#0: entering ngx_event_process_init 0000000001B525B0 (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:01 [alert] 9431#0: continue listen 0 (17: File exists)
+2015/06/19 16:46:01 [alert] 9431#0: continue listen 1 (17: File exists)
+2015/06/19 16:46:01 [alert] 9431#0: continue listen 2 (17: File exists)
+2015/06/19 16:46:01 [alert] 9431#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:01 [alert] 9432#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:11 [alert] 9432#0: *1 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (17: File exists) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:26 [alert] 9435#0: entering ngx_event_process_init 0000000001B565C0 (17: File exists)
+2015/06/19 16:46:26 [alert] 9436#0: entering ngx_event_process_init 0000000001B565C0 (17: File exists)
+2015/06/19 16:46:26 [alert] 9435#0: continue listen 0 (17: File exists)
+2015/06/19 16:46:26 [alert] 9435#0: continue listen 1 (17: File exists)
+2015/06/19 16:46:26 [alert] 9435#0: continue listen 2 (17: File exists)
+2015/06/19 16:46:26 [alert] 9436#0: continue listen 0 (17: File exists)
+2015/06/19 16:46:26 [alert] 9436#0: continue listen 1 (17: File exists)
+2015/06/19 16:46:26 [alert] 9436#0: continue listen 2 (17: File exists)
+2015/06/19 16:46:26 [alert] 9435#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:26 [alert] 9436#0: ngx_epoll_add_event (8193)
+(nginx: master process ./sbin/nginx(cur_backtrace+0x1c) [0x42f2be]
+nginx: master process ./sbin/nginx() [0x42f362]
+nginx: master process ./sbin/nginx(ngx_add_channel_event+0xa0) [0x42b742]
+nginx: master process ./sbin/nginx() [0x42d375]
+nginx: master process ./sbin/nginx() [0x42d6f1]
+nginx: master process ./sbin/nginx(ngx_spawn_process+0x438) [0x42c306]
+nginx: master process ./sbin/nginx() [0x42d903]
+nginx: master process ./sbin/nginx(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: master process ./sbin/nginx(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: master process ./sbin/nginx() [0x411069]
+) (17: File exists)
+2015/06/19 16:46:30 [alert] 9432#0: *2 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:31 [alert] 9432#0: *3 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:32 [alert] 9432#0: *4 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:33 [alert] 9432#0: *5 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:33 [alert] 9432#0: *6 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:34 [alert] 9432#0: *7 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:35 [alert] 9432#0: *8 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x1e7) [0x42e150]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:36 [alert] 9436#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable)
+2015/06/19 16:46:36 [alert] 9436#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable)
+2015/06/19 16:46:36 [alert] 9436#0: ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process() [0x428521]
+nginx: worker process(ngx_trylock_accept_mutex+0x3d) [0x428c8b]
+nginx: worker process(ngx_process_events_and_timers+0x5a) [0x427bce]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable)
+2015/06/19 16:46:36 [alert] 9436#0: *9 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) (11: Resource temporarily unavailable) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081
+2015/06/19 16:46:37 [alert] 9436#0: *10 ngx_epoll_add_event (8193)
+(nginx: worker process(cur_backtrace+0x1c) [0x42f2be]
+nginx: worker process() [0x42f362]
+nginx: worker process(ngx_handle_read_event+0x2f) [0x427cb5]
+nginx: worker process(ngx_http_init_connection+0x250) [0x43aadd]
+nginx: worker process(ngx_event_accept+0x5ad) [0x428c0b]
+nginx: worker process(ngx_event_process_posted+0x36) [0x428040]
+nginx: worker process(ngx_process_events_and_timers+0xbe) [0x427c32]
+nginx: worker process() [0x42d7aa]
+nginx: worker process(ngx_spawn_process+0x438) [0x42c306]
+nginx: worker process() [0x42d903]
+nginx: worker process(ngx_master_process_cycle+0x7fe) [0x42e767]
+nginx: worker process(main+0xa18) [0x412310]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf5) [0x7fee31074ec5]
+nginx: worker process() [0x411069]
+) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:8081

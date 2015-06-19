@@ -9,6 +9,7 @@ ALL_INCS = -I src/core \
 	-I src/event \
 	-I src/event/modules \
 	-I src/os/unix \
+	-I /usr/include/luajit-2.0 \
 	-I module/lua-nginx-module-0.9.10/src/api \
 	-I module/ngx_devel_kit/objs \
 	-I objs/addon/ndk \
@@ -72,7 +73,8 @@ CORE_DEPS = src/core/nginx.h \
 	src/os/unix/ngx_os.h \
 	src/os/unix/ngx_user.h \
 	src/os/unix/ngx_process_cycle.h \
-	src/os/unix/ngx_posix_config.h \
+	src/os/unix/ngx_linux_config.h \
+	src/os/unix/ngx_linux.h \
 	src/core/ngx_regex.h \
 	objs/ngx_auto_config.h
 
@@ -81,6 +83,7 @@ CORE_INCS = -I src/core \
 	-I src/event \
 	-I src/event/modules \
 	-I src/os/unix \
+	-I /usr/include/luajit-2.0 \
 	-I module/lua-nginx-module-0.9.10/src/api \
 	-I module/ngx_devel_kit/objs \
 	-I objs/addon/ndk \
@@ -164,8 +167,9 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/os/unix/ngx_posix_init.o \
 	objs/src/os/unix/ngx_user.o \
 	objs/src/os/unix/ngx_process_cycle.o \
-	objs/src/event/modules/ngx_select_module.o \
-	objs/src/event/modules/ngx_poll_module.o \
+	objs/src/os/unix/ngx_linux_init.o \
+	objs/src/event/modules/ngx_epoll_module.o \
+	objs/src/os/unix/ngx_linux_sendfile_chain.o \
 	objs/src/core/ngx_regex.o \
 	objs/src/http/ngx_http.o \
 	objs/src/http/ngx_http_core_module.o \
@@ -292,6 +296,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/addon/src/ngx_http_set_secure_random.o \
 	objs/addon/src/ngx_http_set_rotate.o \
 	objs/ngx_modules.o
+
 	$(LINK) -o objs/nginx \
 	objs/src/core/nginx.o \
 	objs/src/core/ngx_log.o \
@@ -349,8 +354,9 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/os/unix/ngx_posix_init.o \
 	objs/src/os/unix/ngx_user.o \
 	objs/src/os/unix/ngx_process_cycle.o \
-	objs/src/event/modules/ngx_select_module.o \
-	objs/src/event/modules/ngx_poll_module.o \
+	objs/src/os/unix/ngx_linux_init.o \
+	objs/src/event/modules/ngx_epoll_module.o \
+	objs/src/os/unix/ngx_linux_sendfile_chain.o \
 	objs/src/core/ngx_regex.o \
 	objs/src/http/ngx_http.o \
 	objs/src/http/ngx_http_core_module.o \
@@ -880,18 +886,25 @@ objs/src/os/unix/ngx_process_cycle.o:	$(CORE_DEPS) \
 		src/os/unix/ngx_process_cycle.c
 
 
-objs/src/event/modules/ngx_select_module.o:	$(CORE_DEPS) \
-	src/event/modules/ngx_select_module.c
+objs/src/os/unix/ngx_linux_init.o:	$(CORE_DEPS) \
+	src/os/unix/ngx_linux_init.c
 	$(CC) -c $(CFLAGS) $(CORE_INCS) \
-		-o objs/src/event/modules/ngx_select_module.o \
-		src/event/modules/ngx_select_module.c
+		-o objs/src/os/unix/ngx_linux_init.o \
+		src/os/unix/ngx_linux_init.c
 
 
-objs/src/event/modules/ngx_poll_module.o:	$(CORE_DEPS) \
-	src/event/modules/ngx_poll_module.c
+objs/src/event/modules/ngx_epoll_module.o:	$(CORE_DEPS) \
+	src/event/modules/ngx_epoll_module.c
 	$(CC) -c $(CFLAGS) $(CORE_INCS) \
-		-o objs/src/event/modules/ngx_poll_module.o \
-		src/event/modules/ngx_poll_module.c
+		-o objs/src/event/modules/ngx_epoll_module.o \
+		src/event/modules/ngx_epoll_module.c
+
+
+objs/src/os/unix/ngx_linux_sendfile_chain.o:	$(CORE_DEPS) \
+	src/os/unix/ngx_linux_sendfile_chain.c
+	$(CC) -c $(CFLAGS) $(CORE_INCS) \
+		-o objs/src/os/unix/ngx_linux_sendfile_chain.o \
+		src/os/unix/ngx_linux_sendfile_chain.c
 
 
 objs/src/core/ngx_regex.o:	$(CORE_DEPS) \
@@ -1772,47 +1785,47 @@ objs/addon/src/ngx_http_set_rotate.o:	$(ADDON_DEPS) \
 manpage:	objs/nginx.8
 
 objs/nginx.8:	man/nginx.8 objs/ngx_auto_config.h
-	sed -e "s|%%PREFIX%%|/home/qjiao/nginx|" \
-		-e "s|%%PID_PATH%%|/home/qjiao/nginx/logs/nginx.pid|" \
-		-e "s|%%CONF_PATH%%|/home/qjiao/nginx/conf/nginx.conf|" \
-		-e "s|%%ERROR_LOG_PATH%%|/home/qjiao/nginx/logs/error.log|" \
+	sed -e "s|%%PREFIX%%|/home/qjiao/study/nginx/install|" \
+		-e "s|%%PID_PATH%%|/home/qjiao/study/nginx/install/logs/nginx.pid|" \
+		-e "s|%%CONF_PATH%%|/home/qjiao/study/nginx/install/conf/nginx.conf|" \
+		-e "s|%%ERROR_LOG_PATH%%|/home/qjiao/study/nginx/install/logs/error.log|" \
 		< man/nginx.8 > $@
 
 install:	objs/nginx 		
-	test -d '$(DESTDIR)/home/qjiao/nginx' || mkdir -p '$(DESTDIR)/home/qjiao/nginx'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install' || mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/sbin' 		|| mkdir -p '$(DESTDIR)/home/qjiao/nginx/sbin'
-	test ! -f '$(DESTDIR)/home/qjiao/nginx/sbin/nginx' 		|| mv '$(DESTDIR)/home/qjiao/nginx/sbin/nginx' 			'$(DESTDIR)/home/qjiao/nginx/sbin/nginx.old'
-	cp objs/nginx '$(DESTDIR)/home/qjiao/nginx/sbin/nginx'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/sbin' 		|| mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install/sbin'
+	test ! -f '$(DESTDIR)/home/qjiao/study/nginx/install/sbin/nginx' 		|| mv '$(DESTDIR)/home/qjiao/study/nginx/install/sbin/nginx' 			'$(DESTDIR)/home/qjiao/study/nginx/install/sbin/nginx.old'
+	cp objs/nginx '$(DESTDIR)/home/qjiao/study/nginx/install/sbin/nginx'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/conf' 		|| mkdir -p '$(DESTDIR)/home/qjiao/nginx/conf'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/conf' 		|| mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
 
-	cp conf/koi-win '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/koi-utf '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/win-utf '$(DESTDIR)/home/qjiao/nginx/conf'
+	cp conf/koi-win '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/koi-utf '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/win-utf '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/mime.types' 		|| cp conf/mime.types '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/mime.types '$(DESTDIR)/home/qjiao/nginx/conf/mime.types.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/mime.types' 		|| cp conf/mime.types '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/mime.types '$(DESTDIR)/home/qjiao/study/nginx/install/conf/mime.types.default'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/fastcgi_params' 		|| cp conf/fastcgi_params '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/fastcgi_params 		'$(DESTDIR)/home/qjiao/nginx/conf/fastcgi_params.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/fastcgi_params' 		|| cp conf/fastcgi_params '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/fastcgi_params 		'$(DESTDIR)/home/qjiao/study/nginx/install/conf/fastcgi_params.default'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/fastcgi.conf' 		|| cp conf/fastcgi.conf '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/fastcgi.conf '$(DESTDIR)/home/qjiao/nginx/conf/fastcgi.conf.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/fastcgi.conf' 		|| cp conf/fastcgi.conf '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/fastcgi.conf '$(DESTDIR)/home/qjiao/study/nginx/install/conf/fastcgi.conf.default'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/uwsgi_params' 		|| cp conf/uwsgi_params '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/uwsgi_params 		'$(DESTDIR)/home/qjiao/nginx/conf/uwsgi_params.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/uwsgi_params' 		|| cp conf/uwsgi_params '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/uwsgi_params 		'$(DESTDIR)/home/qjiao/study/nginx/install/conf/uwsgi_params.default'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/scgi_params' 		|| cp conf/scgi_params '$(DESTDIR)/home/qjiao/nginx/conf'
-	cp conf/scgi_params 		'$(DESTDIR)/home/qjiao/nginx/conf/scgi_params.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/scgi_params' 		|| cp conf/scgi_params '$(DESTDIR)/home/qjiao/study/nginx/install/conf'
+	cp conf/scgi_params 		'$(DESTDIR)/home/qjiao/study/nginx/install/conf/scgi_params.default'
 
-	test -f '$(DESTDIR)/home/qjiao/nginx/conf/nginx.conf' 		|| cp conf/nginx.conf '$(DESTDIR)/home/qjiao/nginx/conf/nginx.conf'
-	cp conf/nginx.conf '$(DESTDIR)/home/qjiao/nginx/conf/nginx.conf.default'
+	test -f '$(DESTDIR)/home/qjiao/study/nginx/install/conf/nginx.conf' 		|| cp conf/nginx.conf '$(DESTDIR)/home/qjiao/study/nginx/install/conf/nginx.conf'
+	cp conf/nginx.conf '$(DESTDIR)/home/qjiao/study/nginx/install/conf/nginx.conf.default'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/logs' 		|| mkdir -p '$(DESTDIR)/home/qjiao/nginx/logs'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/logs' 		|| mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install/logs'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/logs' || 		mkdir -p '$(DESTDIR)/home/qjiao/nginx/logs'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/logs' || 		mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install/logs'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/html' 		|| cp -R html '$(DESTDIR)/home/qjiao/nginx'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/html' 		|| cp -R html '$(DESTDIR)/home/qjiao/study/nginx/install'
 
-	test -d '$(DESTDIR)/home/qjiao/nginx/logs' || 		mkdir -p '$(DESTDIR)/home/qjiao/nginx/logs'
+	test -d '$(DESTDIR)/home/qjiao/study/nginx/install/logs' || 		mkdir -p '$(DESTDIR)/home/qjiao/study/nginx/install/logs'

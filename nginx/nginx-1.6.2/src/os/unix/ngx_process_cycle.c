@@ -256,6 +256,12 @@ ngx_master_process_cycle(ngx_cycle_t *cycle)
                                        NGX_PROCESS_JUST_RESPAWN);
             ngx_start_cache_manager_processes(cycle, 1);
 
+            // Nginx won't guarantee the new workers will be ready to accept
+            // new connections before sending shutdown signals to old workers.
+            // If the new works takes more than 100ms to startup, then there is
+            // a risk that the old workers are shutdown but new workers are still
+            // not ready, as a result, new connections will be pending until a new
+            // worker is ready to handle.
             /* allow new processes to start */
             ngx_msleep(100);
 
@@ -747,6 +753,7 @@ ngx_worker_process_cycle(ngx_cycle_t *cycle, void *data)
     ngx_worker_process_init(cycle, worker);
 
     ngx_setproctitle("worker process");
+    sleep(10);
 
 
     for ( ;; ) {
