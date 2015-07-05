@@ -4,10 +4,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="Employee" table="EMPLOYEE">
-        <meta attribute="class-description"> This class contains the employee detail.
-        </meta>
+        <meta attribute="class-description"> This class contains the employee detail.</meta>
         <id name="id" type="int" column="id">
-            <generator class="native"/> </id>
-        <property name="firstName" column="first_name" type="string"/> <property name="lastName" column="last_name" type="string"/> <property name="salary" column="salary" type="int"/>
+            <generator class="native"/>
+        </id>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
     </class>
 </hibernate-mapping>
