@@ -1,0 +1,253 @@
+====================[Employee.hbm.xml]====================
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Employee" table="EMPLOYEE">
+        <meta attribute="class-description"> This class contains the employee detail.</meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+    </class>
+</hibernate-mapping>
+
+====================[Employee.java]====================
+public class Employee {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int salary;
+    public Employee() {}
+    public Employee(String fname, String lname, int salary) {
+        this.firstName = fname;
+        this.lastName = lname;
+        this.salary = salary;
+    }
+    public int getId() {
+        return id; }
+    public void setId( int id ) {
+        this.id = id;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName( String first_name ) {
+        this.firstName = first_name;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public void setLastName( String last_name ) {
+        this.lastName = last_name;
+    }
+    public int getSalary() {
+        return salary;
+    }
+    public void setSalary( int salary ) {
+        this.salary = salary;
+    }
+}
+
+====================[Employee.sql]====================
+create table EMPLOYEE (
+       id INT NOT NULL auto_increment,
+       first_name VARCHAR(20) default NULL,
+       last_name  VARCHAR(20) default NULL,
+       salary     INT  default NULL,
+       PRIMARY KEY (id)
+);
+
+====================[ManageEmployee.java]====================
+import java.util.List;
+import java.util.Date;
+import java.util.Iterator;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class ManageEmployee {
+    private static SessionFactory factory;
+    public static void main(String[] args) {
+        try {
+            factory = new Configuration().configure().buildSessionFactory();
+        }
+        catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+        ManageEmployee ME = new ManageEmployee();
+        /* Add few employee records in database */
+        Integer empID1 = ME.addEmployee("Zara", "Ali", 1000);
+        Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
+        Integer empID3 = ME.addEmployee("John", "Paul", 10000);
+        /* List down all the employees */
+        ME.listEmployees();
+        /* Update employee's records */
+        ME.updateEmployee(empID1, 5000);
+        /* Delete an employee from the database */
+        ME.deleteEmployee(empID2);
+        /* List down new list of the employees */
+        ME.listEmployees();
+    }
+    /* Method to CREATE an employee in the database */
+    public Integer addEmployee(String fname, String lname, int salary) {
+        Session session = factory.openSession();
+        Transaction tx = null;
+        Integer employeeID = null;
+        try {
+            tx = session.beginTransaction();
+            Employee employee = new Employee(fname, lname, salary);
+            employeeID = (Integer) session.save(employee);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return employeeID;
+    }
+
+    /* Method to  READ all the employees */
+    public void listEmployees( ) {
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            List employees = session.createQuery("FROM Employee").list();
+            for (Iterator iterator =
+                        employees.iterator(); iterator.hasNext();) {
+                Employee employee = (Employee) iterator.next();
+                System.out.print("First Name: " + employee.getFirstName());
+                System.out.print(" Last Name: " + employee.getLastName());
+                System.out.println(" Salary: " + employee.getSalary());
+            }
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+    /* Method to UPDATE salary for an employee */
+    public void updateEmployee(Integer EmployeeID, int salary ) {
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Employee employee =
+                (Employee)session.get(Employee.class, EmployeeID);
+            employee.setSalary( salary );
+            session.update(employee);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+    /* Method to DELETE an employee from the records */
+    public void deleteEmployee(Integer EmployeeID) {
+        Session session = factory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Employee employee =
+                (Employee)session.get(Employee.class, EmployeeID);
+            session.delete(employee);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+}
+
+====================[hibernate.cfg.xml]====================
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <!-- Assume test is the database name -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost/test
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.password">
+        </property>
+        <!-- List of XML mapping files -->
+        <mapping resource="Employee.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
+
+====================[lib.tree.txt]====================
+lib/
+├── commons-fileupload-1.3.1.jar
+├── commons-io-2.4.jar
+├── hibernate
+│   ├── envers
+│   │   └── hibernate-envers-4.3.10.Final.jar
+│   ├── jpa
+│   │   └── hibernate-entitymanager-4.3.10.Final.jar
+│   ├── jpa-metamodel-generator
+│   │   └── hibernate-jpamodelgen-4.3.10.Final.jar
+│   ├── optional
+│   │   ├── c3p0
+│   │   │   ├── c3p0-0.9.2.1.jar
+│   │   │   ├── hibernate-c3p0-4.3.10.Final.jar
+│   │   │   └── mchange-commons-java-0.2.3.4.jar
+│   │   ├── ehcache
+│   │   │   ├── ehcache-core-2.4.3.jar
+│   │   │   ├── hibernate-ehcache-4.3.10.Final.jar
+│   │   │   └── slf4j-api-1.6.1.jar
+│   │   ├── infinispan
+│   │   │   ├── hibernate-infinispan-4.3.10.Final-tests.jar
+│   │   │   ├── hibernate-infinispan-4.3.10.Final.jar
+│   │   │   ├── infinispan-commons-6.0.0.Final.jar
+│   │   │   ├── infinispan-core-6.0.0.Final.jar
+│   │   │   ├── jboss-marshalling-1.3.18.GA.jar
+│   │   │   ├── jboss-marshalling-river-1.3.18.GA.jar
+│   │   │   ├── jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+│   │   │   ├── jgroups-3.4.1.Final.jar
+│   │   │   └── rhq-pluginAnnotations-3.0.4.jar
+│   │   └── proxool
+│   │       ├── hibernate-proxool-4.3.10.Final.jar
+│   │       └── proxool-0.8.3.jar
+│   ├── osgi
+│   │   ├── hibernate-osgi-4.3.10.Final.jar
+│   │   ├── org.osgi.compendium-4.3.1.jar
+│   │   └── org.osgi.core-4.3.1.jar
+│   └── required
+│       ├── antlr-2.7.7.jar
+│       ├── dom4j-1.6.1.jar
+│       ├── hibernate-commons-annotations-4.0.5.Final.jar
+│       ├── hibernate-core-4.3.10.Final.jar
+│       ├── hibernate-jpa-2.1-api-1.0.0.Final.jar
+│       ├── jandex-1.1.0.Final.jar
+│       ├── javassist-3.18.1-GA.jar
+│       ├── jboss-logging-3.1.3.GA.jar
+│       ├── jboss-logging-annotations-1.2.0.Beta1.jar
+│       └── jboss-transaction-api_1.2_spec-1.0.0.Final.jar
+└── mysql-connector-java-5.1.35-bin.jar
+
+11 directories, 36 files
+
