@@ -287,6 +287,8 @@ main(int argc, char *const *argv)
         return 1;
     }
 
+
+    // An important initialization: ngx_os_io = ngx_linux_io
     if (ngx_os_init(log) != NGX_OK) {
         return 1;
     }
@@ -369,6 +371,7 @@ main(int argc, char *const *argv)
         return 1;
     }
 
+    // Why close log->file->fd ?
     if (log->file->fd != ngx_stderr) {
         if (ngx_close_file(log->file->fd) == NGX_FILE_ERROR) {
             ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno,
@@ -769,8 +772,8 @@ ngx_get_options(int argc, char *const *argv)
 }
 
 
-// main(argv)->ngx_os_argv[], environ->ngx_os_environ
-// main(argc,argv)->ngx_argc/ngx_argv[](copied all args & last is NULL)
+// main(argv)=>ngx_os_argv[], environ=>ngx_os_environ
+// main(argc,argv)=>ngx_argc/ngx_argv[](copied all args & last is NULL)
 static ngx_int_t
 ngx_save_argv(ngx_cycle_t *cycle, int argc, char *const *argv)
 {

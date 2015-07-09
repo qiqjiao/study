@@ -86,8 +86,9 @@ struct ngx_queue_s {
 
 #endif
 
+// Split h at q, n becomes the head of the new queue
 // http://blog.csdn.net/commshare/article/details/19030191
-// h x1 x2 .. xn q .. y1 y2 ====> h x1 x2 .. xn  +  n q .. y1 y2 
+// h x1 x2 .. q .. y1 y2 ====> h x1 x2 .. + n q .. y1 y2 
 #define ngx_queue_split(h, q, n)                                              \
     (n)->prev = (h)->prev;                                                    \
     (n)->prev->next = n;                                                      \
@@ -96,14 +97,21 @@ struct ngx_queue_s {
     (h)->prev->next = h;                                                      \
     (q)->prev = n;
 
-
+// Join to queues, h is the new head
+// h x1 x2 ...  +  n y1 y2 ...  ===>  h x1 x2 ... y1 y2 ...
 #define ngx_queue_add(h, n)                                                   \
     (h)->prev->next = (n)->next;                                              \
     (n)->next->prev = (h)->prev;                                              \
     (h)->prev = (n)->prev;                                                    \
     (h)->prev->next = h;
 
-
+// struct X {
+//   ...
+//   ngx_queue_t queue,
+//   ...
+// };
+// q = address of X.queue
+// ngx_queue_data(q, X, queue) is the address of the instance of X.
 #define ngx_queue_data(q, type, link)                                         \
     (type *) ((u_char *) q - offsetof(type, link))
 

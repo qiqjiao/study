@@ -35,6 +35,7 @@ struct ngx_shm_zone_s {
 
 
 struct ngx_cycle_s {
+    // conf_ctx[module->index] = module->ctx->create_conf(cycle)
     void                  ****conf_ctx;
     ngx_pool_t               *pool;
 

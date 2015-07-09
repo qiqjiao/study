@@ -171,7 +171,7 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
         return NULL;
     }
 
-    // init cycle->listening with old size/n
+    // init cycle->listening with old size/10
     n = old_cycle->listening.nelts ? old_cycle->listening.nelts : 10;
 
     cycle->listening.elts = ngx_pcalloc(pool, n * sizeof(ngx_listening_t));
@@ -935,6 +935,9 @@ ngx_delete_pidfile(ngx_cycle_t *cycle)
 }
 
 
+// ccf = (ngx_core_conf_t *) ngx_get_conf(cycle->conf_ctx, ngx_core_module);
+// pid = ngx_atoi(ngx_read_file(ngx_open_file(ccf->pid)))
+// ngx_os_signal_process(cycle, sig, pid);
 ngx_int_t
 ngx_signal_process(ngx_cycle_t *cycle, char *sig)
 {

@@ -643,7 +643,8 @@ ngx_debug_point(void)
     }
 }
 
-
+// for (ngx_signal_t *sig: signals):
+//    if (sig->name == name) { kill(pid, sig->signo) }
 ngx_int_t
 ngx_os_signal_process(ngx_cycle_t *cycle, char *name, ngx_int_t pid)
 {

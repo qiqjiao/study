@@ -23,7 +23,7 @@ struct ngx_file_s {
 
     ngx_log_t                 *log;
 
-#if (NGX_HAVE_FILE_AIO)
+#if (NGX_HAVE_FILE_AIO) // =0
     ngx_event_aio_t           *aio;
 #endif
 

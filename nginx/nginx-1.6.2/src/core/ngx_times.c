@@ -79,11 +79,11 @@ ngx_time_init(void)
 //
 //    ngx_memory_barrier();
 //    # update pointers #
-//    ngx_cached_time = tp;
-//    ngx_cached_http_time.data = p0;
-//    ngx_cached_err_log_time.data = p1;
-//    ngx_cached_http_log_time.data = p2;
-//    ngx_cached_http_log_iso8601.data = p3;
+//    ngx_cached_time = &cached_time[slot];
+//    ngx_cached_http_time.data = &cached_http_time[slot][0];
+//    ngx_cached_err_log_time.data = &cached_err_log_time[slot][0];
+//    ngx_cached_http_log_time.data = &cached_http_log_time[slot][0];
+//    ngx_cached_http_log_iso8601.data = &cached_http_log_iso8601[slot][0];
 //
 // unlock
 void

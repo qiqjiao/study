@@ -372,8 +372,9 @@ ngx_log_open_default(ngx_cycle_t *cycle)
     return NGX_OK;
 }
 
-// if cycle->log_use_stderr: return
-// dup2(cycle->log->file->fd, stderr)
+// if cycle->log_use_stderr:
+//   # Outputs to stderr will be redirected to cycle->log->file->fd
+//   dup2(cycle->log->file->fd, stderr)
 ngx_int_t
 ngx_log_redirect_stderr(ngx_cycle_t *cycle)
 {

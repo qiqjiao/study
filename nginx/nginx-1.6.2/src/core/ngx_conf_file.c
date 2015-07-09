@@ -459,10 +459,37 @@ invalid:
     return NGX_ERROR;
 }
 
-
+// http://www.commentapi.com/news/nginx%20ngx_conf_read_token.html
+// 这个函数会被循环调用多次 
+// 把每次分析的值放到cf->args这个数组里面 
+// 碰到{ ; 返回 
+// ngx数组的用法要知道此函数读取如下的格式 
+// 格式1 
+// user  nobody; 
+// http { 
+//     include  conf/mime.types; 
+//     #gzip  on; 
+//     server { 
+//         listen  80; 
+//         location / {root   html; } 
+//     } 
+// } 
+// user nobody              cf->args 数组长度2 
+// http                     cf->args 数组长度1 
+// include  conf/mime.types cf->args 数组长度2 
+// 还可以读取以下格式 可以用双(单)引号包括 可以多个相连 
+// 格式2 
+// 'error_log'  "logs/error.log";                                  cf->args数组长度2 
+// "error_log"  "logs/err 
+// or.log";                              用引号包括可以有换行               数组长度1 
+// error_log  "l\"ogs/error.log";        中间有双引号要用\转义              数组长度2 
+// error_log  "logs/error.log" "dfadsfa";相邻的双引号中间要有\r\n\t或空格   数组长度3 
+// 上面单引号一样 
 static ngx_int_t
 ngx_conf_read_token(ngx_conf_t *cf)
 {
+    // start - beginning of current argument
+    // ch    - current character
     u_char      *start, ch, *src, *dst;
     off_t        file_size;
     size_t       len;
@@ -472,11 +499,15 @@ ngx_conf_read_token(ngx_conf_t *cf)
     ngx_str_t   *word;
     ngx_buf_t   *b;
 
+    // Whether found the end (space, {, ;) of an argument
     found = 0;
+    // Closing '/" is found, also an argument is found (found = 1)
     need_space = 0;
+    // last character is space (not inside quotes), sucessive space will be skipped
     last_space = 1;
     sharp_comment = 0;
     variable = 0;
+    // Set to true if ch == '\\', on next character reset quoted and continue.
     quoted = 0;
     s_quoted = 0;
     d_quoted = 0;
@@ -514,8 +545,9 @@ ngx_conf_read_token(ngx_conf_t *cf)
                 return NGX_CONF_FILE_DONE;
             }
 
+            // The current argument length
             len = b->pos - start;
-
+            // Error if argument length equals to buffer capacity
             if (len == NGX_CONF_BUFFER) {
                 cf->conf_file->line = start_line;
 
@@ -538,6 +570,7 @@ ngx_conf_read_token(ngx_conf_t *cf)
                 return NGX_ERROR;
             }
 
+            // Copy the unfinished argument to buffer beginning
             if (len) {
                 ngx_memmove(b->start, start, len);
             }
@@ -588,6 +621,7 @@ ngx_conf_read_token(ngx_conf_t *cf)
             continue;
         }
 
+        // need_space = 1 iff closing ' or " is found. Only valid chars behind are space/;/{/)
         if (need_space) {
             if (ch == ' ' || ch == '\t' || ch == CR || ch == LF) {
                 last_space = 1;
@@ -615,6 +649,7 @@ ngx_conf_read_token(ngx_conf_t *cf)
         }
 
         if (last_space) {
+            // If last char is space, skip successive spaces
             if (ch == ' ' || ch == '\t' || ch == CR || ch == LF) {
                 continue;
             }
@@ -622,6 +657,7 @@ ngx_conf_read_token(ngx_conf_t *cf)
             start = b->pos - 1;
             start_line = cf->conf_file->line;
 
+            // If last char is space, and current char is not, then the bondary is found
             switch (ch) {
 
             case ';':
@@ -689,6 +725,8 @@ ngx_conf_read_token(ngx_conf_t *cf)
                 continue;
             }
 
+            // If in quotation, then on closing quote set found = 1,
+            // otherwise, on space or ;, { set found =1
             if (d_quoted) {
                 if (ch == '"') {
                     d_quoted = 0;
@@ -710,6 +748,13 @@ ngx_conf_read_token(ngx_conf_t *cf)
                 found = 1;
             }
 
+            // An argument is found,
+            // word = ngx_array_push(cf->args);
+            // #ch = b->pos - 1, ch is separator, so -1 again
+            // copy 'start ~ b->pos - 2' to word.
+            // if (ch == ';') return NGX_OK;
+            // if (ch == '{') return NGX_CONF_BLOCK_START
+            // continue
             if (found) {
                 word = ngx_array_push(cf->args);
                 if (word == NULL) {
