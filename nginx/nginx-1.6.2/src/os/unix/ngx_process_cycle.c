@@ -78,7 +78,9 @@ static ngx_cycle_t      ngx_exit_cycle;
 static ngx_log_t        ngx_exit_log;
 static ngx_open_file_t  ngx_exit_log_file;
 
-
+// http://www.xuebuyuan.com/557917.html
+// http://blog.csdn.net/lu_ming/article/details/5144427
+// http://blog.csdn.net/lengzijian/article/details/7587740
 void
 ngx_master_process_cycle(ngx_cycle_t *cycle)
 {
@@ -133,6 +135,7 @@ ngx_master_process_cycle(ngx_cycle_t *cycle)
     ngx_setproctitle(title);
 
 
+    // Start workers and cache_manager
     ccf = (ngx_core_conf_t *) ngx_get_conf(cycle->conf_ctx, ngx_core_module);
 
     ngx_start_worker_processes(cycle, ccf->worker_processes,
@@ -190,6 +193,7 @@ ngx_master_process_cycle(ngx_cycle_t *cycle)
             ngx_master_process_exit(cycle);
         }
 
+        // on SIGINT set ngx_terminate = 1
         if (ngx_terminate) {
             if (delay == 0) {
                 delay = 50;
@@ -988,7 +992,7 @@ ngx_worker_process_exit(ngx_cycle_t *cycle)
     ngx_uint_t         i;
     ngx_connection_t  *c;
 
-#if (NGX_THREADS)
+#if (NGX_THREADS) // =0
     ngx_terminate = 1;
 
     ngx_wakeup_worker_threads(cycle);

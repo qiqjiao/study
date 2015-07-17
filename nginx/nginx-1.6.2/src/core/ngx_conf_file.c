@@ -217,6 +217,20 @@ ngx_conf_parse(ngx_conf_t *cf, ngx_str_t *filename)
 
         /* rc == NGX_OK || rc == NGX_CONF_BLOCK_START */
 
+        // An example is the mime.types parsing. It's format:
+        // http {
+        //   include '...mime.types'
+        // }
+        // types {
+        //   text/xyzhtml                             html htm shtml;
+        //   text/css                              css;
+        // }
+        // When handle "types" in ngx_http_core_types(), it will:
+        //   save = *cf;
+        //   cf->handler = ngx_http_core_type;
+        //   cf->handler_conf = conf;
+        //   rv = ngx_conf_parse(cf, NULL);
+        //   *cf = save;
         if (cf->handler) {
 
             /*
@@ -379,10 +393,13 @@ ngx_conf_handler(ngx_conf_t *cf, ngx_int_t last)
             //   ngx_conf_set_flag_slot,
             //   0,
             //   offsetof(ngx_core_conf_t, daemon),
-            //   NULL },
-            //   char * ngx_conf_set_flag_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf) {
-            //       char  *p = conf;
-            //       ngx_flag_t *fp = (ngx_flag_t *) (p + cmd->offset);
+            //   NULL
+            // },
+            // char * ngx_conf_set_flag_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf) {
+            //     char  *p = conf;
+            //     ngx_flag_t *fp = (ngx_flag_t *) (p + cmd->offset);
+            // }
+            //
             // NGX_MAIN_CONF
             // pass pointer to cf->ctx[ngx_modules[i]->index] which is a pointer
             // to actual config struct, e.g.
@@ -405,6 +422,35 @@ ngx_conf_handler(ngx_conf_t *cf, ngx_int_t last)
             //     ngx_http_conf_ctx_t         *ctx;
             //     ctx = ngx_pcalloc(cf->pool, sizeof(ngx_http_conf_ctx_t));
             //     *(ngx_http_conf_ctx_t **) conf = ctx;
+            //
+            //     ngx_conf_t pcf = *cf;
+            //     cf->ctx = ctx;
+            //     cf->module_type = NGX_HTTP_MODULE;
+            //     cf->cmd_type = NGX_HTTP_MAIN_CONF;
+            //     rv = ngx_conf_parse(cf, NULL);
+            //
+            //     *cf = pcf;
+            //
+            // NONE
+            // cf->ctx points to the module specific config, e.g. for http_module, it points to
+            // ngx_http_conf_ctx_t which is created when parsing "http" in ngx_http_block().
+            //               cmd->conf is the offset 
+            //                   v            |---> Some struct
+            // cf->ctx ---> Some struct       |
+            //                   |-----[v* v* v* ... ] (confp)// Array of void*
+            //                                ^
+            //                      ngx_modules[i]->ctx_index
+            // E.g. When parsing "types" inside "http", 
+            // #define NGX_HTTP_LOC_CONF_OFFSET   offsetof(ngx_http_conf_ctx_t, loc_conf)
+            //    { ngx_string("types"),
+            //      NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF
+            //                                          |NGX_CONF_BLOCK|NGX_CONF_NOARGS,
+            //      ngx_http_core_types,
+            //      NGX_HTTP_LOC_CONF_OFFSET,
+            //      0,
+            //      NULL },
+            // cmd->conf is the offset of loc_conf in ngx_http_conf_ctx_t, then
+            // conf = confp[ngx_modules[i]->ctx_index] is the loc_conf item for ngx_modules[i].
             conf = NULL;
 
             if (cmd->type & NGX_DIRECT_CONF) {

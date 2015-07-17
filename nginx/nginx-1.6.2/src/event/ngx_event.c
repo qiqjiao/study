@@ -456,6 +456,8 @@ ngx_event_module_init(ngx_cycle_t *cycle)
 
     ngx_timer_resolution = ccf->timer_resolution;
 
+    // Warnign when 'ecf->connections > rlmt.rlim_cur' and 'ecf->connections > ccf->rlimit_nofile'.
+    // i.e. it respects to the rlimit_nofile in config file (worker_rlimit_nofile).
     {
     ngx_int_t      limit;
     struct rlimit  rlmt;
@@ -597,10 +599,11 @@ ngx_event_process_init(ngx_cycle_t *cycle)
 
 #if !(NGX_WIN32)
 
-    if (ngx_timer_resolution && !(ngx_event_flags & NGX_USE_TIMER_EVENT)) {
+    if (ngx_timer_resolution && !(ngx_event_flags & NGX_USE_TIMER_EVENT)) { // = false
         struct sigaction  sa;
         struct itimerval  itv;
 
+        abort();
         ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno,
                       "event-flags");
         ngx_memzero(&sa, sizeof(struct sigaction));
@@ -624,7 +627,7 @@ ngx_event_process_init(ngx_cycle_t *cycle)
         }
     }
 
-    if (ngx_event_flags & NGX_USE_FD_EVENT) {
+    if (ngx_event_flags & NGX_USE_FD_EVENT) { // =false
         struct rlimit  rlmt;
 
         if (getrlimit(RLIMIT_NOFILE, &rlmt) == -1) {
@@ -644,9 +647,9 @@ ngx_event_process_init(ngx_cycle_t *cycle)
 
 #endif
 
-    // cycle->connections  = ngx_connection_t[cycle->connection_n]
-    // cycle->read_events  = ngx_event_t[cycle->connection_n]
-    // cycle->write_events = ngx_event_t[cycle->connection_n]
+    // cycle->connections  = new ngx_connection_t[cycle->connection_n]
+    // cycle->read_events  = new ngx_event_t[cycle->connection_n]
+    // cycle->write_events = new ngx_event_t[cycle->connection_n]
     // # build a connection link list
     // cycle->connections[i].data  = &cycle->connections[i]
     // cycle->connections[i].read  = &cycle->read_events[i]
@@ -708,6 +711,8 @@ ngx_event_process_init(ngx_cycle_t *cycle)
     //   c->listening = &ls
     //   ls.connection = c
     //   c->read->accept = 1
+    //   c->read->handler = ngx_event_accept;
+    //   ngx_add_event(c->read, NGX_READ_EVENT, 0)
     ls = cycle->listening.elts;
     for (i = 0; i < cycle->listening.nelts; i++) {
 
@@ -810,7 +815,24 @@ ngx_send_lowat(ngx_connection_t *c, size_t lowat)
     return NGX_OK;
 }
 
-
+// for m in event modules (ngx_modules[i]->type != NGX_EVENT_MODULE):
+//   ngx_modules[i]->ctx_index = ngx_event_max_module++;
+//
+// void ***ctx = ngx_pcalloc(cf->pool, sizeof(void *));
+// *ctx = ngx_pcalloc(cf->pool, ngx_event_max_module * sizeof(void *));
+// cycle->conf_ctx[ngx_events_module.index] = ctx
+//
+// for m in event modules (ngx_modules[i]->type != NGX_EVENT_MODULE):
+//   (*ctx)[m->ctx_index] = ((ngx_event_module_t*)m->ctx)->create_conf(cf->cycle);
+//
+// cf->ctx = ctx;
+// cf->module_type = NGX_EVENT_MODULE;
+// cf->cmd_type = NGX_EVENT_CONF;
+// gx_conf_parse(cf, NULL);
+//
+// for m in event modules (ngx_modules[i]->type != NGX_EVENT_MODULE):
+//   ((ngx_event_module_t*)m->ctx)->init_conf(cf->cycle, (*ctx)[m->ctx_index]);
+//
 static char *
 ngx_events_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {

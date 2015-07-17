@@ -1,4 +1,55 @@
+typedef struct {
+    ngx_str_t             name;
+    void               *(*create_conf)(ngx_cycle_t *cycle);
+    char               *(*init_conf)(ngx_cycle_t *cycle, void *conf);
+} ngx_core_module_t;
+struct ngx_module_s {
+    ngx_uint_t            ctx_index;
+    ngx_uint_t            index;
+    ngx_uint_t            spare0~3;
+    ngx_uint_t            version;
+    void                 *ctx;
+    ngx_command_t        *commands;
+    ngx_uint_t            type;
+    ngx_int_t           (*init_master)(ngx_log_t *log);
+    ngx_int_t           (*init_module)(ngx_cycle_t *cycle);
+    ngx_int_t           (*init_process)(ngx_cycle_t *cycle);
+    ngx_int_t           (*init_thread)(ngx_cycle_t *cycle);
+    void                (*exit_thread)(ngx_cycle_t *cycle);
+    void                (*exit_process)(ngx_cycle_t *cycle);
+    void                (*exit_master)(ngx_cycle_t *cycle);
+    uintptr_t             spare_hook0~7;
+};
+----NGX_CORE_MODULE----
+ngx_core_module;
+ngx_errlog_module;
+ngx_events_module;
+ngx_regex_module;
+ngx_http_module;
+
+-----main(argc, argv)----
+ngx_cycle_t * new_cycle = ngx_init_cycle(ngx_cycle_t *old_cycle) {
+  foreach m in ngx core modules (m->type == NGX_CORE_MODULE):
+    cycle->conf_ctx[m->index] = ((ngx_core_module_t*)m->ctx)->create_conf(cycle)
+  
+  conf.ctx = cycle->conf_ctx;
+  conf.module_type = NGX_CORE_MODULE;
+  conf.cmd_type = NGX_MAIN_CONF;
+  ngx_conf_parse(&conf, &cycle->conf_file);
+
+  foreach m in ngx core modules (m->type == NGX_CORE_MODULE):
+    ((ngx_core_module_t*)m->ctx)->init_conf(cycle)
+
+  foreach m in ngx all modules:
+    m->init_module(cycle)
+
+}
+
+void ngx_master_process_cycle(ngx_cycle_t *cycle) {
+}
+
 ========base=========
+http://my.oschina.net/7gaoxing/blog/110279
 1. --------array-----------
 typedef struct {
     void        *elts;

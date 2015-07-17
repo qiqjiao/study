@@ -732,8 +732,7 @@ ngx_close_listening_sockets(ngx_cycle_t *cycle)
 }
 
 // ngx_connection_t *c = get a connection from ngx_cycle->free_connections
-// c->fd = s
-// c->log = log
+// (c->fd, c->log) = (s, log)
 // ngx_event_t *rev = c->read, *wev = c->write
 // instance = rev->instance;
 // rev->instance = !instance;

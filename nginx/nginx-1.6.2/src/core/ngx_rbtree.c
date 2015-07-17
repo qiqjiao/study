@@ -135,6 +135,12 @@ ngx_rbtree_insert_timer_value(ngx_rbtree_node_t *temp, ngx_rbtree_node_t *node,
          */
 
         /*  node->key < temp->key */
+        //*  
+        //*   要比较的两个timer值通常相差不大，大概几分钟而已
+        //*   而0xFFFFFFFF小于50天的毫秒数，所以当值超过50天时就会溢出
+        //*   所以0xFFFFFFF0和0x0000000F的timer值比较，应该认为0x0000000F值溢出
+        //*    其本来值应该大于0xFFFFFFF0，所以才有此区别。
+        //*/
 
         p = ((ngx_rbtree_key_int_t) (node->key - temp->key) < 0)
             ? &temp->left : &temp->right;

@@ -114,10 +114,13 @@ struct ngx_module_s {
     ngx_command_t        *commands;
     ngx_uint_t            type;
 
+    // Unused
     ngx_int_t           (*init_master)(ngx_log_t *log);
 
+    // called in init_cycle
     ngx_int_t           (*init_module)(ngx_cycle_t *cycle);
 
+    // called in ngx_worker_process_init
     ngx_int_t           (*init_process)(ngx_cycle_t *cycle);
     ngx_int_t           (*init_thread)(ngx_cycle_t *cycle);
     void                (*exit_thread)(ngx_cycle_t *cycle);
@@ -168,6 +171,7 @@ struct ngx_conf_s {
     ngx_uint_t            module_type;
     ngx_uint_t            cmd_type;
 
+    // Set in some block to handle config statements. e.g. "types" in http module
     ngx_conf_handler_pt   handler;
     char                 *handler_conf;
 };

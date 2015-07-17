@@ -115,10 +115,10 @@ ngx_module_t  ngx_http_module = {
 };
 
 // ngx_http_max_module = Number of NGX_HTTP_MODULE
-// *(ngx_http_conf_ctx_t **) conf = ctx;
-// ctx->main_conf = void *[ngx_http_max_module]
-// ctx->srv_conf = void *[ngx_http_max_module]
-// ctx->loc_conf = void *[ngx_http_max_module]
+// *(ngx_http_conf_ctx_t **) conf = new ngx_http_conf_ctx_t;
+// ctx->main_conf = new void *[ngx_http_max_module]
+// ctx->srv_conf  = new void *[ngx_http_max_module]
+// ctx->loc_conf  = new void *[ngx_http_max_module]
 // for m in http ngx_modules:
 //   ctx->main_conf[m->ctx_index] = m->create_main_conf(cf)
 //   ctx->srv_conf[m->ctx_index] = m->create_srv_conf(cf)
